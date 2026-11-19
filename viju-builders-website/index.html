@@ -1,61 +1,29 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Viju Builders — thoughtful construction, dependable project execution. Get in touch to discuss your building project.">
+
+  <meta name="description" content="Viju Builders — thoughtful construction, dependable project execution.">
+
   <meta name="theme-color" content="#111820">
+
   <title>Viju Builders | Building with Purpose</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    /* Refined navigation */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(17,24,32,.045);
-    }
+    /* CAREERS SECTION */
 
-    .nav {
-      gap: 8px;
-      font-size: 12px;
-    }
-
-    .nav a:not(.nav-cta) {
-      padding: 12px 15px;
-      border-radius: 30px;
-      transition: background .25s ease, color .25s ease;
-    }
-
-    .nav a:not(.nav-cta):hover {
-      background: rgba(212,163,79,.13);
-      color: #9c6c23;
-    }
-
-    .nav-cta {
-      border-radius: 3px;
-      padding: 15px 21px;
-      margin-left: 8px;
-      transition: background .25s ease, transform .25s ease;
-    }
-
-    .nav-cta:hover {
-      background: #b07b2b;
-      color: white !important;
-      transform: translateY(-2px);
-    }
-
-    /* Careers section */
     .careers {
       background: #eae8e1;
-      padding: 105px 0;
+      padding: 100px 0;
     }
 
     .careers-grid {
@@ -73,7 +41,7 @@
     }
 
     .careers h2 em {
-      color: #bd914e;
+      color: #c18b3e;
       font-style: normal;
     }
 
@@ -96,53 +64,49 @@
       padding: 17px 22px;
       background: #111820;
       color: white;
+      text-decoration: none;
       font-size: 12px;
       font-weight: 700;
       margin-top: 18px;
-      transition: .25s ease;
+      transition: .3s ease;
     }
 
     .careers-button:hover {
       background: #b07b2b;
-      transform: translateY(-2px);
+      transform: translateY(-4px);
     }
 
-    @media(max-width:1000px) {
-      .nav {
-        gap: 2px;
-      }
+    /* NAVIGATION */
 
-      .nav a:not(.nav-cta) {
-        padding: 11px 9px;
-      }
+    .nav {
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .nav a:not(.nav-cta) {
+      padding: 12px 15px;
+      border-radius: 30px;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .nav a:not(.nav-cta):hover {
+      background: rgba(212,163,79,.13);
+      color: #9c6c23;
     }
 
     @media(max-width:800px) {
-      .site-header {
-        position: sticky;
-        top: 0;
-      }
-
-      .nav {
-        gap: 12px;
-      }
-
-      .nav a:not(.nav-cta) {
-        padding: 10px 12px;
-      }
-
-      .nav-cta {
-        margin-left: 0;
-      }
-
       .careers {
-        padding: 75px 0;
+        padding: 70px 0;
       }
 
       .careers-grid {
         grid-template-columns: 1fr;
         gap: 25px;
         margin-top: 35px;
+      }
+
+      .careers h2 {
+        font-size: clamp(42px,10vw,60px);
       }
     }
   </style>
@@ -159,7 +123,8 @@
 
     <a class="brand" href="#top" aria-label="Viju Builders home">
       <span class="brand-mark">VB</span>
-      <span>VIJU <b>BUILDERS</b>
+      <span>
+        VIJU <b>BUILDERS</b>
         <small>BUILDING WITH PURPOSE</small>
       </span>
     </a>
@@ -175,9 +140,9 @@
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#careers">Careers</a>
-      <a href="#approach">Our Approach</a>
+      <a href="#approach">Our approach</a>
       <a class="nav-cta" href="#contact">
-        Get a Quote <span>↗</span>
+        Get a quote <span>↗</span>
       </a>
     </nav>
 
@@ -186,15 +151,25 @@
   <main>
 
     <!-- HERO -->
+
     <section class="hero">
-      <div class="hero-image" role="img"
-        aria-label="Modern residential architecture"></div>
+
+      <div class="hero-image"
+        role="img"
+        aria-label="Modern residential architecture">
+      </div>
+
       <div class="hero-shade"></div>
 
       <div class="hero-content">
-        <p class="eyebrow light">CIVIL CONSTRUCTION & ENGINEERING</p>
+        <p class="eyebrow light">
+          CIVIL CONSTRUCTION & ENGINEERING
+        </p>
 
-        <h1>Built on good<br><em>foundations.</em></h1>
+        <h1>
+          Built on good<br>
+          <em>foundations.</em>
+        </h1>
 
         <p class="hero-copy">
           Thoughtful planning. Quality workmanship.
@@ -205,6 +180,7 @@
           <a class="button button-light" href="#contact">
             Discuss your project <span>↗</span>
           </a>
+
           <a class="text-link light-link" href="#projects">
             Explore our work <span>↓</span>
           </a>
@@ -215,36 +191,45 @@
         <span>01 / 04</span>
         <span>DESIGN · BUILD · DELIVER</span>
       </div>
+
     </section>
 
     <!-- ABOUT -->
+
     <section class="intro section-wrap" id="about">
 
       <div class="section-kicker">
-        <span>01</span><span>WHO WE ARE</span>
+        <span>01</span>
+        <span>WHO WE ARE</span>
       </div>
 
       <div class="intro-grid">
-        <h2>Creating spaces<br>made to <em>last.</em></h2>
+
+        <h2>
+          Creating spaces<br>
+          made to <em>last.</em>
+        </h2>
 
         <div class="intro-text">
           <p class="lead">
-            Viju Builders is a civil construction firm focused
-            on practical solutions, careful execution and clear
-            communication.
+            Viju Builders is a civil construction firm
+            focused on practical solutions, careful
+            execution and clear communication.
           </p>
 
           <p>
-            From the first conversation to the finishing details,
-            our aim is to make the building process straightforward
-            and dependable. Tell us about your project and let's
-            explore how we can bring it to life.
+            From the first conversation to the finishing
+            details, our aim is to make the building
+            process straightforward and dependable.
+            Tell us about your project and let's explore
+            how we can bring it to life.
           </p>
 
           <a class="text-link dark-link" href="#contact">
             Get to know us <span>↗</span>
           </a>
         </div>
+
       </div>
 
       <div class="stats-row">
@@ -252,36 +237,46 @@
           <strong>01</strong>
           <span>PERSONAL<br>ATTENTION</span>
         </div>
+
         <div>
           <strong>02</strong>
           <span>QUALITY-LED<br>EXECUTION</span>
         </div>
+
         <div>
           <strong>03</strong>
           <span>OPEN<br>COMMUNICATION</span>
         </div>
+
         <p>
-          Every project deserves care, clarity and a strong foundation.
+          Every project deserves care, clarity
+          and a strong foundation.
         </p>
       </div>
 
     </section>
 
     <!-- SERVICES -->
+
     <section class="services-section" id="services">
 
       <div class="section-wrap">
 
         <div class="section-kicker light-kicker">
-          <span>02</span><span>WHAT WE DO</span>
+          <span>02</span>
+          <span>WHAT WE DO</span>
         </div>
 
         <div class="section-heading">
-          <h2>Construction,<br><em>considered.</em></h2>
+          <h2>
+            Construction,<br>
+            <em>considered.</em>
+          </h2>
+
           <p>
             Services can be tailored to your requirements.
-            Speak with us about the scope, site and timeline
-            of your project.
+            Speak with us about the scope, site and
+            timeline of your project.
           </p>
         </div>
 
@@ -291,7 +286,10 @@
             <span class="service-no">01</span>
             <div>
               <h3>Residential construction</h3>
-              <p>Homes and residential spaces planned around the people who use them.</p>
+              <p>
+                Homes and residential spaces planned
+                around the people who use them.
+              </p>
             </div>
             <span class="service-arrow">↗</span>
           </article>
@@ -300,7 +298,10 @@
             <span class="service-no">02</span>
             <div>
               <h3>Commercial buildings</h3>
-              <p>Functional spaces designed to support businesses, teams and customers.</p>
+              <p>
+                Functional spaces designed to support
+                businesses, teams and customers.
+              </p>
             </div>
             <span class="service-arrow">↗</span>
           </article>
@@ -309,7 +310,10 @@
             <span class="service-no">03</span>
             <div>
               <h3>Civil engineering works</h3>
-              <p>Construction and civil works delivered with attention to site conditions and detail.</p>
+              <p>
+                Construction and civil works delivered
+                with attention to site conditions and detail.
+              </p>
             </div>
             <span class="service-arrow">↗</span>
           </article>
@@ -318,7 +322,10 @@
             <span class="service-no">04</span>
             <div>
               <h3>Renovation & extensions</h3>
-              <p>Thoughtful upgrades that help existing spaces work better.</p>
+              <p>
+                Thoughtful upgrades that help existing
+                spaces work better.
+              </p>
             </div>
             <span class="service-arrow">↗</span>
           </article>
@@ -326,24 +333,33 @@
         </div>
 
         <p class="small-note">
-          Please confirm the final service list with the company before publishing.
+          Please confirm the final service list with
+          the company before publishing.
         </p>
 
       </div>
+
     </section>
 
     <!-- PROJECTS -->
+
     <section class="projects section-wrap" id="projects">
 
       <div class="section-kicker">
-        <span>03</span><span>SELECTED WORK</span>
+        <span>03</span>
+        <span>SELECTED WORK</span>
       </div>
 
       <div class="section-heading project-heading">
-        <h2>Made real,<br><em>one project at a time.</em></h2>
+        <h2>
+          Made real,<br>
+          <em>one project at a time.</em>
+        </h2>
+
         <p>
-          Replace these sample photographs with Viju Builders'
-          own site photographs and project details when available.
+          Replace these sample photographs with Viju
+          Builders' own site photographs and project
+          details when available.
         </p>
       </div>
 
@@ -351,7 +367,9 @@
 
         <article class="project-card project-large">
           <img data-photo="photo2"
-            alt="Modern house exterior" loading="lazy">
+            alt="Modern house exterior"
+            loading="lazy">
+
           <div class="project-caption">
             <span>01 / RESIDENTIAL</span>
             <h3>Residential spaces</h3>
@@ -361,7 +379,9 @@
 
         <article class="project-card">
           <img data-photo="photo3"
-            alt="Building construction site" loading="lazy">
+            alt="Building construction site"
+            loading="lazy">
+
           <div class="project-caption">
             <span>02 / CONSTRUCTION</span>
             <h3>On-site execution</h3>
@@ -371,7 +391,9 @@
 
         <article class="project-card">
           <img data-photo="photo4"
-            alt="Contemporary commercial architecture" loading="lazy">
+            alt="Contemporary commercial architecture"
+            loading="lazy">
+
           <div class="project-caption">
             <span>03 / COMMERCIAL</span>
             <h3>Commercial spaces</h3>
@@ -380,21 +402,28 @@
         </article>
 
       </div>
+
     </section>
 
     <!-- CAREERS -->
+
     <section class="careers" id="careers">
 
       <div class="section-wrap">
 
         <div class="section-kicker">
-          <span>04</span><span>JOIN OUR TEAM</span>
+          <span>04</span>
+          <span>CAREERS & OPPORTUNITIES</span>
         </div>
 
         <div class="careers-grid">
 
           <div>
-            <h2>Build your<br>future with<br><em>Viju Builders.</em></h2>
+            <h2>
+              Build your<br>
+              future with<br>
+              <em>Viju Builders.</em>
+            </h2>
           </div>
 
           <div class="careers-copy">
@@ -404,15 +433,16 @@
             </p>
 
             <p>
-              We welcome interest from talented and motivated
-              professionals who are passionate about construction,
-              engineering and creating quality spaces.
+              We welcome interest from talented and
+              motivated professionals who are passionate
+              about construction, engineering and
+              creating quality spaces.
             </p>
 
             <p>
-              If you would like to explore opportunities with
-              Viju Builders, we would be glad to hear from you.
-              Send us your details and introduce yourself.
+              Interested in working with Viju Builders?
+              We would be happy to hear from you.
+              Share your experience and introduce yourself.
             </p>
 
             <a class="careers-button" href="#contact">
@@ -422,10 +452,13 @@
           </div>
 
         </div>
+
       </div>
+
     </section>
 
-    <!-- APPROACH -->
+    <!-- OUR APPROACH -->
+
     <section class="approach" id="approach">
 
       <div class="approach-photo"></div>
@@ -433,7 +466,8 @@
       <div class="approach-content">
 
         <div class="section-kicker light-kicker">
-          <span>05</span><span>HOW WE WORK</span>
+          <span>05</span>
+          <span>HOW WE WORK</span>
         </div>
 
         <h2>
@@ -442,10 +476,11 @@
         </h2>
 
         <p>
-          We believe a successful project begins with understanding
-          what matters to you. We take time to discuss your needs,
-          explain the next steps and keep communication clear as
-          work progresses.
+          We believe a successful project begins with
+          understanding what matters to you. We take
+          time to discuss your needs, explain the next
+          steps and keep communication clear as work
+          progresses.
         </p>
 
         <a class="button button-outline" href="#contact">
@@ -453,19 +488,26 @@
         </a>
 
       </div>
+
     </section>
 
     <!-- CONTACT -->
+
     <section class="contact section-wrap" id="contact">
 
       <div class="section-kicker">
-        <span>06</span><span>LET'S TALK</span>
+        <span>06</span>
+        <span>LET'S TALK</span>
       </div>
 
       <div class="contact-grid">
 
         <div>
-          <h2>Have a project<br>in <em>mind?</em></h2>
+          <h2>
+            Have a project<br>
+            in <em>mind?</em>
+          </h2>
+
           <p class="lead">
             Tell us what you're planning.
             We'd be glad to hear from you.
@@ -498,17 +540,21 @@
           </a>
 
         </div>
+
       </div>
+
     </section>
 
   </main>
 
   <!-- FOOTER -->
+
   <footer class="footer">
 
     <a class="brand footer-brand" href="#top">
       <span class="brand-mark">VB</span>
-      <span>VIJU <b>BUILDERS</b>
+      <span>
+        VIJU <b>BUILDERS</b>
         <small>BUILDING WITH PURPOSE</small>
       </span>
     </a>
@@ -516,18 +562,28 @@
     <p>Thoughtful construction. Strong foundations.</p>
 
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Viju Builders. All rights reserved.</span>
+      <span>
+        © <span id="year"></span>
+        Viju Builders. All rights reserved.
+      </span>
+
       <a href="#top">Back to top ↑</a>
     </div>
 
   </footer>
+
+  <!-- FLOATING WHATSAPP -->
 
   <a class="floating-whatsapp"
     id="floating-whatsapp"
     href="#"
     target="_blank"
     rel="noopener"
-    aria-label="Chat on WhatsApp">WA</a>
+    aria-label="Chat on WhatsApp">
+    WA
+  </a>
+
+  <!-- JAVASCRIPT -->
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/main.js"></script>
