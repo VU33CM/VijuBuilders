@@ -1,16 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About Us | Viju Builders</title>
 
-    <meta name="description" content="Learn about Viju Builders, established in 1990. Meet our leadership team and discover our experience in architecture, engineering and construction.">
+    <meta name="description" content="Learn about Viju Builders, established in 1990, and meet the leadership team behind our construction and engineering work.">
 
-    <meta name="theme-color" content="#14283f">
+    <meta name="theme-color" content="#101e30">
 
     <link rel="icon" href="assets/viju-builders-logo.jpeg" type="image/jpeg">
 
@@ -24,509 +23,311 @@
     <script src="assets/js/main.js" defer></script>
 
     <style>
-        /* Same homepage header and wordmark */
+        /* ABOUT PAGE */
 
-        .site-header .header-inner {
-            width: min(1400px, calc(100% - 48px));
-            max-width: 1400px;
-            min-height: 110px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .site-header .brand {
-            display: flex;
-            align-items: center;
-            flex: 0 1 600px;
-            width: 600px;
-            max-width: 600px;
-            min-width: 0;
-        }
-
-        .site-header .brand-combined {
-            display: block;
-            width: 600px;
-            height: 125px;
-            max-width: 100%;
-            object-fit: contain;
-            object-position: left center;
-        }
-
-        .site-header .main-nav {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 18px;
-            flex: 1 1 auto;
-        }
-
-        .site-header .main-nav a {
-            white-space: nowrap;
-            font-size: 0.82rem;
-        }
-
-        /* About page layout */
-
-        .about-page-hero {
-            padding: 65px 0;
-            background: var(--cream);
-        }
-
-        .about-page-hero-inner {
-            display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
-            align-items: center;
-            gap: 55px;
-        }
-
-        .about-page-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-page-logo img {
-            width: 100%;
-            max-width: 340px;
-            max-height: 340px;
-            object-fit: contain;
-        }
-
-        .about-page-intro h1 {
-            margin-bottom: 20px;
-            font-size: clamp(2.3rem, 4vw, 3.5rem);
-        }
-
-        .about-page-intro p {
-            margin-bottom: 14px;
-            line-height: 1.85;
-        }
-
-        .about-facts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            margin-top: 27px;
-        }
-
-        .about-fact strong {
-            display: block;
-            color: var(--gold-dark);
-            font-size: 1.65rem;
-            line-height: 1.3;
-        }
-
-        .about-fact span {
-            color: var(--muted);
-            font-size: 0.8rem;
-            font-weight: 650;
-        }
-
-        .about-story-section {
+        .about-hero {
+            background: #101e30;
+            color: #ffffff;
             padding: 75px 0;
-            background: var(--white);
+            position: relative;
+            overflow: hidden;
         }
 
-        .about-story-content {
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: center;
+        .about-hero-content {
+            max-width: 800px;
         }
 
-        .about-story-content .eyebrow {
-            justify-content: center;
+        .about-hero .eyebrow {
+            color: #d7b879;
+            margin-bottom: 18px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.12;
+            margin: 0 0 22px;
+            font-weight: 800;
+        }
+
+        .about-hero h1 span {
+            color: #d7b879;
+        }
+
+        .about-hero p {
+            max-width: 680px;
+            color: rgba(255,255,255,0.82);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .about-story {
+            padding: 75px 0;
+        }
+
+        .about-story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-story-image {
+            position: relative;
+        }
+
+        .about-story-image img {
+            display: block;
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .about-story-highlight {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: #ffffff;
+            padding: 16px 22px;
+            border-left: 4px solid #c6a15b;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .about-story-highlight strong {
+            display: block;
+            font-size: 2rem;
+            color: #14283f;
+            line-height: 1;
+        }
+
+        .about-story-highlight span {
+            display: block;
+            margin-top: 5px;
+            color: #626b75;
+            font-size: 0.85rem;
         }
 
         .about-story-content h2 {
-            margin-bottom: 22px;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            color: #14283f;
+            line-height: 1.2;
+            margin: 12px 0 20px;
         }
 
         .about-story-content p {
+            color: #626b75;
+            line-height: 1.85;
             margin-bottom: 15px;
-            line-height: 1.9;
         }
 
-        .about-values-section {
-            padding: 75px 0;
-            background: var(--cream);
+        .about-values {
+            padding: 70px 0;
+            background: #f5f6f7;
         }
 
-        .about-values-heading {
+        .about-section-heading {
+            text-align: center;
             max-width: 700px;
-            margin: 0 auto 40px;
-            text-align: center;
+            margin: 0 auto 38px;
         }
 
-        .about-values-heading .eyebrow {
-            justify-content: center;
+        .about-section-heading h2 {
+            color: #14283f;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin: 12px 0;
         }
 
-        .about-values-heading p {
-            margin-top: 14px;
+        .about-section-heading p {
+            color: #69727c;
+            line-height: 1.7;
         }
 
-        .about-values-grid {
+        .values-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .about-value-card {
-            padding: 27px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-medium);
+        .value-card {
+            background: #ffffff;
+            border: 1px solid #e8eaed;
+            border-radius: 7px;
+            padding: 25px;
         }
 
-        .about-value-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .about-value-card p {
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-
-        .leadership-section {
-            padding: 85px 0;
-            background: var(--white);
-        }
-
-        .leadership-heading {
-            max-width: 720px;
-            margin: 0 auto 45px;
-            text-align: center;
-        }
-
-        .leadership-heading .eyebrow {
-            justify-content: center;
-        }
-
-        .leadership-heading h2 {
+        .value-card span {
+            display: block;
+            color: #c6a15b;
+            font-size: 1.7rem;
+            font-weight: 800;
             margin-bottom: 14px;
         }
 
-        .leadership-heading p {
-            line-height: 1.8;
+        .value-card h3 {
+            color: #14283f;
+            font-size: 1.1rem;
+            margin: 0 0 10px;
+        }
+
+        .value-card p {
+            color: #69727c;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .leadership-section {
+            padding: 75px 0;
         }
 
         .leadership-list {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+            max-width: 950px;
+            margin: 0 auto;
         }
 
         .leader-card {
             display: grid;
-            grid-template-columns: 300px minmax(0, 1fr);
+            grid-template-columns: 240px 1fr;
+            gap: 35px;
             align-items: center;
-            gap: 42px;
-            padding: 25px;
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-large);
+            padding: 30px 0;
+            border-bottom: 1px solid #e5e8ec;
         }
 
-        .leader-card.leader-reverse {
-            grid-template-columns: minmax(0, 1fr) 300px;
-        }
-
-        .leader-card.leader-reverse .leader-photo {
-            order: 2;
-        }
-
-        .leader-card.leader-reverse .leader-content {
-            order: 1;
+        .leader-card:last-child {
+            border-bottom: none;
         }
 
         .leader-photo {
             width: 100%;
-            height: 340px;
+            height: 250px;
             overflow: hidden;
-            background: var(--cream-dark);
-            border-radius: var(--radius-medium);
+            border-radius: 7px;
+            background: #edf0f2;
         }
 
         .leader-photo img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
-        }
-
-        .leader-content {
-            padding: 10px 0;
+            object-position: center;
         }
 
         .leader-index {
-            display: block;
-            margin-bottom: 13px;
-            color: var(--gold-dark);
+            color: #c6a15b;
             font-size: 0.8rem;
-            font-weight: 850;
-            letter-spacing: 0.12em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
         }
 
         .leader-role {
-            margin-bottom: 10px;
-            color: var(--gold-dark);
-            font-size: 0.75rem;
-            font-weight: 850;
-            letter-spacing: 0.13em;
+            display: inline-block;
+            color: #a27c39;
+            background: #f8f3e9;
+            padding: 6px 12px;
+            border-radius: 3px;
+            font-size: 0.76rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
         }
 
         .leader-content h3 {
-            margin-bottom: 15px;
-            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: #14283f;
+            font-size: 1.55rem;
+            margin: 0 0 12px;
         }
 
         .leader-description {
-            max-width: 650px;
-            font-size: 0.94rem;
-            line-height: 1.85;
-        }
-
-        .leader-divider {
-            width: 50px;
-            height: 3px;
-            margin: 20px 0;
-            background: var(--gold);
+            color: #69727c;
+            line-height: 1.8;
+            margin: 0;
         }
 
         .leader-speciality {
-            color: var(--navy);
-            font-size: 0.87rem;
-            font-weight: 650;
-            line-height: 1.8;
+            margin-top: 14px;
+            color: #14283f;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .about-closing {
-            padding: 65px 0;
+            padding: 65px 20px;
+            background: #101e30;
             text-align: center;
-            background: var(--navy);
+            color: #ffffff;
         }
 
         .about-closing h2 {
-            margin-bottom: 15px;
-            color: var(--white);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin: 0 0 15px;
         }
 
         .about-closing p {
-            max-width: 700px;
+            color: rgba(255,255,255,0.78);
+            max-width: 650px;
             margin: 0 auto 25px;
-            color: rgba(255,255,255,0.75);
-        }
-
-        /* Tablet */
-
-        @media (max-width: 1250px) {
-            .site-header .brand {
-                flex-basis: 460px;
-                width: 460px;
-                max-width: 460px;
-            }
-
-            .site-header .brand-combined {
-                width: 460px;
-                height: 105px;
-            }
-
-            .site-header .main-nav {
-                gap: 10px;
-            }
-
-            .site-header .main-nav a {
-                font-size: 0.7rem;
-            }
+            line-height: 1.7;
         }
 
         @media (max-width: 800px) {
-            .site-header .header-inner {
-                width: calc(100% - 32px);
-                min-height: 90px;
+            .about-hero {
+                padding: 55px 0;
             }
 
-            .site-header .brand {
-                flex: 0 1 340px;
-                width: 340px;
-                max-width: calc(100% - 55px);
+            .about-story {
+                padding: 55px 0;
             }
 
-            .site-header .brand-combined {
-                width: 100%;
-                height: 82px;
-            }
-
-            .site-header .menu-toggle {
-                display: flex;
-                flex: 0 0 42px;
-                width: 42px;
-                height: 42px;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                gap: 5px;
-                border: 1px solid var(--border);
-                border-radius: 6px;
-                background: var(--white);
-                cursor: pointer;
-            }
-
-            .site-header .menu-toggle span {
-                display: block;
-                width: 19px;
-                height: 2px;
-                background: var(--navy);
-            }
-
-            .site-header .main-nav {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 12px 24px 22px;
-                background: var(--white);
-                border-top: 1px solid var(--border);
-                box-shadow: var(--shadow-medium);
-            }
-
-            .site-header .main-nav.open {
-                display: flex;
-            }
-
-            .site-header .main-nav a {
-                display: block;
-                padding: 13px 0;
-                font-size: 0.9rem;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .site-header .main-nav .nav-contact {
-                margin-top: 12px;
-                padding: 12px 18px;
-                text-align: center;
-                border: none;
-            }
-
-            .about-page-hero-inner {
+            .about-story-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .about-page-logo img {
-                max-width: 260px;
-                max-height: 260px;
+            .about-story-image img {
+                height: 300px;
             }
 
-            .about-values-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .leader-card,
-            .leader-card.leader-reverse {
-                grid-template-columns: 250px minmax(0, 1fr);
-                gap: 25px;
+            .leadership-section {
+                padding: 55px 0;
             }
 
-            .leader-card.leader-reverse .leader-photo,
-            .leader-card.leader-reverse .leader-content {
-                order: initial;
+            .leader-card {
+                grid-template-columns: 190px 1fr;
+                gap: 22px;
             }
 
             .leader-photo {
-                height: 300px;
+                height: 220px;
             }
         }
 
-        /* Mobile */
-
-        @media (max-width: 600px) {
-            .site-header .header-inner {
-                min-height: 82px;
-            }
-
-            .site-header .brand-combined {
-                height: 75px;
-            }
-
-            .about-page-hero {
-                padding: 50px 0;
-            }
-
-            .about-page-logo img {
-                max-width: 220px;
-                max-height: 220px;
-            }
-
-            .about-page-intro h1 {
-                font-size: 2.35rem;
-            }
-
-            .about-facts {
-                gap: 20px;
-            }
-
-            .about-story-section,
-            .about-values-section,
-            .leadership-section {
-                padding: 60px 0;
-            }
-
-            .about-values-grid {
+        @media (max-width: 560px) {
+            .values-grid {
                 grid-template-columns: 1fr;
             }
 
-            .leadership-heading {
-                text-align: left;
-            }
-
-            .leadership-heading .eyebrow {
-                justify-content: flex-start;
-            }
-
-            .leader-card,
-            .leader-card.leader-reverse {
+            .leader-card {
                 grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 17px;
+                gap: 18px;
             }
 
             .leader-photo {
-                height: 330px;
-            }
-
-            .leader-content {
-                padding: 5px;
+                width: 100%;
+                height: 300px;
+                max-width: 320px;
             }
 
             .leader-content h3 {
-                font-size: 1.6rem;
-            }
-
-            .about-closing {
-                padding: 55px 0;
-            }
-        }
-
-        @media (max-width: 430px) {
-            .site-header .header-inner {
-                min-height: 78px;
-            }
-
-            .site-header .brand-combined {
-                height: 70px;
-            }
-
-            .leader-photo {
-                height: 290px;
+                font-size: 1.35rem;
             }
         }
     </style>
@@ -534,22 +335,17 @@
 
 <body>
 
-    <!-- =====================================
-         HEADER - SAME AS HOMEPAGE
-    ====================================== -->
+    <!-- HEADER -->
 
     <header class="site-header">
-
         <div class="container header-inner">
 
             <a href="index.html" class="brand" aria-label="Viju Builders Home">
-
                 <img
                     src="assets/viju-builders-wordmark.png"
                     alt="Viju Builders - Architects, Engineers and Builders"
                     class="brand-combined"
                 >
-
             </a>
 
             <button
@@ -565,7 +361,6 @@
             </button>
 
             <nav class="main-nav" id="main-navigation">
-
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About</a>
                 <a href="index.html#services">Services</a>
@@ -573,243 +368,197 @@
                 <a href="index.html#approach">Our Approach</a>
                 <a href="careers.html">Careers</a>
                 <a href="contact.html" class="nav-contact">Contact Us</a>
-
             </nav>
 
         </div>
-
     </header>
 
 
     <main>
 
-        <!-- =====================================
-             ABOUT HERO
-        ====================================== -->
+        <!-- ABOUT HERO -->
 
-        <section class="about-page-hero">
-
-            <div class="container about-page-hero-inner">
-
-                <div class="about-page-logo reveal-left">
-
-                    <img
-                        src="assets/viju-builders-logo.jpeg"
-                        alt="Viju Builders official company emblem"
-                    >
-
-                </div>
-
-                <div class="about-page-intro reveal-right">
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-content">
 
                     <div class="eyebrow">
-                        <span></span>
                         ABOUT VIJU BUILDERS
                     </div>
 
-                    <h1>Building With Experience Since 1990.</h1>
+                    <h1>
+                        Built on Experience.<br>
+                        <span>Driven by Quality.</span>
+                    </h1>
 
                     <p>
-                        Viju Builders brings together architectural thinking,
-                        engineering knowledge and construction experience
-                        to create spaces built for lasting value.
+                        Since 1990, Viju Builders has been bringing together
+                        engineering knowledge, construction experience and
+                        practical thinking to create spaces built for lasting value.
                     </p>
 
-                    <p>
-                        Established in 1990, our journey has been shaped
-                        by practical experience, professional commitment
-                        and a focus on quality.
-                    </p>
+                </div>
+            </div>
+        </section>
 
-                    <div class="about-facts">
 
-                        <div class="about-fact">
-                            <strong>1990</strong>
-                            <span>Year Established</span>
-                        </div>
+        <!-- COMPANY STORY -->
 
-                        <div class="about-fact">
+        <section class="about-story">
+            <div class="container">
+
+                <div class="about-story-grid">
+
+                    <div class="about-story-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                            alt="Modern residential architecture"
+                            loading="lazy"
+                        >
+
+                        <div class="about-story-highlight">
                             <strong>30+</strong>
                             <span>Years of Experience</span>
                         </div>
 
-                        <div class="about-fact">
-                            <strong>3</strong>
-                            <span>Core Disciplines</span>
+                    </div>
+
+                    <div class="about-story-content">
+
+                        <div class="eyebrow">
+                            OUR STORY
                         </div>
 
+                        <h2>
+                            Experience That Shapes Every Structure.
+                        </h2>
+
+                        <p>
+                            Established in 1990, Viju Builders has built its
+                            foundation on experience, technical knowledge and
+                            a commitment to quality construction.
+                        </p>
+
+                        <p>
+                            Our work spans residential construction, commercial
+                            buildings, civil engineering and renovation. Every
+                            project is approached with careful planning,
+                            practical solutions and attention to detail.
+                        </p>
+
+                        <p>
+                            We believe that good construction begins with
+                            understanding the client's vision and ends with
+                            delivering a structure that provides lasting value.
+                        </p>
+
                     </div>
 
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             COMPANY STORY
-        ====================================== -->
+        <!-- OUR VALUES -->
 
-        <section class="about-story-section">
-
+        <section class="about-values">
             <div class="container">
 
-                <div class="about-story-content reveal">
+                <div class="about-section-heading">
 
                     <div class="eyebrow">
-                        <span></span>
-                        OUR STORY
-                    </div>
-
-                    <h2>Experience. Engineering. Commitment.</h2>
-
-                    <p>
-                        Since 1990, Viju Builders has been involved in
-                        building and engineering work with an emphasis
-                        on practical solutions and dependable execution.
-                    </p>
-
-                    <p>
-                        Our work spans residential construction,
-                        commercial buildings, civil engineering,
-                        renovation and architectural services.
-                    </p>
-
-                    <p>
-                        We believe that every project deserves careful
-                        consideration, clear communication and attention
-                        to the details that make a building functional
-                        and enduring.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
-             OUR VALUES
-        ====================================== -->
-
-        <section class="about-values-section">
-
-            <div class="container">
-
-                <div class="about-values-heading reveal">
-
-                    <div class="eyebrow">
-                        <span></span>
                         WHAT GUIDES US
                     </div>
 
-                    <h2>Principles Behind Our Work.</h2>
+                    <h2>Our Values</h2>
 
                     <p>
-                        Our approach is grounded in the values that
-                        matter throughout every stage of a project.
+                        The principles that guide our work, our decisions
+                        and our relationships with clients.
                     </p>
 
                 </div>
 
-                <div class="about-values-grid">
+                <div class="values-grid">
 
-                    <article class="about-value-card reveal">
-
+                    <article class="value-card">
+                        <span>01</span>
                         <h3>Experience</h3>
-
                         <p>
-                            Building on decades of practical experience
-                            in construction and engineering.
+                            Building on decades of practical construction
+                            and engineering experience.
                         </p>
-
                     </article>
 
-                    <article class="about-value-card reveal reveal-delay-1">
-
+                    <article class="value-card">
+                        <span>02</span>
                         <h3>Quality</h3>
-
                         <p>
-                            Paying attention to workmanship, materials
-                            and the details that matter.
+                            Maintaining attention to detail throughout
+                            planning and execution.
                         </p>
-
                     </article>
 
-                    <article class="about-value-card reveal reveal-delay-2">
+                    <article class="value-card">
+                        <span>03</span>
+                        <h3>Integrity</h3>
+                        <p>
+                            Working with transparency, responsibility
+                            and professional commitment.
+                        </p>
+                    </article>
 
+                    <article class="value-card">
+                        <span>04</span>
                         <h3>Engineering</h3>
-
                         <p>
-                            Applying technical understanding and
-                            thoughtful planning to building projects.
+                            Applying technical understanding to practical
+                            construction requirements.
                         </p>
-
                     </article>
 
-                    <article class="about-value-card reveal">
-
-                        <h3>Responsibility</h3>
-
-                        <p>
-                            Taking a considered approach to project
-                            requirements and execution.
-                        </p>
-
-                    </article>
-
-                    <article class="about-value-card reveal reveal-delay-1">
-
+                    <article class="value-card">
+                        <span>05</span>
                         <h3>Client Focus</h3>
-
                         <p>
                             Understanding each client's needs and
-                            working towards practical outcomes.
+                            project expectations.
                         </p>
-
                     </article>
 
-                    <article class="about-value-card reveal reveal-delay-2">
-
+                    <article class="value-card">
+                        <span>06</span>
                         <h3>Lasting Value</h3>
-
                         <p>
-                            Creating spaces intended to remain useful,
-                            functional and dependable over time.
+                            Creating spaces designed to serve people
+                            for years to come.
                         </p>
-
                     </article>
 
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             LEADERSHIP
-        ====================================== -->
+        <!-- LEADERSHIP -->
 
         <section class="leadership-section">
-
             <div class="container">
 
-                <div class="leadership-heading reveal">
+                <div class="about-section-heading">
 
                     <div class="eyebrow">
-                        <span></span>
-                        OUR LEADERSHIP
+                        THE PEOPLE BEHIND OUR WORK
                     </div>
 
-                    <h2>The People Behind Viju Builders.</h2>
+                    <h2>Our Leadership</h2>
 
                     <p>
-                        Our leadership brings together construction
-                        experience, engineering education and business
-                        management.
+                        Experience, engineering knowledge and business
+                        leadership come together to guide Viju Builders.
                     </p>
 
                 </div>
@@ -819,41 +568,35 @@
 
                     <!-- FOUNDER -->
 
-                    <article class="leader-card reveal">
+                    <article class="leader-card">
 
                         <div class="leader-photo">
-
                             <img
                                 src="assets/FOUNDER.png"
                                 alt="Viju Pallikkaparambil, Founder of Viju Builders"
                                 loading="lazy"
                             >
-
                         </div>
 
                         <div class="leader-content">
 
-                            <span class="leader-index">01</span>
+                            <div class="leader-index">01 / LEADERSHIP</div>
 
-                            <div class="leader-role">
-                                Founder
-                            </div>
+                            <div class="leader-role">Founder</div>
 
                             <h3>Viju Pallikkaparambil</h3>
 
                             <p class="leader-description">
-                                With over 30 years of experience in
-                                civil engineering and construction,
-                                Viju provides the experience and
-                                foundation behind the company's journey.
+                                With more than 30 years of experience in
+                                civil engineering and construction, Viju
+                                Pallikkaparambil established the foundation
+                                of Viju Builders and continues to guide its
+                                commitment to practical, quality construction.
                             </p>
 
-                            <div class="leader-divider"></div>
-
-                            <p class="leader-speciality">
-                                <strong>Focus:</strong>
-                                Civil Engineering · Construction · Project Experience
-                            </p>
+                            <div class="leader-speciality">
+                                Civil Engineering · Construction
+                            </div>
 
                         </div>
 
@@ -862,42 +605,34 @@
 
                     <!-- CEO -->
 
-                    <article class="leader-card leader-reverse reveal">
+                    <article class="leader-card">
 
                         <div class="leader-photo">
-
                             <img
                                 src="assets/CEO.png"
                                 alt="Jithin Pallikkaparambil, CEO of Viju Builders"
                                 loading="lazy"
                             >
-
                         </div>
 
                         <div class="leader-content">
 
-                            <span class="leader-index">02</span>
+                            <div class="leader-index">02 / LEADERSHIP</div>
 
-                            <div class="leader-role">
-                                Chief Executive Officer
-                            </div>
+                            <div class="leader-role">Chief Executive Officer</div>
 
                             <h3>Jithin Pallikkaparambil</h3>
 
                             <p class="leader-description">
-                                As CEO, Jithin brings an engineering-led
-                                perspective to the company's direction
-                                and operations. His academic background
-                                combines civil engineering with advanced
-                                specialisation in structural engineering.
+                                Jithin leads the company's overall operations
+                                and project direction, bringing an engineering
+                                perspective to planning, coordination and
+                                construction management.
                             </p>
 
-                            <div class="leader-divider"></div>
-
-                            <p class="leader-speciality">
-                                <strong>Education:</strong>
+                            <div class="leader-speciality">
                                 B.Tech Civil Engineering · M.Tech Structural Engineering
-                            </p>
+                            </div>
 
                         </div>
 
@@ -906,41 +641,34 @@
 
                     <!-- CFO -->
 
-                    <article class="leader-card reveal">
+                    <article class="leader-card">
 
                         <div class="leader-photo">
-
                             <img
                                 src="assets/CFO.png"
                                 alt="Jibin Pallikkaparambil, CFO of Viju Builders"
                                 loading="lazy"
                             >
-
                         </div>
 
                         <div class="leader-content">
 
-                            <span class="leader-index">03</span>
+                            <div class="leader-index">03 / LEADERSHIP</div>
 
-                            <div class="leader-role">
-                                Chief Financial Officer
-                            </div>
+                            <div class="leader-role">Chief Financial Officer</div>
 
                             <h3>Jibin Pallikkaparambil</h3>
 
                             <p class="leader-description">
-                                Jibin contributes to the company's
-                                financial and management functions,
-                                bringing experience in civil engineering
-                                and management to the business.
+                                Jibin oversees financial management and
+                                business operations, supporting responsible
+                                financial planning and the company's
+                                organisational growth.
                             </p>
 
-                            <div class="leader-divider"></div>
-
-                            <p class="leader-speciality">
-                                <strong>Focus:</strong>
+                            <div class="leader-speciality">
                                 Financial Management · Business Operations
-                            </p>
+                            </div>
 
                         </div>
 
@@ -949,70 +677,52 @@
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =====================================
-             CLOSING SECTION
-        ====================================== -->
+        <!-- CLOSING SECTION -->
 
         <section class="about-closing">
 
-            <div class="container reveal">
+            <h2>Planning Your Next Project?</h2>
 
-                <div class="eyebrow eyebrow-light" style="justify-content:center;">
-                    <span></span>
-                    BUILD WITH CONFIDENCE
-                </div>
+            <p>
+                Let's discuss your requirements and explore how
+                Viju Builders can help bring your ideas to life.
+            </p>
 
-                <h2>Let's Build Something Meaningful.</h2>
-
-                <p>
-                    Have a construction, engineering or architectural
-                    project in mind? We welcome the opportunity to
-                    understand your requirements.
-                </p>
-
-                <a href="contact.html" class="button button-gold">
-                    Connect With Our Team <span>→</span>
-                </a>
-
-            </div>
+            <a href="contact.html" class="button button-gold">
+                Get In Touch <span>→</span>
+            </a>
 
         </section>
 
     </main>
 
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
+    <!-- FOOTER -->
 
     <footer class="site-footer">
-
         <div class="container">
 
             <div class="footer-grid">
 
-                <div class="footer-brand">
+                <div class="footer-column footer-about">
 
-                    <a href="index.html" class="footer-logo">
+                    <img
+                        src="assets/viju-builders-logo.jpeg"
+                        alt="Viju Builders emblem"
+                        class="footer-logo"
+                    >
 
-                        <img
-                            src="assets/viju-builders-logo.jpeg"
-                            alt="Viju Builders company logo"
-                            loading="lazy"
-                        >
-
-                    </a>
-
-                    <h2>VIJU BUILDERS</h2>
+                    <h3>Viju Builders</h3>
 
                     <p>
-                        Architects, Engineers and Builders.
-                        Building with experience, engineering knowledge
-                        and a commitment to quality since 1990.
+                        Architects · Engineers · Builders
+                    </p>
+
+                    <p>
+                        Building with experience since 1990.
                     </p>
 
                 </div>
@@ -1026,6 +736,7 @@
                     <a href="about.html">About Us</a>
                     <a href="index.html#services">Our Services</a>
                     <a href="index.html#projects">Projects</a>
+                    <a href="index.html#approach">Our Approach</a>
                     <a href="careers.html">Careers</a>
                     <a href="contact.html">Contact Us</a>
 
@@ -1036,51 +747,37 @@
 
                     <h3>Contact Information</h3>
 
-                    <a href="https://wa.me/918078233805"
-                       target="_blank"
-                       rel="noopener noreferrer">
-
+                    <a href="https://wa.me/918078233805" target="_blank" rel="noopener">
                         <span class="footer-icon">☎</span>
-
                         <span>
                             <small>Phone / WhatsApp</small>
                             8078233805
                         </span>
-
                     </a>
 
                     <a href="mailto:vijubuilders@gmail.com">
-
                         <span class="footer-icon">✉</span>
-
                         <span>
                             <small>Email</small>
                             vijubuilders@gmail.com
                         </span>
-
                     </a>
 
                     <div class="footer-detail">
-
                         <span class="footer-icon">⌖</span>
-
                         <span>
-                            <small>Address</small>
+                            <small>Registered Address</small>
                             ARCADIA COMPLEX, PALAPARAMBU,
                             VADAPURAM, Kerala - 676542, India
                         </span>
-
                     </div>
 
                     <div class="footer-detail">
-
                         <span class="footer-icon">▤</span>
-
                         <span>
                             <small>GST Registration</small>
                             32CQYPV2870F1Z8
                         </span>
-
                     </div>
 
                 </div>
@@ -1091,8 +788,8 @@
             <div class="footer-bottom">
 
                 <p>
-                    © <span data-current-year>2026</span>
-                    Viju Builders. All Rights Reserved.
+                    © <span data-current-year>2026</span> Viju Builders.
+                    All Rights Reserved.
                 </p>
 
                 <p>
@@ -1102,7 +799,6 @@
             </div>
 
         </div>
-
     </footer>
 
 
@@ -1112,7 +808,7 @@
         class="floating-whatsapp"
         href="https://wa.me/918078233805"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
         aria-label="Contact Viju Builders on WhatsApp"
         title="Contact Viju Builders"
     >
