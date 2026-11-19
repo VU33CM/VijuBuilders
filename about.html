@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | Viju Builders</title>
+  <title>About Viju Builders | Architects, Engineers & Builders</title>
 
-  <meta name="description" content="Discover Viju Builders, established in 1990. Meet the leadership team behind the company: Founder Viju Pallikkaparambil, CEO Jithin Pallikkaparambil and CFO Jibin Pallikkaparambil.">
+  <meta name="description" content="Established in 1990, Viju Builders brings together construction experience, engineering knowledge and professional leadership.">
 
   <meta name="theme-color" content="#101e30">
 
@@ -17,42 +17,129 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 
-
   <style>
 
-    /* ==========================================
-       ABOUT PAGE — ADDITIONAL DESIGN
-    ========================================== */
+    /* =========================================
+       VIJU BUILDERS — MODERN ABOUT PAGE
+    ========================================= */
+
+    .about-page {
+      --about-navy: #101e30;
+      --about-gold: #c99d52;
+      --about-light-gold: #e5c789;
+      --about-cream: #f7f6f2;
+      --about-text: #647184;
+      --about-border: #e9e7e1;
+
+      font-family: "Manrope", sans-serif;
+      color: var(--about-navy);
+      overflow-x: hidden;
+    }
+
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after {
+      box-sizing: border-box;
+    }
+
+    .about-page h1,
+    .about-page h2,
+    .about-page h3,
+    .about-page p,
+    .about-page a,
+    .about-page span {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .about-page h1,
+    .about-page h2,
+    .about-page h3 {
+      letter-spacing: -0.045em;
+    }
+
+    .about-page p {
+      color: var(--about-text);
+    }
+
+    .about-page .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--about-gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .about-page .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--about-gold);
+    }
+
+
+    /* HEADER BRAND */
+
+    .about-page .brand-text strong {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+
+    .about-page .brand-text span {
+      font-family: "Manrope", sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
+      font-weight: 700;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
 
     .about-hero {
       position: relative;
-      padding: 155px 0 95px;
-      background:
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(201,164,94,.13),
-          transparent 35%
-        ),
-        var(--navy);
-      color: white;
       overflow: hidden;
+      padding: 110px 0 105px;
+      background: var(--about-navy);
+      color: white;
+    }
+
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      right: -220px;
+      top: -260px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(201,157,82,.15),
+        transparent 70%
+      );
+      pointer-events: none;
     }
 
     .about-hero::after {
       content: "VB";
       position: absolute;
-      right: -35px;
-      bottom: -170px;
-      font-family: var(--serif);
-      font-size: clamp(250px, 36vw, 520px);
+      right: -20px;
+      bottom: -180px;
+      font-size: clamp(260px, 35vw, 490px);
       line-height: 1;
+      font-weight: 800;
+      letter-spacing: -.1em;
       color: rgba(255,255,255,.025);
       pointer-events: none;
     }
@@ -61,129 +148,118 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.05fr .95fr;
       align-items: center;
-      gap: 70px;
+      gap: 65px;
     }
 
-    .about-hero .eyebrow {
-      color: var(--gold-light);
+    .about-hero-content {
+      max-width: 690px;
     }
 
     .about-hero h1 {
-      max-width: 750px;
-      margin-bottom: 26px;
+      margin: 27px 0 25px;
       color: white;
-      font-size: clamp(3.3rem, 6vw, 6rem);
+      font-size: clamp(43px, 5.3vw, 75px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -.065em;
     }
 
     .about-hero h1 span {
-      color: var(--gold-light);
+      display: block;
+      color: var(--about-light-gold);
     }
 
     .about-hero-copy {
-      max-width: 600px;
-      color: rgba(255,255,255,.7);
-      font-size: 1rem;
-      line-height: 1.95;
+      max-width: 570px;
+      margin: 0;
+      color: rgba(255,255,255,.7) !important;
+      font-size: 15px;
+      line-height: 2;
     }
 
 
-    /* LARGE COMPANY LOGO PANEL */
+    /* LOGO — NO BOX, NO FRAME, NO CAPTION */
 
-    .about-logo-panel {
-      position: relative;
+    .about-logo-area {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 430px;
-      padding: 25px;
-      background: var(--cream);
-      box-shadow: 0 25px 70px rgba(0,0,0,.2);
-      transition: box-shadow .5s ease;
+      min-width: 0;
+      padding: 10px;
     }
 
-    .about-logo-panel::before {
-      content: "";
-      position: absolute;
-      inset: 13px;
-      border: 1px solid rgba(201,164,94,.65);
-      pointer-events: none;
-    }
-
-    .about-logo-panel img {
-      position: relative;
-      z-index: 1;
+    .about-logo-area img {
       display: block;
-      width: min(100%, 370px);
-      max-height: 370px;
+      width: min(100%, 470px);
+      height: auto;
+      max-height: 470px;
       object-fit: contain;
-      transition: transform .65s var(--ease);
+      mix-blend-mode: normal;
+      transition: transform .7s cubic-bezier(.2,.7,.2,1);
     }
 
-    .about-logo-panel:hover img {
-      transform: scale(1.045);
-    }
-
-    .about-logo-caption {
-      position: absolute;
-      bottom: 22px;
-      left: 0;
-      right: 0;
-      color: var(--gold-dark);
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-align: center;
-      text-transform: uppercase;
+    .about-logo-area:hover img {
+      transform: scale(1.035);
     }
 
 
-    /* COMPANY INTRO */
+    /* =========================================
+       COMPANY INTRODUCTION
+    ========================================= */
 
     .company-story {
-      background: var(--cream);
+      padding: 115px 0;
+      background: var(--about-cream);
     }
 
     .company-story-grid {
       display: grid;
       grid-template-columns: .65fr 1.35fr;
-      gap: 90px;
       align-items: start;
+      gap: 100px;
     }
 
     .story-year {
       position: sticky;
       top: 120px;
-      padding: 28px;
-      background: var(--navy);
+      padding: 35px;
+      background: var(--about-navy);
       color: white;
     }
 
     .story-year strong {
       display: block;
-      color: var(--gold-light);
-      font-family: var(--serif);
-      font-size: 4.3rem;
+      color: var(--about-light-gold);
+      font-size: 66px;
+      font-weight: 700;
+      letter-spacing: -.07em;
       line-height: 1;
     }
 
     .story-year span {
       display: block;
-      margin-top: 15px;
-      font-size: .7rem;
-      letter-spacing: .16em;
+      margin-top: 18px;
+      color: rgba(255,255,255,.8);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.8;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
     .story-content h2 {
-      margin-bottom: 25px;
-      color: var(--navy);
+      max-width: 650px;
+      margin: 23px 0 25px;
+      font-size: clamp(32px, 4vw, 49px);
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .story-content p {
-      margin-bottom: 18px;
-      font-size: .97rem;
+      margin: 0 0 19px;
+      font-size: 14px;
       line-height: 2;
     }
 
@@ -191,230 +267,278 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-top: 18px;
-      color: var(--gold-dark);
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .17em;
+      margin-top: 17px;
+      color: #a77b35;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .15em;
       text-transform: uppercase;
     }
 
     .story-signature::before {
       content: "";
-      width: 34px;
+      width: 30px;
       height: 1px;
-      background: var(--gold);
+      background: var(--about-gold);
     }
 
 
-    /* LEADERSHIP */
+    /* =========================================
+       LEADERSHIP INTRODUCTION
+    ========================================= */
 
     .leadership-section {
+      padding: 115px 0 125px;
       background: white;
     }
 
-    .leadership-intro {
+    .leadership-heading {
+      max-width: 760px;
+      margin-bottom: 65px;
+    }
+
+    .leadership-heading h2 {
+      margin: 22px 0 18px;
+      font-size: clamp(34px, 4.5vw, 53px);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .leadership-heading p {
+      max-width: 620px;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+
+    /* =========================================
+       LEADERSHIP — VERTICAL PROFILE LAYOUT
+    ========================================= */
+
+    .leadership-list {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 35px;
-      margin-bottom: 58px;
+      flex-direction: column;
+      gap: 48px;
     }
 
-    .leadership-intro .section-heading {
-      margin-bottom: 0;
-    }
-
-    .leadership-note {
-      max-width: 300px;
-      padding-bottom: 7px;
-      font-size: .87rem;
-      line-height: 1.9;
-    }
-
-    .leadership-grid {
+    .leader-profile {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: 330px 1fr;
+      align-items: center;
+      gap: 65px;
+      padding: 0 0 48px;
+      border-bottom: 1px solid var(--about-border);
+      transition: border-color .4s ease;
     }
 
-    .leader-card {
+    .leader-profile:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .leader-profile:hover {
+      border-color: var(--about-gold);
+    }
+
+    .leader-photo {
       position: relative;
-      background: var(--cream);
-      overflow: hidden;
-      transition:
-        transform .6s var(--ease),
-        box-shadow .6s ease;
-    }
-
-    .leader-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 65px rgba(9,20,33,.12);
-    }
-
-    .leader-image {
-      position: relative;
-      height: 390px;
-      overflow: hidden;
-      background: #e6e1d7;
-    }
-
-    .leader-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
-      transition: transform 1s var(--ease);
+      height: 350px;
+      overflow: hidden;
+      background: #eae8e1;
     }
 
-    .leader-card:hover .leader-image img {
-      transform: scale(1.045);
-    }
-
-    .leader-image::after {
+    .leader-photo::after {
       content: "";
       position: absolute;
-      inset: 45% 0 0;
+      inset: auto 0 0;
+      height: 30%;
       background: linear-gradient(
         transparent,
-        rgba(9,20,33,.22)
+        rgba(16,30,48,.12)
       );
       pointer-events: none;
     }
 
-    .leader-details {
-      position: relative;
-      padding: 30px 27px 34px;
-      border-bottom: 3px solid transparent;
-      transition: border-color .4s ease;
+    .leader-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 25%;
+      transition: transform .9s cubic-bezier(.2,.7,.2,1);
     }
 
-    .leader-card:hover .leader-details {
-      border-color: var(--gold);
+    .leader-profile:hover .leader-photo img {
+      transform: scale(1.045);
+    }
+
+    .leader-information {
+      padding: 15px 0;
     }
 
     .leader-role {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: var(--gold-dark);
-      font-size: .67rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 20px;
+      color: #a77b35;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: .2em;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-    .leader-details h3 {
-      margin-bottom: 13px;
-      color: var(--navy);
-      font-size: clamp(1.35rem, 2vw, 1.7rem);
-      letter-spacing: -.025em;
+    .leader-role::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--about-gold);
     }
 
-    .leader-details p {
-      font-size: .86rem;
-      line-height: 1.85;
+    .leader-information h3 {
+      margin: 0 0 20px;
+      color: var(--about-navy);
+      font-size: clamp(27px, 3vw, 38px);
+      font-weight: 800;
+      line-height: 1.25;
     }
 
-    .leader-index {
-      position: absolute;
-      top: 27px;
-      right: 27px;
-      color: rgba(16,30,48,.2);
-      font-family: var(--serif);
-      font-size: 2.3rem;
-      line-height: 1;
+    .leader-information p {
+      max-width: 650px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 2.05;
+    }
+
+    .leader-accent {
+      width: 45px;
+      height: 3px;
+      margin-top: 26px;
+      background: var(--about-gold);
+      transition: width .45s ease;
+    }
+
+    .leader-profile:hover .leader-accent {
+      width: 90px;
     }
 
 
-    /* CLOSING BANNER */
+    /* =========================================
+       CLOSING SECTION
+    ========================================= */
 
     .about-closing {
-      padding: 90px 0;
-      background:
-        radial-gradient(
-          circle at 80% 30%,
-          rgba(201,164,94,.1),
-          transparent 30%
-        ),
-        var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0;
+      background: var(--about-navy);
       text-align: center;
-    }
-
-    .about-closing .eyebrow {
-      color: var(--gold-light);
     }
 
     .about-closing h2 {
       max-width: 800px;
-      margin: 0 auto 24px;
+      margin: 25px auto 20px;
       color: white;
+      font-size: clamp(34px, 4.8vw, 58px);
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .about-closing p {
-      max-width: 600px;
+      max-width: 610px;
       margin: 0 auto 32px;
       color: rgba(255,255,255,.68);
-      line-height: 1.9;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .about-closing .eyebrow {
+      color: var(--about-light-gold);
+    }
+
+    .about-closing .btn {
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
     }
 
 
-    /* TABLET */
+    /* =========================================
+       FOOTER TYPOGRAPHY
+    ========================================= */
 
-    @media (max-width: 900px) {
+    .about-page .footer,
+    .about-page .footer * {
+      font-family: "Manrope", sans-serif;
+    }
+
+
+    /* =========================================
+       TABLET RESPONSIVENESS
+    ========================================= */
+
+    @media (max-width: 950px) {
 
       .about-hero-grid {
-        grid-template-columns: 1.1fr .9fr;
         gap: 35px;
       }
 
-      .about-logo-panel {
-        min-height: 340px;
-        padding: 22px;
-      }
-
-      .about-logo-panel img {
-        width: min(100%, 310px);
-        max-height: 310px;
+      .about-logo-area img {
+        width: min(100%, 390px);
       }
 
       .company-story-grid {
-        gap: 45px;
+        gap: 50px;
       }
 
-      .leader-image {
+      .leader-profile {
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+      }
+
+      .leader-photo {
         height: 320px;
       }
 
     }
 
 
-    /* MOBILE */
+    /* =========================================
+       MOBILE RESPONSIVENESS
+    ========================================= */
 
     @media (max-width: 760px) {
 
       .about-hero {
-        padding: 125px 0 75px;
+        padding: 90px 0 75px;
       }
 
       .about-hero-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 38px;
       }
 
       .about-hero h1 {
-        font-size: clamp(3.1rem, 12vw, 4.8rem);
+        font-size: clamp(39px, 10vw, 58px);
       }
 
-      .about-logo-panel {
-        width: min(100%, 390px);
-        min-height: 350px;
-        margin: 0 auto;
-        padding: 20px;
+      .about-hero-copy {
+        font-size: 14px;
       }
 
-      .about-logo-panel img {
-        width: min(100%, 290px);
-        max-height: 290px;
+      .about-logo-area {
+        padding: 0;
+      }
+
+      .about-logo-area img {
+        width: min(100%, 360px);
+        max-height: 360px;
+      }
+
+      .company-story {
+        padding: 80px 0;
       }
 
       .company-story-grid {
@@ -423,32 +547,52 @@
       }
 
       .story-year {
-        position: relative;
-        top: auto;
-        width: min(100%, 240px);
+        position: static;
+        width: min(100%, 230px);
       }
 
-      .leadership-intro {
-        display: block;
+      .story-content h2 {
+        font-size: 34px;
       }
 
-      .leadership-note {
-        margin-top: 24px;
+      .leadership-section {
+        padding: 80px 0 90px;
       }
 
-      .leadership-grid {
+      .leadership-heading {
+        margin-bottom: 45px;
+      }
+
+      .leadership-heading h2 {
+        font-size: 36px;
+      }
+
+      .leadership-list {
+        gap: 42px;
+      }
+
+      .leader-profile {
         grid-template-columns: 1fr;
-        gap: 28px;
-        max-width: 480px;
-        margin-inline: auto;
+        gap: 24px;
+        padding-bottom: 38px;
       }
 
-      .leader-image {
-        height: 440px;
+      .leader-photo {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .leader-information {
+        padding: 0;
+      }
+
+      .leader-information h3 {
+        font-size: 30px;
       }
 
       .about-closing {
-        padding: 75px 0;
+        padding: 80px 0;
       }
 
     }
@@ -458,17 +602,40 @@
 
     @media (max-width: 420px) {
 
-      .about-logo-panel {
-        min-height: 310px;
+      .about-hero h1 {
+        font-size: 39px;
       }
 
-      .about-logo-panel img {
-        max-width: 255px;
-        max-height: 255px;
+      .about-logo-area img {
+        width: min(100%, 310px);
       }
 
-      .leader-image {
-        height: 360px;
+      .story-year strong {
+        font-size: 56px;
+      }
+
+      .leader-photo {
+        aspect-ratio: 1 / 1;
+      }
+
+      .leader-information h3 {
+        font-size: 27px;
+      }
+
+    }
+
+
+    /* REDUCED MOTION ACCESSIBILITY */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .about-page *,
+      .about-page *::before,
+      .about-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
       }
 
     }
@@ -478,10 +645,12 @@
 </head>
 
 
-<body>
+<body class="about-page">
 
 
-  <!-- HEADER -->
+  <!-- =====================================
+       HEADER
+  ====================================== -->
 
   <header class="header">
 
@@ -491,8 +660,7 @@
 
         <img
           src="assets/viju-builders-logo.jpeg"
-          data-logo
-          alt="Viju Builders official logo"
+          alt="Viju Builders logo"
         >
 
         <div class="brand-text">
@@ -516,11 +684,18 @@
       <nav class="nav" aria-label="Main navigation">
 
         <a href="index.html">Home</a>
+
         <a href="about.html" class="active">About</a>
+
         <a href="index.html#services">Services</a>
+
         <a href="index.html#projects">Projects</a>
+
         <a href="index.html#approach">Our Approach</a>
-        <a href="index.html#contact" class="nav-cta">Contact Us</a>
+
+        <a href="index.html#contact" class="nav-cta">
+          Contact Us
+        </a>
 
       </nav>
 
@@ -533,14 +708,16 @@
   <main>
 
 
-    <!-- ABOUT HERO -->
+    <!-- =====================================
+         HERO
+    ====================================== -->
 
     <section class="about-hero">
 
       <div class="container about-hero-grid">
 
 
-        <div class="reveal-left">
+        <div class="about-hero-content reveal-left">
 
           <span class="eyebrow">
             About Viju Builders
@@ -563,19 +740,15 @@
         </div>
 
 
-        <!-- LARGE OFFICIAL COMPANY LOGO -->
+        <!-- LARGE LOGO — NO BOX OR CAPTION -->
 
-        <div class="about-logo-panel reveal-right">
+        <div class="about-logo-area reveal-right">
 
           <img
             src="assets/viju-builders-logo.jpeg"
-            data-logo
             alt="Official Viju Builders company logo"
+            fetchpriority="high"
           >
-
-          <span class="about-logo-caption">
-            Established 1990
-          </span>
 
         </div>
 
@@ -586,7 +759,9 @@
 
 
 
-    <!-- COMPANY STORY -->
+    <!-- =====================================
+         COMPANY STORY
+    ====================================== -->
 
     <section class="company-story">
 
@@ -598,7 +773,8 @@
           <strong>1990</strong>
 
           <span>
-            The Beginning of Viju Builders
+            Established
+            Viju Builders
           </span>
 
         </div>
@@ -611,8 +787,7 @@
           </span>
 
           <h2>
-            Experience That Shapes
-            Every Structure.
+            Experience That Shapes Every Structure.
           </h2>
 
           <p>
@@ -631,7 +806,7 @@
           </p>
 
           <p>
-            We believe that every successful project begins
+            We believe every successful project begins
             with understanding the client's requirements
             and bringing together the right planning,
             technical knowledge and execution.
@@ -650,53 +825,43 @@
 
 
 
-    <!-- LEADERSHIP -->
+    <!-- =====================================
+         LEADERSHIP
+    ====================================== -->
 
     <section class="leadership-section">
 
       <div class="container">
 
 
-        <div class="leadership-intro">
+        <div class="leadership-heading reveal">
 
-          <div class="section-heading reveal">
+          <span class="eyebrow">
+            The People Behind the Company
+          </span>
 
-            <span class="eyebrow">
-              The People Behind the Company
-            </span>
+          <h2>
+            Leadership Built on Experience and Expertise.
+          </h2>
 
-            <h2>
-              Leadership Built on
-              Experience and Expertise.
-            </h2>
-
-            <p>
-              Viju Builders is guided by a leadership team
-              bringing together construction experience,
-              engineering education and management knowledge.
-            </p>
-
-          </div>
-
-
-          <p class="leadership-note reveal">
-            Three leadership roles. A shared commitment
-            to building with knowledge, responsibility
-            and purpose.
+          <p>
+            Viju Builders is guided by a leadership team
+            bringing together construction experience,
+            engineering education and management knowledge.
           </p>
 
         </div>
 
 
 
-        <div class="leadership-grid">
+        <div class="leadership-list">
 
 
           <!-- FOUNDER -->
 
-          <article class="leader-card reveal">
+          <article class="leader-profile reveal">
 
-            <div class="leader-image">
+            <div class="leader-photo">
 
               <img
                 src="assets/FOUNDER.png"
@@ -707,9 +872,7 @@
             </div>
 
 
-            <div class="leader-details">
-
-              <span class="leader-index">01</span>
+            <div class="leader-information">
 
               <span class="leader-role">
                 Founder
@@ -727,6 +890,8 @@
                 construction industry.
               </p>
 
+              <div class="leader-accent"></div>
+
             </div>
 
           </article>
@@ -735,9 +900,9 @@
 
           <!-- CEO -->
 
-          <article class="leader-card reveal reveal-delay-1">
+          <article class="leader-profile reveal">
 
-            <div class="leader-image">
+            <div class="leader-photo">
 
               <img
                 src="assets/CEO.png"
@@ -748,9 +913,7 @@
             </div>
 
 
-            <div class="leader-details">
-
-              <span class="leader-index">02</span>
+            <div class="leader-information">
 
               <span class="leader-role">
                 Chief Executive Officer
@@ -764,9 +927,11 @@
                 A civil engineering graduate with a
                 postgraduate qualification in structural
                 engineering, Jithin brings technical
-                expertise and engineering perspective
+                expertise and an engineering perspective
                 to the company's leadership.
               </p>
+
+              <div class="leader-accent"></div>
 
             </div>
 
@@ -776,9 +941,9 @@
 
           <!-- CFO -->
 
-          <article class="leader-card reveal reveal-delay-2">
+          <article class="leader-profile reveal">
 
-            <div class="leader-image">
+            <div class="leader-photo">
 
               <img
                 src="assets/CFO.png"
@@ -789,9 +954,7 @@
             </div>
 
 
-            <div class="leader-details">
-
-              <span class="leader-index">03</span>
+            <div class="leader-information">
 
               <span class="leader-role">
                 Chief Financial Officer
@@ -808,6 +971,8 @@
                 organisational leadership.
               </p>
 
+              <div class="leader-accent"></div>
+
             </div>
 
           </article>
@@ -821,7 +986,9 @@
 
 
 
-    <!-- CLOSING -->
+    <!-- =====================================
+         CLOSING
+    ====================================== -->
 
     <section class="about-closing">
 
@@ -857,7 +1024,9 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
 
   <footer class="footer">
 
@@ -870,7 +1039,6 @@
 
           <img
             src="assets/viju-builders-logo.jpeg"
-            data-logo
             alt="Viju Builders logo"
             loading="lazy"
           >
@@ -894,9 +1062,13 @@
           <ul class="footer-links">
 
             <li><a href="index.html">Home</a></li>
+
             <li><a href="about.html">About Us</a></li>
+
             <li><a href="index.html#services">Our Services</a></li>
+
             <li><a href="index.html#projects">Projects</a></li>
+
             <li><a href="index.html#contact">Contact</a></li>
 
           </ul>
@@ -910,21 +1082,21 @@
 
           <div class="footer-links">
 
-            <a href="tel:+918078233805" data-phone-link>
+            <a href="tel:+918078233805">
               8078233805
             </a>
 
-            <a href="mailto:vijubuilders@gmail.com" data-email-link>
+            <a href="mailto:vijubuilders@gmail.com">
               vijubuilders@gmail.com
             </a>
 
-            <p data-address>
+            <p>
               ARCADIA COMPLEX, PALAPARAMBU,
               VADAPURAM, Kerala - 676542, India
             </p>
 
             <p>
-              GSTIN: <span data-gst>32CQYPV2870F1Z8</span>
+              GSTIN: 32CQYPV2870F1Z8
             </p>
 
           </div>
@@ -954,13 +1126,14 @@
 
 
 
-  <!-- WHATSAPP -->
+  <!-- =====================================
+       WHATSAPP
+  ====================================== -->
 
   <a
     id="floating-whatsapp"
     class="floating-whatsapp"
-    data-whatsapp
-    href="https://wa.me/918078233805"
+    href="https://wa.me/918078233805?text=Hello%20Viju%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Contact Viju Builders on WhatsApp"
