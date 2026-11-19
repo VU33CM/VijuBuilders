@@ -6,6 +6,11 @@
 
 window.VIJU_CONFIG = {
 
+  // Company information
+  companyName: "Viju Builders",
+  tagline: "Architects | Engineers | Builders",
+  established: "1990",
+
   // Contact details
   phone: "8078233805",
   phoneInternational: "918078233805",
@@ -25,7 +30,14 @@ window.VIJU_CONFIG = {
   // Company logo
   logo: "assets/viju-builders-logo.jpeg",
 
-  // Website photographs
+  // Leadership photographs - fixed filenames
+  leadership: {
+    founder: "assets/FOUNDER.png",
+    ceo: "assets/CEO.png",
+    cfo: "assets/CFO.png"
+  },
+
+  // Website photographs - original URLs preserved
   images: {
     photo1: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=85",
 
