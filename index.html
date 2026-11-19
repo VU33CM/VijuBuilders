@@ -7,7 +7,7 @@
 
   <title>Viju Builders | Architects, Engineers & Builders Since 1990</title>
 
-  <meta name="description" content="Viju Builders — Architects, Engineers and Builders. Residential construction, commercial buildings, renovation, civil engineering and 3D architectural modelling in Kerala.">
+  <meta name="description" content="Viju Builders — Architects, Engineers and Builders since 1990. Residential construction, commercial buildings, civil engineering, renovation and 3D architectural modelling in Kerala.">
 
   <meta name="theme-color" content="#101e30">
 
@@ -16,10 +16,744 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Homepage refinements -->
+  <style>
+    /* One consistent typeface throughout */
+    html,
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-family: "Inter", sans-serif !important;
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, p, a, span, strong {
+      font-family: "Inter", sans-serif;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: -0.045em;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(1320px, calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand img {
+      width: 66px;
+      height: 66px;
+      object-fit: contain;
+    }
+
+    .brand-text strong {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      letter-spacing: .16em;
+      font-weight: 700;
+    }
+
+    .nav a {
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #101e30;
+      color: #fff;
+      padding: 76px 0 82px;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      border: 1px solid rgba(220,185,119,.12);
+      border-radius: 50%;
+      right: -170px;
+      top: -220px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(220,185,119,.10);
+      border-radius: 50%;
+      right: -80px;
+      bottom: -280px;
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero .eyebrow {
+      color: #dfbb78;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 25px 0 22px;
+      max-width: 780px;
+      color: #fff;
+      font-size: clamp(48px, 6.2vw, 82px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -.065em;
+    }
+
+    .hero h1 span {
+      color: #e2bf7e;
+    }
+
+    .hero-content > p {
+      max-width: 680px;
+      color: rgba(255,255,255,.76);
+      font-size: 18px;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-logo-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 1px solid rgba(225,190,126,.38);
+      background: rgba(255,255,255,.045);
+      min-height: 390px;
+    }
+
+    .hero-logo-panel img {
+      display: block;
+      width: min(100%, 360px);
+      height: auto;
+      max-height: 360px;
+      object-fit: contain;
+      mix-blend-mode: normal;
+    }
+
+    .hero-logo-caption {
+      margin-top: 16px;
+      color: #dfbb78;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    /* Shared section spacing */
+    main > section {
+      position: relative;
+      padding: 92px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-content h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.16;
+      font-weight: 800;
+      letter-spacing: -.055em;
+      margin: 18px 0;
+    }
+
+    .section-heading p,
+    .about-content p,
+    .contact-content > p {
+      color: #69778b;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: #a9792e;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: #c89d55;
+    }
+
+    /* About introduction */
+    .about-section {
+      background: #f5f4f0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .about-image {
+      position: relative;
+      min-width: 0;
+    }
+
+    .about-image img {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .experience-box {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      background: #101e30;
+      color: #fff;
+      padding: 17px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .experience-box strong {
+      color: #e2bf7e;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .experience-box span {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .about-content p {
+      margin: 0 0 16px;
+    }
+
+    .about-content .btn {
+      margin-top: 14px;
+    }
+
+    /* Services */
+    .services-section {
+      background: #fff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      min-height: 235px;
+      padding: 30px;
+      background: #f5f4f0;
+      border: 1px solid transparent;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200,157,85,.55);
+      box-shadow: 0 18px 40px rgba(16,30,48,.07);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: #b8873d;
+      border: 1px solid rgba(184,135,61,.45);
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 750;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #6d7a8d;
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Projects */
+    .projects-section {
+      background: #f1f0ec;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .project-card {
+      position: relative;
+      min-width: 0;
+      height: 310px;
+      overflow: hidden;
+      background: #d8d8d4;
+    }
+
+    .project-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .project-info {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 42px 26px 22px;
+      color: #fff;
+      background: linear-gradient(transparent, rgba(8,18,30,.88));
+    }
+
+    .project-info h3 {
+      font-size: 21px;
+      font-weight: 750;
+      margin-bottom: 4px;
+    }
+
+    .project-info p {
+      font-size: 14px;
+      color: rgba(255,255,255,.78);
+      margin: 0;
+    }
+
+    /* Approach */
+    .approach-section {
+      background: #fff;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .approach-card {
+      padding: 26px 22px;
+      border-top: 2px solid #d1aa68;
+      background: #f7f6f2;
+    }
+
+    .approach-number {
+      display: block;
+      color: #c99f5a;
+      font-size: 36px;
+      font-weight: 750;
+      letter-spacing: -.05em;
+      margin-bottom: 22px;
+    }
+
+    .approach-card h3 {
+      font-size: 21px;
+      font-weight: 750;
+      margin-bottom: 10px;
+    }
+
+    .approach-card p {
+      color: #6d7a8d;
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Closing call to action */
+    .contact-section {
+      background: #101e30;
+      color: #fff;
+      padding: 76px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-content h2 {
+      max-width: 720px;
+      color: #fff;
+      font-size: clamp(36px, 4.5vw, 58px);
+    }
+
+    .contact-content > p {
+      max-width: 620px;
+      color: rgba(255,255,255,.72);
+    }
+
+    .contact-panel {
+      padding: 34px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(225,190,126,.3);
+    }
+
+    .contact-panel .eyebrow {
+      color: #e2bf7e;
+    }
+
+    .contact-panel h3 {
+      font-size: 25px;
+      line-height: 1.3;
+      margin: 16px 0 12px;
+      font-weight: 750;
+    }
+
+    .contact-panel p {
+      color: rgba(255,255,255,.7);
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #081522;
+      color: #fff;
+      padding-top: 65px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .7fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand img {
+      width: 86px;
+      height: 86px;
+      object-fit: contain;
+      background: #f4f0e6;
+      padding: 5px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand h3 {
+      font-size: 23px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p,
+    .footer-links,
+    .footer-links p {
+      color: rgba(255,255,255,.62);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .footer h4 {
+      color: #dfbb78;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.68);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #dfbb78;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.13);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255,255,255,.48);
+      font-size: 12px;
+    }
+
+    /* Buttons */
+    .btn {
+      min-height: 52px;
+      padding: 14px 23px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      font-size: 13px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #c99f5a;
+      color: #101e30;
+      border: 1px solid #c99f5a;
+    }
+
+    .btn-primary:hover {
+      background: #dfbb78;
+    }
+
+    .btn-outline {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.32);
+      background: transparent;
+    }
+
+    .btn-dark {
+      color: #fff;
+      background: #101e30;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 1000px) {
+      .hero-layout {
+        grid-template-columns: 1fr .65fr;
+        gap: 35px;
+      }
+
+      .hero-logo-panel {
+        min-height: 300px;
+      }
+
+      .about-grid {
+        gap: 38px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-grid {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 36px, 560px);
+      }
+
+      main > section {
+        padding: 66px 0;
+      }
+
+      .hero {
+        padding: 58px 0 64px;
+        min-height: auto;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 11vw, 62px);
+      }
+
+      .hero-content > p {
+        font-size: 16px;
+      }
+
+      .hero-logo-panel {
+        min-height: auto;
+        padding: 22px;
+      }
+
+      .hero-logo-panel img {
+        width: min(100%, 260px);
+        max-height: 260px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .about-image img {
+        height: 300px;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .project-card {
+        height: 260px;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .approach-card {
+        padding: 20px 16px;
+      }
+
+      .contact-panel {
+        padding: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .brand img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .brand-text strong {
+        font-size: 17px;
+      }
+
+      .brand-text span {
+        font-size: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
@@ -27,8 +761,7 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
 
@@ -41,7 +774,7 @@
 
         <div class="brand-text">
           <strong>VIJU BUILDERS</strong>
-          <span>Architects · Engineers · Builders</span>
+          <span>ARCHITECTS · ENGINEERS · BUILDERS</span>
         </div>
       </a>
 
@@ -69,13 +802,11 @@
 
   <main>
 
-    <!-- ================= HERO ================= -->
-
+    <!-- HERO -->
     <section class="hero" id="home">
+      <div class="container hero-layout">
 
-      <div class="container">
-
-        <div class="hero-content">
+        <div class="hero-content reveal">
 
           <span class="eyebrow">
             Established 1990 · Over 30 Years of Experience
@@ -87,46 +818,50 @@
           </h1>
 
           <p>
-            From thoughtful architectural concepts to carefully executed
-            construction, Viju Builders brings experience, engineering
-            knowledge and craftsmanship together to create spaces
-            built to last.
+            From architectural ideas to carefully executed construction,
+            Viju Builders brings together experience, engineering knowledge
+            and craftsmanship to create spaces built for lasting value.
           </p>
 
           <div class="hero-actions">
-
             <a href="#projects" class="btn btn-primary">
-              Explore Our Work
-              <span aria-hidden="true">→</span>
+              Explore Our Work <span aria-hidden="true">→</span>
             </a>
 
             <a href="about.html" class="btn btn-outline">
               Discover Our Story
             </a>
-
           </div>
 
         </div>
 
-      </div>
+        <div class="hero-brand reveal-right">
+          <div class="hero-logo-panel">
+            <img
+              src="assets/viju-builders-logo.jpeg"
+              alt="Viju Builders official company logo"
+            >
+          </div>
+          <div class="hero-logo-caption">
+            Architects · Engineers · Builders
+          </div>
+        </div>
 
+      </div>
     </section>
 
 
-    <!-- ================= INTRODUCTION ================= -->
-
+    <!-- ABOUT INTRODUCTION -->
     <section class="about-section" id="about">
-
       <div class="container">
 
         <div class="about-grid">
 
           <div class="about-image reveal-left">
-
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=85"
               data-photo="photo1"
-              alt="Modern architectural residential building"
+              alt="Contemporary residential architecture"
               loading="lazy"
             >
 
@@ -134,17 +869,14 @@
               <strong>30+</strong>
               <span>Years of Experience</span>
             </div>
-
           </div>
-
 
           <div class="about-content reveal-right">
 
             <span class="eyebrow">About Viju Builders</span>
 
             <h2>
-              Experience That Shapes
-              Every Structure.
+              Experience That Shapes Every Structure.
             </h2>
 
             <p>
@@ -155,20 +887,18 @@
 
             <p>
               With expertise spanning civil engineering, residential
-              construction, commercial projects and renovation, we
-              approach every project with careful planning and attention
-              to detail.
+              construction, commercial projects and renovation, we approach
+              every project with careful planning and attention to detail.
             </p>
 
             <p>
-              Our focus is simple: understand the client's vision,
-              deliver practical solutions and create buildings that
-              stand the test of time.
+              Our focus is simple: understand the client's vision, deliver
+              practical solutions and create buildings that stand the
+              test of time.
             </p>
 
             <a href="about.html" class="btn btn-dark">
-              More About Us
-              <span aria-hidden="true">→</span>
+              More About Us <span aria-hidden="true">→</span>
             </a>
 
           </div>
@@ -176,159 +906,112 @@
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- ================= SERVICES ================= -->
-
+    <!-- SERVICES -->
     <section class="services-section" id="services">
-
       <div class="container">
 
         <div class="section-heading reveal">
-
           <span class="eyebrow">What We Do</span>
 
           <h2>
-            Comprehensive Building
-            & Engineering Solutions.
+            Comprehensive Building & Engineering Solutions.
           </h2>
 
           <p>
-            From initial design concepts to construction and
-            transformation, we offer integrated solutions for
-            residential and commercial requirements.
+            From initial design concepts to construction and transformation,
+            we offer integrated solutions for residential and commercial
+            requirements.
           </p>
-
         </div>
-
 
         <div class="services-grid">
 
           <article class="service-card reveal">
-
             <div class="service-icon" aria-hidden="true">⌂</div>
-
             <h3>Residential Construction</h3>
-
             <p>
               Thoughtfully planned homes designed around functionality,
               comfort, quality and the needs of modern living.
             </p>
-
           </article>
-
 
           <article class="service-card reveal reveal-delay-1">
-
             <div class="service-icon" aria-hidden="true">▦</div>
-
             <h3>Commercial Buildings</h3>
-
             <p>
-              Practical and professionally executed commercial
-              spaces that combine structural reliability and
-              functional design.
+              Practical and professionally executed commercial spaces
+              that combine structural reliability and functional design.
             </p>
-
           </article>
-
 
           <article class="service-card reveal reveal-delay-2">
-
             <div class="service-icon" aria-hidden="true">⌖</div>
-
             <h3>Civil Engineering Works</h3>
-
             <p>
-              Engineering-focused construction solutions supported
-              by technical planning and attention to structural details.
+              Engineering-focused construction solutions supported by
+              technical planning and attention to structural details.
             </p>
-
           </article>
-
 
           <article class="service-card reveal">
-
             <div class="service-icon" aria-hidden="true">↗</div>
-
             <h3>Renovation & Extensions</h3>
-
             <p>
-              Upgrading, extending and transforming existing
-              buildings to meet changing requirements.
+              Upgrading, extending and transforming existing buildings
+              to meet changing requirements.
             </p>
-
           </article>
-
 
           <article class="service-card reveal reveal-delay-1">
-
             <div class="service-icon" aria-hidden="true">◇</div>
-
             <h3>3D Architectural Modelling</h3>
-
             <p>
-              Three-dimensional architectural models that help
-              clients understand building layouts, forms and
-              design concepts before construction.
+              Three-dimensional architectural models that help clients
+              understand building layouts, forms and design concepts
+              before construction.
             </p>
-
           </article>
 
-
           <article class="service-card reveal reveal-delay-2">
-
             <div class="service-icon" aria-hidden="true">▧</div>
-
             <h3>3D Visualization & Rendering</h3>
-
             <p>
-              Realistic visual representations of architectural
-              concepts to communicate design ideas and
-              proposed spaces more clearly.
+              Realistic visual representations of architectural concepts
+              to communicate design ideas and proposed spaces more clearly.
             </p>
-
           </article>
 
         </div>
-
       </div>
-
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
-
+    <!-- PROJECTS -->
     <section class="projects-section" id="projects">
-
       <div class="container">
 
         <div class="section-heading reveal">
-
           <span class="eyebrow">Our Work</span>
 
           <h2>
-            Built With Purpose.
-            Designed to Last.
+            Built With Purpose. Designed to Last.
           </h2>
 
           <p>
-            Every building begins with an idea. Our work brings
-            together planning, engineering and construction to
-            turn those ideas into reality.
+            Every building begins with an idea. Our work brings together
+            planning, engineering and construction to turn those ideas
+            into reality.
           </p>
-
         </div>
-
 
         <div class="projects-grid">
 
           <article class="project-card reveal">
-
             <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85"
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85"
               data-photo="photo2"
               alt="Contemporary residential architecture"
               loading="lazy"
@@ -338,14 +1021,11 @@
               <h3>Residential Architecture</h3>
               <p>Thoughtful spaces for modern living</p>
             </div>
-
           </article>
 
-
           <article class="project-card reveal reveal-delay-1">
-
             <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85"
               data-photo="photo3"
               alt="Construction and civil engineering work"
               loading="lazy"
@@ -355,14 +1035,11 @@
               <h3>Construction & Engineering</h3>
               <p>Precision in every stage of construction</p>
             </div>
-
           </article>
 
-
           <article class="project-card reveal">
-
             <img
-              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=85"
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1100&q=85"
               data-photo="photo4"
               alt="Modern building exterior"
               loading="lazy"
@@ -372,14 +1049,11 @@
               <h3>Modern Building Design</h3>
               <p>Balancing aesthetics and functionality</p>
             </div>
-
           </article>
 
-
           <article class="project-card reveal reveal-delay-1">
-
             <img
-              src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+              src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=85"
               alt="Contemporary interior architectural design"
               loading="lazy"
             >
@@ -388,271 +1062,143 @@
               <h3>Interior & Spatial Design</h3>
               <p>Spaces designed around people</p>
             </div>
-
           </article>
 
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- ================= APPROACH ================= -->
-
+    <!-- OUR APPROACH -->
     <section class="approach-section" id="approach">
-
       <div class="container">
 
         <div class="section-heading reveal">
-
           <span class="eyebrow">Our Approach</span>
 
           <h2>
-            A Thoughtful Process.
-            A Stronger Outcome.
+            A Thoughtful Process. A Stronger Outcome.
           </h2>
 
           <p>
-            A successful construction project requires more than
-            execution. It requires understanding, coordination,
-            planning and attention to detail.
+            A successful construction project requires more than execution.
+            It requires understanding, coordination, planning and attention
+            to detail.
           </p>
-
         </div>
-
 
         <div class="approach-grid">
 
           <article class="approach-card reveal">
-
             <span class="approach-number">01</span>
-
             <h3>Understand</h3>
-
             <p>
               We begin by understanding the client's requirements,
               vision and project expectations.
             </p>
-
           </article>
 
-
           <article class="approach-card reveal reveal-delay-1">
-
             <span class="approach-number">02</span>
-
             <h3>Plan</h3>
-
             <p>
               We focus on thoughtful planning, engineering
               considerations and practical solutions.
             </p>
-
           </article>
 
-
           <article class="approach-card reveal reveal-delay-2">
-
             <span class="approach-number">03</span>
-
             <h3>Execute</h3>
-
             <p>
               We bring plans to life through coordinated
               construction and attention to quality.
             </p>
-
           </article>
 
-
           <article class="approach-card reveal reveal-delay-3">
-
             <span class="approach-number">04</span>
-
             <h3>Deliver</h3>
-
             <p>
               We aim to deliver spaces that meet the intended
               requirements and provide lasting value.
             </p>
-
           </article>
 
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
-
+    <!-- FINAL CALL TO ACTION -->
     <section class="contact-section" id="contact">
-
       <div class="container">
 
         <div class="contact-grid">
 
           <div class="contact-content reveal-left">
-
-            <span class="eyebrow">Get In Touch</span>
+            <span class="eyebrow">Let's Work Together</span>
 
             <h2>
-              Let's Build Something
-              Meaningful Together.
+              Have a Project in Mind? Let's Build It.
             </h2>
 
             <p>
-              Have a construction project in mind?
-              Get in touch with Viju Builders to discuss
-              your requirements.
+              Whether you are planning a new home, a commercial building
+              or a renovation, speak with Viju Builders about your
+              requirements.
             </p>
-
-
-            <div class="contact-details">
-
-
-              <div class="contact-item">
-
-                <div class="contact-icon" aria-hidden="true">☎</div>
-
-                <div>
-                  <h4>Call Us</h4>
-
-                  <a
-                    id="phone-link"
-                    data-phone-link
-                    href="tel:+918078233805"
-                  >
-                    8078233805
-                  </a>
-                </div>
-
-              </div>
-
-
-              <div class="contact-item">
-
-                <div class="contact-icon" aria-hidden="true">✉</div>
-
-                <div>
-                  <h4>Email Us</h4>
-
-                  <a
-                    id="email-link"
-                    data-email-link
-                    href="mailto:vijubuilders@gmail.com"
-                  >
-                    vijubuilders@gmail.com
-                  </a>
-                </div>
-
-              </div>
-
-
-              <div class="contact-item">
-
-                <div class="contact-icon" aria-hidden="true">⌖</div>
-
-                <div>
-                  <h4>Our Address</h4>
-
-                  <p id="address-text" data-address>
-                    ARCADIA COMPLEX, PALAPARAMBU,
-                    VADAPURAM, Kerala - 676542, India
-                  </p>
-                </div>
-
-              </div>
-
-
-              <div class="contact-item">
-
-                <div class="contact-icon" aria-hidden="true">▤</div>
-
-                <div>
-                  <h4>GST Registration</h4>
-
-                  <p id="gst-number" data-gst>
-                    32CQYPV2870F1Z8
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
           </div>
 
-
           <div class="contact-panel reveal-right">
+            <span class="eyebrow">Get in Touch</span>
 
-            <span class="eyebrow">Start a Conversation</span>
-
-            <h3>Tell Us About Your Project.</h3>
+            <h3>Start Your Project With Us.</h3>
 
             <p>
-              Whether you are planning a new home, a commercial
-              building, a renovation or an architectural design,
-              we would be happy to hear from you.
+              Tell us what you have in mind. Our team would be pleased
+              to discuss your construction and design requirements.
             </p>
 
-            <a
-              id="whatsapp-button"
-              data-whatsapp
-              href="https://wa.me/918078233805"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Chat With Us on WhatsApp
+            <a href="mailto:vijubuilders@gmail.com" class="btn btn-primary">
+              Contact Viju Builders
               <span aria-hidden="true">→</span>
             </a>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
 
   </main>
 
 
-  <!-- ================= FOOTER ================= -->
-
+  <!-- FOOTER -->
   <footer class="footer">
-
     <div class="container">
 
       <div class="footer-grid">
 
-
         <div class="footer-brand">
-
           <img
             src="assets/viju-builders-logo.jpeg"
             data-logo
-            alt="Viju Builders logo"
+            alt="Viju Builders official logo"
             loading="lazy"
           >
 
           <h3>VIJU BUILDERS</h3>
 
           <p>
-            Architects, Engineers and Builders.
-
-            Building with experience, engineering knowledge
-            and a commitment to quality since 1990.
+            Architects, Engineers and Builders. Building with experience,
+            engineering knowledge and a commitment to quality since 1990.
           </p>
-
         </div>
 
-
         <div>
-
           <h4>Explore</h4>
 
           <ul class="footer-links">
@@ -663,16 +1209,12 @@
             <li><a href="#approach">Our Approach</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-
         </div>
 
-
         <div>
-
           <h4>Contact Information</h4>
 
           <div class="footer-links">
-
             <a href="tel:+918078233805" data-phone-link>
               8078233805
             </a>
@@ -682,42 +1224,32 @@
             </a>
 
             <p data-address>
-              ARCADIA COMPLEX, PALAPARAMBU,
-              VADAPURAM, Kerala - 676542, India
+              ARCADIA COMPLEX, PALAPARAMBU, VADAPURAM,
+              Kerala - 676542, India
             </p>
 
             <p>
               GSTIN: <span data-gst>32CQYPV2870F1Z8</span>
             </p>
-
           </div>
-
         </div>
-
 
       </div>
 
-
       <div class="footer-bottom">
-
         <p>
           © <span id="year">2026</span> Viju Builders.
           All Rights Reserved.
         </p>
 
-        <p>
-          Architects · Engineers · Builders
-        </p>
-
+        <p>Architects · Engineers · Builders</p>
       </div>
 
     </div>
-
   </footer>
 
 
-  <!-- ================= FLOATING WHATSAPP ================= -->
-
+  <!-- FLOATING WHATSAPP CONTACT -->
   <a
     id="floating-whatsapp"
     class="floating-whatsapp"
@@ -725,11 +1257,10 @@
     href="https://wa.me/918078233805"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Contact Viju Builders on WhatsApp"
+    aria-label="Contact Viju Builders"
   >
     <span aria-hidden="true">✆</span>
   </a>
-
 
 </body>
 </html>
