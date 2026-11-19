@@ -1,1873 +1,506 @@
 
 /* =========================================================
-   VIJU BUILDERS
-   COMPLETE CONSOLIDATED WEBSITE STYLESHEET
-   Homepage | About | Careers | Contact
+   26. VIJU BUILDERS — ANIMATION & INTERACTION SYSTEM
+   Add this section at the END of style.css
 ========================================================= */
 
-/* =========================================================
-   1. ROOT VARIABLES
-========================================================= */
+/* ---------------------------------------------------------
+   GLOBAL TRANSITIONS
+--------------------------------------------------------- */
 
-:root {
-    --navy: #101e30;
-    --navy-light: #14283f;
-    --gold: #c6a15b;
-    --gold-light: #d7b879;
-    --white: #ffffff;
-    --text: #333d48;
-    --muted: #69727c;
-    --light: #f5f6f7;
-    --border: #e5e8ec;
-    --shadow: 0 12px 35px rgba(15, 35, 55, 0.09);
-    --container: 1200px;
-}
-
-/* =========================================================
-   2. RESET AND BASE
-========================================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 145px;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    background: var(--white);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
+a,
 button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-.container {
-    width: min(var(--container), calc(100% - 48px));
-    margin: 0 auto;
-}
-
-section {
-    position: relative;
-}
-
-h1, h2, h3, h4, p {
-    margin-top: 0;
-}
-
-h1, h2, h3, h4 {
-    line-height: 1.25;
-}
-
-::selection {
-    background: var(--gold);
-    color: var(--navy);
-}
-
-/* =========================================================
-   3. COMMON HEADER
-========================================================= */
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: 0 2px 12px rgba(15, 35, 55, 0.05);
-}
-
-.site-header .header-inner {
-    width: min(1400px, calc(100% - 48px)) !important;
-    height: 135px !important;
-    min-height: 135px !important;
-    max-height: 135px !important;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    position: relative;
-}
-
-.site-header .brand {
-    display: flex !important;
-    align-items: center;
-    flex: 0 1 600px !important;
-    width: 600px !important;
-    max-width: 600px !important;
-    min-width: 0;
-    text-decoration: none;
-}
-
-.site-header .brand-combined {
-    display: block !important;
-    width: 600px !important;
-    height: 125px !important;
-    max-width: none !important;
-    max-height: none !important;
-    min-width: 0;
-    object-fit: contain !important;
-    object-position: left center;
-    flex: 0 1 600px !important;
-}
-
-.site-header .main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 16px;
-    flex: 1 1 auto;
-}
-
-.site-header .main-nav a {
-    color: var(--navy-light);
-    font-size: 0.8rem;
-    font-weight: 600;
-    white-space: nowrap;
-    padding: 9px 0;
-    transition: color 0.25s ease;
-}
-
-.site-header .main-nav a:hover,
-.site-header .main-nav a.active {
-    color: var(--gold);
-}
-
-.site-header .main-nav .nav-contact {
-    background: var(--navy);
-    color: #ffffff;
-    padding: 11px 17px;
-    border-radius: 4px;
-}
-
-.site-header .main-nav .nav-contact:hover {
-    background: var(--gold);
-    color: var(--navy);
-}
-
-.site-header .menu-toggle {
-    display: none;
-}
-
-/* =========================================================
-   4. BUTTONS
-========================================================= */
-
 .button,
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 13px 23px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    font-size: 0.88rem;
-    font-weight: 700;
-    line-height: 1.3;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.button-gold,
-.btn-primary {
-    background: var(--gold);
-    color: var(--navy);
-}
-
-.button-gold:hover,
-.btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-}
-
-.button-outline-light,
-.btn-outline {
-    border-color: rgba(255,255,255,0.65);
-    color: #ffffff;
-    background: transparent;
-}
-
-.button-outline-light:hover,
-.btn-outline:hover {
-    background: #ffffff;
-    color: var(--navy);
-}
-
-.button-dark,
-.btn-dark {
-    background: var(--navy);
-    color: #ffffff;
-}
-
-.button-dark:hover,
-.btn-dark:hover {
-    background: var(--gold);
-    color: var(--navy);
-}
-
-.text-link {
-    display: inline-flex;
-    gap: 9px;
-    align-items: center;
-    color: var(--navy);
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.text-link:hover {
-    color: var(--gold);
-}
-
-/* =========================================================
-   5. EYEBROW AND SECTION HEADINGS
-========================================================= */
-
-.eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #a27c39;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.eyebrow > span:first-child {
-    display: inline-block;
-    width: 25px;
-    height: 2px;
-    background: var(--gold);
-}
-
-.eyebrow-light {
-    color: var(--gold-light);
-}
-
-.section-space {
-    padding: 75px 0;
-}
-
-.section-heading {
-    max-width: 750px;
-    margin: 0 auto 42px;
-    text-align: center;
-}
-
-.section-heading h2 {
-    color: var(--navy-light);
-    font-size: clamp(1.9rem, 3vw, 2.6rem);
-    margin: 14px 0;
-}
-
-.section-heading p {
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-.page-content {
-    padding: 70px 0;
-}
-
-.page-content.alt {
-    background: var(--light);
-}
-
-/* =========================================================
-   6. HOMEPAGE HERO
-========================================================= */
-
-.home-hero {
-    position: relative;
-    overflow: hidden;
-    background: var(--navy);
-    color: #ffffff;
-    padding: 75px 0;
-    min-height: 520px;
-}
-
-.hero-pattern {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 80% 30%, rgba(198,161,91,0.13), transparent 35%),
-        linear-gradient(120deg, transparent 55%, rgba(255,255,255,0.025));
-}
-
-.hero-layout {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.hero-copy h1 {
-    color: #ffffff;
-    font-size: clamp(2.7rem, 5vw, 4.4rem);
-    font-weight: 800;
-    line-height: 1.12;
-    margin: 22px 0;
-}
-
-.hero-copy h1 span {
-    color: var(--gold-light);
-}
-
-.hero-description {
-    max-width: 650px;
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    line-height: 1.85;
-    margin-bottom: 28px;
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-}
-
-.hero-trust {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 13px;
-    margin-top: 35px;
-    color: rgba(255,255,255,0.65);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.trust-divider {
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    border-radius: 50%;
-}
-
-.hero-brand {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.hero-brand img {
-    display: block;
-    width: 100%;
-    max-width: 360px;
-    max-height: 360px;
-    height: auto;
-    object-fit: contain;
-}
-
-.hero-brand p {
-    margin-top: 18px;
-    color: var(--gold-light);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-/* =========================================================
-   7. INTRODUCTION
-========================================================= */
-
-.intro-section {
-    padding: 80px 0;
-}
-
-.intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.intro-image {
-    position: relative;
-}
-
-.intro-image img {
-    display: block;
-    width: 100%;
-    height: 410px;
-    object-fit: cover;
-    border-radius: 7px;
-}
-
-.image-label {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 15px 20px;
-    background: #ffffff;
-    border-left: 4px solid var(--gold);
-    box-shadow: var(--shadow);
-}
-
-.image-label strong {
-    color: var(--navy);
-    font-size: 2rem;
-    line-height: 1.1;
-}
-
-.image-label span {
-    color: var(--muted);
-    font-size: 0.82rem;
-}
-
-.intro-copy h2 {
-    color: var(--navy);
-    font-size: clamp(1.9rem, 3vw, 2.6rem);
-    margin: 15px 0 20px;
-}
-
-.intro-copy p {
-    color: var(--muted);
-    line-height: 1.85;
-}
-
-/* =========================================================
-   8. SERVICES
-========================================================= */
-
-.services-section {
-    padding: 75px 0;
-    background: var(--light);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.service-card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 28px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.service-icon,
-.service-symbol {
-    color: var(--gold);
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 18px;
-}
-
-.service-card h3 {
-    color: var(--navy);
-    font-size: 1.12rem;
-    margin-bottom: 12px;
-}
-
-.service-card p {
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.75;
-    margin-bottom: 0;
-}
-
-/* =========================================================
-   9. PROJECTS
-   DESKTOP: TWO COLUMNS, TWO ROWS
-========================================================= */
-
-.projects-section {
-    padding: 75px 0;
-}
-
-.projects-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 28px !important;
-    align-items: stretch;
-}
-
-.project-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-    background: #ffffff;
-    border-radius: 7px;
-    box-shadow: 0 8px 25px rgba(15,35,55,0.07);
-}
-
-.project-card > img {
-    display: block;
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin: 0;
-    transition: transform 0.4s ease;
-}
-
-.project-card:hover > img {
-    transform: scale(1.03);
-}
-
-.project-card .project-overlay {
-    position: static !important;
-    inset: auto !important;
-    display: block !important;
-    padding: 20px;
-    background: #ffffff !important;
-    color: var(--navy);
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-
-.project-card .project-overlay span {
-    display: none !important;
-}
-
-.project-card .project-overlay h3 {
-    color: var(--navy);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0 0 8px;
-}
-
-.project-card .project-overlay p {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.projects-note {
-    margin-top: 25px;
-    color: var(--muted);
-    font-size: 0.85rem;
-    line-height: 1.6;
-}
-
-/* =========================================================
-   10. OUR APPROACH
-========================================================= */
-
-.approach-section {
-    padding: 75px 0;
-    background: var(--navy);
-    color: #ffffff;
-}
-
-.approach-section .section-heading h2 {
-    color: #ffffff;
-}
-
-.approach-section .section-heading p {
-    color: rgba(255,255,255,0.75);
-}
-
-.approach-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.approach-card {
-    padding: 25px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 7px;
-}
-
-.approach-number {
-    display: block;
-    color: var(--gold-light);
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-.approach-card h3 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.approach-card p {
-    color: rgba(255,255,255,0.72);
-    font-size: 0.91rem;
-    line-height: 1.75;
-    margin-bottom: 0;
-}
-
-/* =========================================================
-   11. HOMEPAGE CAREERS TEASER
-========================================================= */
-
-.career-intro {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 45px;
-}
-
-.career-intro h2 {
-    color: var(--navy);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin: 15px 0;
-}
-
-.career-intro p {
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-.career-highlight {
-    padding: 30px;
-    background: #ffffff;
-    border-left: 4px solid var(--gold);
-    box-shadow: var(--shadow);
-}
-
-.career-highlight h3 {
-    color: var(--navy);
-}
-
-.career-highlight p {
-    margin-bottom: 0;
-}
-
-/* =========================================================
-   12. HOMEPAGE CTA
-========================================================= */
-
-.home-cta-section {
-    padding: 65px 0;
-    background: var(--navy);
-}
-
-.home-cta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 35px;
-    color: #ffffff;
-}
-
-.home-cta h2 {
-    color: #ffffff;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin: 15px 0;
-}
-
-.home-cta p {
-    max-width: 650px;
-    color: rgba(255,255,255,0.78);
-    line-height: 1.8;
-    margin-bottom: 0;
-}
-
-/* =========================================================
-   13. ABOUT PAGE
-========================================================= */
-
-.about-hero {
-    background: var(--navy);
-    color: #ffffff;
-    padding: 75px 0;
-}
-
-.about-hero-content {
-    max-width: 800px;
-}
-
-.about-hero .eyebrow {
-    color: var(--gold-light);
-    margin-bottom: 18px;
-}
-
-.about-hero h1 {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    line-height: 1.12;
-    margin: 0 0 22px;
-    font-weight: 800;
-}
-
-.about-hero h1 span {
-    color: var(--gold-light);
-}
-
-.about-hero p {
-    max-width: 680px;
-    color: rgba(255,255,255,0.82);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin: 0;
-}
-
-.about-story {
-    padding: 75px 0;
-}
-
-.about-story-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.about-story-image {
-    position: relative;
-}
-
-.about-story-image img {
-    display: block;
-    width: 100%;
-    height: 390px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.about-story-highlight {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: #ffffff;
-    padding: 16px 22px;
-    border-left: 4px solid var(--gold);
-    box-shadow: var(--shadow);
-}
-
-.about-story-highlight strong {
-    display: block;
-    font-size: 2rem;
-    color: var(--navy);
-    line-height: 1;
-}
-
-.about-story-highlight span {
-    display: block;
-    margin-top: 5px;
-    color: var(--muted);
-    font-size: 0.85rem;
-}
-
-.about-story-content h2 {
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    color: var(--navy);
-    line-height: 1.2;
-    margin: 12px 0 20px;
-}
-
-.about-story-content p {
-    color: var(--muted);
-    line-height: 1.85;
-    margin-bottom: 15px;
-}
-
-.about-values {
-    padding: 70px 0;
-    background: var(--light);
-}
-
-.about-section-heading,
-.careers-section-heading {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 38px;
-}
-
-.about-section-heading h2,
-.careers-section-heading h2 {
-    color: var(--navy);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin: 12px 0;
-}
-
-.about-section-heading p,
-.careers-section-heading p {
-    color: var(--muted);
-    line-height: 1.7;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.value-card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 25px;
-}
-
-.value-card span {
-    display: block;
-    color: var(--gold);
-    font-size: 1.7rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-.value-card h3 {
-    color: var(--navy);
-    font-size: 1.1rem;
-    margin: 0 0 10px;
-}
-
-.value-card p {
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* =========================================================
-   14. LEADERSHIP
-========================================================= */
-
-.leadership-section {
-    padding: 75px 0;
-}
-
-.leadership-list {
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-.leadership-section .leader-card {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 35px;
-    align-items: center;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.leadership-section .leader-card:last-child {
-    border-bottom: none;
-}
-
-.leadership-section .leader-photo {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 7px;
-    background: #edf0f2;
-}
-
-.leadership-section .leader-photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.leadership-section .leader-index {
-    display: none !important;
-}
-
-.leadership-section .leader-role {
-    display: inline-block;
-    color: #a27c39;
-    background: #f8f3e9;
-    padding: 6px 12px;
-    border-radius: 3px;
-    font-size: 0.76rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-}
-
-.leadership-section .leader-content h3 {
-    color: var(--navy);
-    font-size: 1.55rem;
-    margin: 0 0 12px;
-}
-
-.leadership-section .leader-description {
-    color: var(--muted);
-    line-height: 1.8;
-    margin: 0;
-}
-
-.leadership-section .leader-speciality {
-    margin-top: 14px;
-    color: var(--navy);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-/* =========================================================
-   15. ABOUT CLOSING SECTION
-========================================================= */
-
-.about-closing {
-    padding: 65px 20px;
-    background: var(--navy);
-    text-align: center;
-    color: #ffffff;
-}
-
-.about-closing h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin: 0 0 15px;
-}
-
-.about-closing p {
-    color: rgba(255,255,255,0.78);
-    max-width: 650px;
-    margin: 0 auto 25px;
-    line-height: 1.7;
-}
-
-/* =========================================================
-   16. CAREERS PAGE
-========================================================= */
-
-.careers-hero {
-    background: var(--navy);
-    color: #ffffff;
-    padding: 75px 0;
-}
-
-.careers-hero-content {
-    max-width: 800px;
-}
-
-.careers-hero .eyebrow {
-    color: var(--gold-light);
-    margin-bottom: 18px;
-}
-
-.careers-hero h1 {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    line-height: 1.12;
-    margin: 0 0 22px;
-    font-weight: 800;
-}
-
-.careers-hero h1 span {
-    color: var(--gold-light);
-}
-
-.careers-hero p {
-    max-width: 680px;
-    color: rgba(255,255,255,0.82);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin: 0;
-}
-
-.careers-intro {
-    padding: 70px 0;
-}
-
-.careers-intro-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 45px;
-    align-items: center;
-}
-
-.careers-intro-content h2 {
-    color: var(--navy);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.2;
-    margin: 12px 0 20px;
-}
-
-.careers-intro-content p {
-    color: var(--muted);
-    line-height: 1.85;
-    margin-bottom: 15px;
-}
-
-.careers-highlight {
-    background: var(--light);
-    border-left: 4px solid var(--gold);
-    padding: 28px;
-    border-radius: 5px;
-}
-
-.careers-highlight h3 {
-    color: var(--navy);
-    margin: 0 0 12px;
-    font-size: 1.2rem;
-}
-
-.careers-highlight p {
-    color: var(--muted);
-    line-height: 1.75;
-    margin: 0;
-}
-
-.career-areas {
-    background: var(--light);
-    padding: 70px 0;
-}
-
-.career-roles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.career-role-card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 25px;
-}
-
-.career-role-number {
-    display: block;
-    color: var(--gold);
-    font-size: 1.6rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-.career-role-card h3 {
-    color: var(--navy);
-    font-size: 1.1rem;
-    margin: 0 0 10px;
-}
-
-.career-role-card p {
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.application-section {
-    padding: 75px 0;
-}
-
-.application-panel {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 40px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    text-align: center;
-    background: #ffffff;
-}
-
-.application-panel h2 {
-    color: var(--navy);
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    margin: 12px 0 15px;
-}
-
-.application-panel > p {
-    max-width: 650px;
-    margin: 0 auto 22px;
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-.application-instructions {
-    background: var(--light);
-    text-align: left;
-    padding: 22px 25px;
-    border-radius: 6px;
-    margin: 25px 0;
-}
-
-.application-instructions h3 {
-    color: var(--navy);
-    font-size: 1rem;
-    margin: 0 0 12px;
-}
-
-.application-instructions ul {
-    padding-left: 20px;
-    margin: 0;
-    color: var(--muted);
-    line-height: 1.9;
-}
-
-.application-note {
-    color: #777f88;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-
-/* =========================================================
-   17. CONTACT PAGE
-========================================================= */
-
-.contact-section {
-    padding: 75px 0;
-}
-
-.contact-layout,
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
-    align-items: start;
-}
-
-.contact-content h2 {
-    color: var(--navy);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin: 15px 0;
-}
-
-.contact-content > p {
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-.contact-details,
-.contact-details-list {
-    display: grid;
-    gap: 18px;
-    margin-top: 30px;
-}
-
-.contact-item,
-.contact-detail-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.contact-icon,
-.contact-detail-icon {
-    display: flex;
-    flex: 0 0 44px;
-    width: 44px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
-    background: #f8f3e9;
-    color: #a27c39;
-    border-radius: 5px;
-    font-size: 1.2rem;
-}
-
-.contact-item h4,
-.contact-detail-card h4 {
-    color: var(--navy);
-    margin: 0 0 5px;
-}
-
-.contact-item p,
-.contact-item a,
-.contact-detail-card p,
-.contact-detail-card a {
-    color: var(--muted);
-    line-height: 1.7;
-    overflow-wrap: anywhere;
-}
-
-.contact-item a:hover,
-.contact-detail-card a:hover {
-    color: var(--gold);
-}
-
-.contact-panel {
-    background: var(--light);
-    padding: 30px;
-    border-radius: 7px;
-}
-
-.contact-panel h3 {
-    color: var(--navy);
-    margin-bottom: 15px;
-}
-
-.contact-panel p {
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-/* =========================================================
-   18. UNIFIED FOOTER
-   Supports both existing footer HTML structures:
-   .footer-brand (Home, Careers, Contact)
-   .footer-about (About)
-========================================================= */
-
-.site-footer {
-    width: 100%;
-    background: #0b1726;
-    color: #ffffff;
-    padding: 55px 0 0;
-}
-
-.site-footer > .container {
-    width: min(var(--container), calc(100% - 48px));
-    margin: 0 auto;
-}
-
-.site-footer .footer-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(150px, 0.75fr) minmax(0, 1.2fr);
-    align-items: start;
-    gap: 44px;
-    padding-bottom: 38px;
-}
-
-/* Normalize all three footer columns */
-.site-footer .footer-column,
-.site-footer .footer-brand,
-.site-footer .footer-about {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-    gap: 10px;
-}
-
-/* Normalize both logo patterns */
-.site-footer .footer-brand .footer-logo,
-.site-footer .footer-about .footer-logo,
-.site-footer .footer-brand > a.footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 112px;
-    height: 112px;
-    max-width: 112px;
-    max-height: 112px;
-    margin: 0 0 8px;
-    padding: 0;
-    overflow: hidden;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-}
-
-.site-footer .footer-brand .footer-logo img,
-.site-footer .footer-about .footer-logo img,
-.site-footer .footer-about img.footer-logo {
-    display: block;
-    width: 112px !important;
-    height: 112px !important;
-    max-width: 112px !important;
-    max-height: 112px !important;
-    object-fit: contain;
-    object-position: left center;
-    margin: 0;
-}
-
-/* Company name: supports h2 and h3 */
-.site-footer .footer-brand h2,
-.site-footer .footer-about h2,
-.site-footer .footer-brand h3,
-.site-footer .footer-about h3 {
-    color: #ffffff;
-    font-size: 1.05rem;
-    line-height: 1.3;
-    font-weight: 700;
-    letter-spacing: 0;
-    margin: 0 0 4px;
-}
-
-/* Brand description */
-.site-footer .footer-brand p,
-.site-footer .footer-about p {
-    max-width: 340px;
-    color: rgba(255,255,255,0.68);
-    font-size: 0.88rem;
-    line-height: 1.75;
-    margin: 0 0 5px;
-}
-
-/* Explore and Contact headings */
-.site-footer .footer-column > h3 {
-    color: #ffffff;
-    font-size: 1.02rem;
-    line-height: 1.35;
-    font-weight: 700;
-    margin: 0 0 8px;
-}
-
-/* Explore links */
-.site-footer .footer-column > a:not(.footer-logo) {
-    display: block;
-    color: rgba(255,255,255,0.72);
-    font-size: 0.87rem;
-    line-height: 1.55;
-    text-decoration: none;
-    margin: 0;
-    transition: color 0.2s ease;
-}
-
-.site-footer .footer-column > a:not(.footer-logo):hover {
-    color: var(--gold-light);
-}
-
-/* Contact links */
-.site-footer .footer-contact > a {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    width: 100%;
-    color: rgba(255,255,255,0.75);
-    font-size: 0.87rem;
-    line-height: 1.6;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-    margin: 0 0 5px;
-}
-
-.site-footer .footer-icon {
-    display: inline-flex;
-    flex: 0 0 20px;
-    width: 20px;
-    min-width: 20px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: var(--gold-light);
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.site-footer .footer-contact small,
-.site-footer .footer-detail small {
-    display: block;
-    color: rgba(255,255,255,0.52);
-    font-size: 0.71rem;
-    line-height: 1.4;
-    margin: 0 0 3px;
-}
-
-/* Address and GST rows */
-.site-footer .footer-detail {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    width: 100%;
-    color: rgba(255,255,255,0.72);
-    font-size: 0.87rem;
-    line-height: 1.65;
-    overflow-wrap: anywhere;
-    margin: 0 0 5px;
-}
-
-/* Copyright strip */
-.site-footer .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    min-height: 62px;
-    padding: 17px 0;
-    border-top: 1px solid rgba(255,255,255,0.12);
-}
-
-.site-footer .footer-bottom p {
-    color: rgba(255,255,255,0.55);
-    font-size: 0.77rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* =========================================================
-   19. FLOATING WHATSAPP
-========================================================= */
-
-.floating-whatsapp {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #20b866;
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    transition: transform 0.25s ease;
-}
-
-.floating-whatsapp:hover {
-    transform: translateY(-4px);
-}
-
-/* =========================================================
-   20. REVEAL ANIMATIONS
-========================================================= */
-
-.reveal,
-.reveal-left,
-.reveal-right {
-    opacity: 1;
-    transform: none;
-}
+.btn,
+.service-card,
+.project-card,
+.value-card,
+.approach-card,
+.career-role-card,
+.leader-photo,
+.contact-detail-card,
+.footer-column a {
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+/* ---------------------------------------------------------
+   SCROLL REVEAL
+   Works with .reveal, .reveal-left and .reveal-right
+--------------------------------------------------------- */
 
 .js-enabled .reveal,
 .js-enabled .reveal-left,
 .js-enabled .reveal-right {
     opacity: 0;
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .js-enabled .reveal {
-    transform: translateY(25px);
+    transform: translateY(35px);
 }
 
 .js-enabled .reveal-left {
-    transform: translateX(-25px);
+    transform: translateX(-35px);
 }
 
 .js-enabled .reveal-right {
-    transform: translateX(25px);
+    transform: translateX(35px);
 }
 
 .js-enabled .reveal.is-visible,
 .js-enabled .reveal-left.is-visible,
 .js-enabled .reveal-right.is-visible {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .reveal-delay-1 {
-    transition-delay: 0.1s !important;
+    transition-delay: 0.12s !important;
 }
 
 .reveal-delay-2 {
-    transition-delay: 0.2s !important;
+    transition-delay: 0.24s !important;
 }
 
 .reveal-delay-3 {
-    transition-delay: 0.3s !important;
+    transition-delay: 0.36s !important;
 }
 
-/* =========================================================
-   21. LAPTOP HEADER
-========================================================= */
+/* ---------------------------------------------------------
+   HERO ENTRANCE
+--------------------------------------------------------- */
 
-@media (max-width: 1250px) {
-
-    .site-header .header-inner {
-        width: calc(100% - 36px) !important;
-        gap: 12px;
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
     }
 
-    .site-header .brand {
-        flex-basis: 460px !important;
-        width: 460px !important;
-        max-width: 460px !important;
-    }
-
-    .site-header .brand-combined {
-        width: 460px !important;
-        height: 105px !important;
-        flex-basis: 460px !important;
-    }
-
-    .site-header .main-nav {
-        gap: 10px;
-    }
-
-    .site-header .main-nav a {
-        font-size: 0.7rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* =========================================================
-   22. TABLET
-========================================================= */
-
-@media (max-width: 800px) {
-
-    html {
-        scroll-padding-top: 100px;
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
     }
 
-    .container {
-        width: calc(100% - 32px);
-    }
-
-    /* Header */
-    .site-header .header-inner {
-        width: calc(100% - 32px) !important;
-        height: 90px !important;
-        min-height: 90px !important;
-        max-height: 90px !important;
-        gap: 12px;
-    }
-
-    .site-header .brand {
-        flex: 0 1 340px !important;
-        width: 340px !important;
-        max-width: calc(100% - 55px) !important;
-    }
-
-    .site-header .brand-combined {
-        width: 100% !important;
-        height: 82px !important;
-        max-width: 100% !important;
-        max-height: 82px !important;
-        flex: 0 1 auto !important;
-    }
-
-    .site-header .menu-toggle {
-        display: flex;
-        flex: 0 0 42px;
-        width: 42px;
-        height: 42px;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 5px;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: #ffffff;
-        cursor: pointer;
-    }
-
-    .site-header .menu-toggle span {
-        display: block;
-        width: 19px;
-        height: 2px;
-        background: var(--navy-light);
-    }
-
-    .site-header .main-nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 12px 24px 22px;
-        background: #ffffff;
-        border-top: 1px solid var(--border);
-        box-shadow: 0 12px 20px rgba(15,35,55,0.08);
-    }
-
-    .site-header .main-nav.open {
-        display: flex;
-    }
-
-    .site-header .main-nav a {
-        display: block;
-        padding: 13px 0;
-        font-size: 0.9rem;
-        white-space: normal;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .site-header .main-nav .nav-contact {
-        margin-top: 12px;
-        padding: 12px 18px;
-        text-align: center;
-        border: none;
-    }
-
-    /* Homepage */
-    .home-hero {
-        padding: 55px 0;
-    }
-
-    .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .hero-copy h1 {
-        font-size: clamp(2.4rem, 8vw, 3.5rem);
-    }
-
-    .hero-brand img {
-        max-width: 260px;
-        max-height: 260px;
-    }
-
-    .intro-grid,
-    .about-story-grid,
-    .careers-intro-grid,
-    .career-intro,
-    .contact-layout,
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .intro-image img {
-        height: 330px;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-
-    .project-card > img {
-        height: 260px;
-    }
-
-    .approach-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .home-cta {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* About */
-    .about-hero,
-    .careers-hero {
-        padding: 55px 0;
-    }
-
-    .about-story {
-        padding: 55px 0;
-    }
-
-    .about-story-image img {
-        height: 300px;
-    }
-
-    .values-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .leadership-section {
-        padding: 55px 0;
-    }
-
-    .leadership-section .leader-card {
-        grid-template-columns: 190px 1fr;
-        gap: 22px;
-    }
-
-    .leadership-section .leader-photo {
-        height: 220px;
-    }
-
-    /* Careers */
-    .career-roles-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .application-section {
-        padding: 55px 0;
-    }
-
-    .application-panel {
-        padding: 30px 22px;
-    }
-
-    /* Unified footer: tablet */
-    .site-footer .footer-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 32px 28px;
-    }
-
-    .site-footer .footer-brand,
-    .site-footer .footer-about {
-        grid-column: 1 / -1;
+    to {
+        opacity: 1;
     }
 }
 
-/* =========================================================
-   23. MOBILE
-========================================================= */
+.home-hero .hero-copy,
+.about-hero .about-hero-content,
+.careers-hero .careers-hero-content,
+.contact-hero .contact-hero-content {
+    animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
-@media (max-width: 560px) {
+.home-hero .hero-brand {
+    animation: heroFadeIn 1.2s ease 0.2s both;
+}
 
-    .container {
-        width: calc(100% - 32px);
+/* ---------------------------------------------------------
+   NAVIGATION HIGHLIGHTS
+--------------------------------------------------------- */
+
+.site-header .main-nav a:not(.nav-contact) {
+    position: relative;
+}
+
+.site-header .main-nav a:not(.nav-contact)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.site-header .main-nav a:not(.nav-contact):hover::after,
+.site-header .main-nav a:not(.nav-contact).active::after {
+    width: 100%;
+}
+
+.site-header .main-nav .nav-contact {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.site-header .main-nav .nav-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 35, 55, 0.16);
+}
+
+/* ---------------------------------------------------------
+   BUTTON HOVER EFFECTS
+--------------------------------------------------------- */
+
+.button,
+.btn {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+}
+
+.button:hover,
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(15, 35, 55, 0.16);
+}
+
+.button:active,
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.button-gold:hover,
+.btn-primary:hover {
+    background: var(--gold-light);
+    box-shadow: 0 8px 22px rgba(198, 161, 91, 0.28);
+}
+
+.button-outline-light:hover,
+.btn-outline:hover {
+    border-color: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   SERVICE CARD HIGHLIGHT
+--------------------------------------------------------- */
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #ffffff;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gold);
+    transition: width 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(198, 161, 91, 0.55);
+    box-shadow: 0 15px 35px rgba(15, 35, 55, 0.11);
+}
+
+.service-card:hover::before {
+    width: 100%;
+}
+
+.service-card .service-symbol {
+    transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.service-card:hover .service-symbol {
+    color: var(--gold-light);
+    transform: translateY(-4px);
+}
+
+/* ---------------------------------------------------------
+   PROJECT IMAGE HOVER
+--------------------------------------------------------- */
+
+.project-card {
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(15, 35, 55, 0.14);
+}
+
+.project-card > img {
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.project-card:hover > img {
+    transform: scale(1.055);
+}
+
+.project-card .project-overlay h3 {
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-overlay h3 {
+    color: #a27c39;
+}
+
+/* ---------------------------------------------------------
+   VALUE CARDS
+--------------------------------------------------------- */
+
+.value-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(198, 161, 91, 0.6);
+    box-shadow: 0 13px 30px rgba(15, 35, 55, 0.09);
+}
+
+.value-card span {
+    transition: transform 0.35s ease;
+}
+
+.value-card:hover span {
+    transform: translateX(5px);
+}
+
+/* ---------------------------------------------------------
+   APPROACH CARDS
+--------------------------------------------------------- */
+
+.approach-card {
+    transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.approach-card:hover {
+    background: rgba(255,255,255,0.11);
+    border-color: rgba(215,184,121,0.55);
+    transform: translateY(-5px);
+}
+
+.approach-number {
+    transition: transform 0.35s ease;
+}
+
+.approach-card:hover .approach-number {
+    transform: translateX(6px);
+}
+
+/* ---------------------------------------------------------
+   LEADERSHIP PHOTO EFFECTS
+--------------------------------------------------------- */
+
+.leadership-section .leader-photo {
+    position: relative;
+    overflow: hidden;
+    background: #edf0f2;
+}
+
+.leadership-section .leader-photo img {
+    transition: transform 0.6s ease;
+}
+
+.leadership-section .leader-card:hover .leader-photo img {
+    transform: scale(1.045);
+}
+
+.leadership-section .leader-role {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.leadership-section .leader-card:hover .leader-role {
+    background: var(--gold-light);
+    color: var(--navy);
+}
+
+.leadership-section .leader-content h3 {
+    transition: color 0.3s ease;
+}
+
+.leadership-section .leader-card:hover .leader-content h3 {
+    color: #a27c39;
+}
+
+/* ---------------------------------------------------------
+   CAREER CARDS
+--------------------------------------------------------- */
+
+.career-role-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.career-role-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(198, 161, 91, 0.65);
+    box-shadow: 0 13px 30px rgba(15, 35, 55, 0.09);
+}
+
+.career-role-number {
+    transition: transform 0.35s ease;
+}
+
+.career-role-card:hover .career-role-number {
+    transform: translateY(-4px);
+}
+
+/* ---------------------------------------------------------
+   CONTACT DETAIL HIGHLIGHTS
+--------------------------------------------------------- */
+
+.contact-detail-card,
+.contact-item {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.contact-detail-card:hover {
+    transform: translateX(5px);
+    background: #ffffff;
+}
+
+.contact-detail-icon,
+.contact-icon {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.contact-detail-card:hover .contact-detail-icon,
+.contact-item:hover .contact-icon {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+/* ---------------------------------------------------------
+   FOOTER LINK HIGHLIGHTS
+   Does not change footer dimensions or layout
+--------------------------------------------------------- */
+
+.site-footer .footer-column > a:not(.footer-logo),
+.site-footer .footer-contact > a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.site-footer .footer-column > a:not(.footer-logo):hover {
+    color: var(--gold-light);
+    transform: translateX(4px);
+}
+
+.site-footer .footer-contact > a:hover {
+    color: var(--gold-light);
+}
+
+/* ---------------------------------------------------------
+   TEXT LINK ARROW
+--------------------------------------------------------- */
+
+.text-link span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover span {
+    transform: translateX(5px);
+}
+
+/* ---------------------------------------------------------
+   WHATSAPP BUTTON PULSE
+--------------------------------------------------------- */
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(32, 184, 102, 0.38);
     }
 
-    .section-space,
-    .services-section,
-    .projects-section,
-    .approach-section,
-    .contact-section {
-        padding: 55px 0;
+    70% {
+        box-shadow: 0 0 0 13px rgba(32, 184, 102, 0);
     }
 
-    .hero-copy h1 {
-        font-size: 2.45rem;
-    }
-
-    .hero-description {
-        font-size: 0.94rem;
-    }
-
-    .hero-actions {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .hero-actions .button {
-        width: 100%;
-    }
-
-    .hero-trust {
-        gap: 9px;
-        font-size: 0.62rem;
-    }
-
-    .services-grid,
-    .projects-grid,
-    .approach-grid,
-    .values-grid,
-    .career-roles-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .project-card > img {
-        height: 260px;
-    }
-
-    .project-card .project-overlay {
-        padding: 18px;
-    }
-
-    .intro-image img {
-        height: 270px;
-    }
-
-    .about-hero,
-    .careers-hero {
-        padding: 48px 0;
-    }
-
-    .about-story {
-        padding: 50px 0;
-    }
-
-    .about-story-image img {
-        height: 260px;
-    }
-
-    .leadership-section .leader-card {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 24px 0;
-    }
-
-    .leadership-section .leader-photo {
-        width: 100%;
-        height: 300px;
-        max-width: 320px;
-    }
-
-    .leadership-section .leader-content h3 {
-        font-size: 1.35rem;
-    }
-
-    .application-panel {
-        padding: 25px 18px;
-    }
-
-    /* Unified footer: mobile */
-    .site-footer .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .site-footer .footer-brand,
-    .site-footer .footer-about {
-        grid-column: auto;
-    }
-
-    .site-footer .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .floating-whatsapp {
-        width: 50px;
-        height: 50px;
-        right: 16px;
-        bottom: 16px;
+    100% {
+        box-shadow: 0 0 0 0 rgba(32, 184, 102, 0);
     }
 }
 
-/* =========================================================
-   24. VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 430px) {
-
-    .site-header .header-inner {
-        height: 78px !important;
-        min-height: 78px !important;
-        max-height: 78px !important;
-    }
-
-    .site-header .brand-combined {
-        height: 70px !important;
-        max-height: 70px !important;
-    }
+.floating-whatsapp {
+    animation: whatsappPulse 2.8s infinite;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
 }
 
-/* =========================================================
-   25. ACCESSIBILITY
-========================================================= */
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--gold);
-    outline-offset: 3px;
+.floating-whatsapp:hover {
+    animation: none;
+    transform: translateY(-5px) scale(1.04);
+    background: #159c54;
 }
+
+/* ---------------------------------------------------------
+   MENU BUTTON
+--------------------------------------------------------- */
+
+.site-header .menu-toggle {
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.site-header .menu-toggle:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 12px rgba(15, 35, 55, 0.08);
+}
+
+.site-header .menu-toggle span {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* ---------------------------------------------------------
+   IMAGE TRANSITIONS
+--------------------------------------------------------- */
+
+.about-story-image img,
+.intro-image img {
+    transition: transform 0.6s ease;
+}
+
+.about-story-image:hover img,
+.intro-image:hover img {
+    transform: scale(1.025);
+}
+
+/* ---------------------------------------------------------
+   ACCESSIBILITY: REDUCED MOTION
+--------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1876,6 +509,36 @@ button:focus-visible {
     *::after {
         scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .js-enabled .reveal,
+    .js-enabled .reveal-left,
+    .js-enabled .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   MOBILE: KEEP HOVER EFFECTS SUBTLE
+--------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    .service-card:hover,
+    .value-card:hover,
+    .career-role-card:hover,
+    .approach-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .leadership-section .leader-card:hover .leader-photo img {
+        transform: none;
+    }
+
+    .site-footer .footer-column > a:not(.footer-logo):hover {
+        transform: none;
     }
 }
