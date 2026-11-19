@@ -1,431 +1,1072 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact Us | Viju Builders</title>
-  <meta name="description" content="Connect with Viju Builders for residential construction, commercial buildings, civil engineering, renovation and architectural services.">
+    <title>Contact Us | Viju Builders</title>
 
-  <meta name="theme-color" content="#101e30">
+    <meta name="description" content="Contact Viju Builders for residential construction, commercial buildings, civil engineering, renovation and architectural services.">
 
-  <link rel="icon" href="assets/viju-builders-logo.jpeg" type="image/jpeg">
+    <meta name="theme-color" content="#14283f">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/viju-builders-logo.jpeg" type="image/jpeg">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js" defer></script>
+
+    <style>
+        /* =====================================
+           SHARED HEADER
+        ====================================== */
+
+        .site-header .header-inner {
+            width: min(1400px, calc(100% - 48px));
+            max-width: 1400px;
+            min-height: 110px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .site-header .brand {
+            display: flex;
+            align-items: center;
+            flex: 0 1 600px;
+            width: 600px;
+            max-width: 600px;
+            min-width: 0;
+        }
+
+        .site-header .brand-combined {
+            display: block;
+            width: 600px;
+            height: 125px;
+            max-width: 100%;
+            object-fit: contain;
+            object-position: left center;
+        }
+
+        .site-header .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+        }
+
+        .site-header .main-nav a {
+            white-space: nowrap;
+            font-size: 0.82rem;
+        }
+
+        /* =====================================
+           CONTACT HERO
+        ====================================== */
+
+        .contact-hero {
+            padding: 85px 0;
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.12;
+            background-image:
+                linear-gradient(135deg, transparent 49.5%, rgba(255,255,255,0.15) 50%, transparent 50.5%);
+            background-size: 38px 38px;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .contact-hero .eyebrow {
+            color: var(--gold);
+        }
+
+        .contact-hero h1 {
+            margin: 20px 0;
+            color: var(--white);
+            font-size: clamp(2.7rem, 5vw, 4.4rem);
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+        }
+
+        .contact-hero h1 span {
+            color: var(--gold);
+        }
+
+        .contact-hero p {
+            max-width: 700px;
+            color: rgba(255,255,255,0.78);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .contact-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        /* =====================================
+           CONTACT DETAILS
+        ====================================== */
+
+        .contact-main-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .contact-main-heading {
+            max-width: 750px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .contact-main-heading .eyebrow {
+            justify-content: center;
+        }
+
+        .contact-main-heading h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-main-heading p {
+            line-height: 1.8;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .contact-details-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-detail-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            padding: 22px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-medium);
+        }
+
+        .contact-detail-icon {
+            display: flex;
+            flex: 0 0 44px;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-light);
+            color: var(--navy);
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .contact-detail-text h3 {
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+        }
+
+        .contact-detail-text p,
+        .contact-detail-text a {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-detail-text a {
+            color: var(--navy);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--gold-dark);
+        }
+
+        /* =====================================
+           ENQUIRY PANEL
+        ====================================== */
+
+        .contact-panel {
+            padding: 35px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-panel h2 {
+            margin: 15px 0;
+            font-size: 1.8rem;
+        }
+
+        .contact-panel > p {
+            margin-bottom: 24px;
+            font-size: 0.92rem;
+            line-height: 1.85;
+        }
+
+        .contact-panel-points {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+            margin: 25px 0;
+        }
+
+        .contact-panel-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .contact-panel-point span:first-child {
+            display: flex;
+            flex: 0 0 28px;
+            width: 28px;
+            height: 28px;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-light);
+            border-radius: 50%;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .contact-panel-point p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .contact-panel .button {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* =====================================
+           LOCATION
+        ====================================== */
+
+        .contact-location-section {
+            padding: 75px 0;
+            background: var(--white);
+        }
+
+        .contact-location-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .contact-location-copy h2 {
+            margin: 15px 0;
+        }
+
+        .contact-location-copy p {
+            margin-bottom: 18px;
+            line-height: 1.85;
+        }
+
+        .contact-location-address {
+            padding: 20px;
+            margin-bottom: 22px;
+            background: var(--cream);
+            border-radius: var(--radius-medium);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .contact-map-card {
+            min-height: 330px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 35px;
+            text-align: center;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-large);
+        }
+
+        .contact-map-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 75px;
+            height: 75px;
+            background: var(--gold-light);
+            color: var(--navy);
+            border-radius: 50%;
+            font-size: 2rem;
+        }
+
+        .contact-map-card h3 {
+            margin: 0;
+        }
+
+        .contact-map-card p {
+            max-width: 350px;
+            font-size: 0.9rem;
+            line-height: 1.75;
+        }
+
+        /* =====================================
+           FINAL CTA
+        ====================================== */
+
+        .contact-closing {
+            padding: 65px 0;
+            text-align: center;
+            background: var(--navy);
+        }
+
+        .contact-closing h2 {
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .contact-closing p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+        }
+
+        /* =====================================
+           RESPONSIVE HEADER
+        ====================================== */
+
+        @media (max-width: 1250px) {
+            .site-header .brand {
+                flex-basis: 460px;
+                width: 460px;
+                max-width: 460px;
+            }
+
+            .site-header .brand-combined {
+                width: 460px;
+                height: 105px;
+            }
+
+            .site-header .main-nav {
+                gap: 10px;
+            }
+
+            .site-header .main-nav a {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .site-header .header-inner {
+                width: calc(100% - 32px);
+                min-height: 90px;
+            }
+
+            .site-header .brand {
+                flex: 0 1 340px;
+                width: 340px;
+                max-width: calc(100% - 55px);
+            }
+
+            .site-header .brand-combined {
+                width: 100%;
+                height: 82px;
+            }
+
+            .site-header .menu-toggle {
+                display: flex;
+                flex: 0 0 42px;
+                width: 42px;
+                height: 42px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 5px;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                background: var(--white);
+                cursor: pointer;
+            }
+
+            .site-header .menu-toggle span {
+                display: block;
+                width: 19px;
+                height: 2px;
+                background: var(--navy);
+            }
+
+            .site-header .main-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 24px 22px;
+                background: var(--white);
+                border-top: 1px solid var(--border);
+                box-shadow: var(--shadow-medium);
+            }
+
+            .site-header .main-nav.open {
+                display: flex;
+            }
+
+            .site-header .main-nav a {
+                display: block;
+                padding: 13px 0;
+                font-size: 0.9rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .site-header .main-nav .nav-contact {
+                margin-top: 12px;
+                padding: 12px 18px;
+                text-align: center;
+                border: none;
+            }
+
+            .contact-layout,
+            .contact-location-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contact-map-card {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-header .header-inner {
+                min-height: 82px;
+            }
+
+            .site-header .brand-combined {
+                height: 75px;
+            }
+
+            .contact-hero {
+                padding: 65px 0;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.65rem;
+            }
+
+            .contact-main-section,
+            .contact-location-section {
+                padding: 60px 0;
+            }
+
+            .contact-main-heading {
+                text-align: left;
+            }
+
+            .contact-main-heading .eyebrow {
+                justify-content: flex-start;
+            }
+
+            .contact-panel {
+                padding: 25px;
+            }
+
+            .contact-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-hero-actions .button {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .site-header .header-inner {
+                min-height: 78px;
+            }
+
+            .site-header .brand-combined {
+                height: 70px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+    <!-- =====================================
+         HEADER
+    ====================================== -->
 
-  <header class="site-header">
-    <div class="container header-inner">
+    <header class="site-header">
 
-      <a href="index.html" class="brand" aria-label="Viju Builders Home">
-        <img src="assets/viju-builders-logo.jpeg" alt="Viju Builders logo">
+        <div class="container header-inner">
 
-        <span class="brand-copy">
-          <strong>VIJU BUILDERS</strong>
-          <small>ARCHITECTS · ENGINEERS · BUILDERS</small>
-        </span>
-      </a>
+            <a href="index.html" class="brand" aria-label="Viju Builders Home">
 
-      <button class="menu-toggle"
-              type="button"
-              aria-label="Toggle navigation"
-              aria-expanded="false"
-              aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+                <img
+                    src="assets/viju-builders-wordmark.png"
+                    alt="Viju Builders - Architects, Engineers and Builders"
+                    class="brand-combined"
+                >
 
-      <nav class="main-nav" id="main-navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#approach">Our Approach</a>
-        <a href="contact.html" class="nav-contact active">Contact Us</a>
-      </nav>
+            </a>
 
-    </div>
-  </header>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
+            <nav class="main-nav" id="main-navigation">
 
-  <main>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#approach">Our Approach</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html" class="nav-contact active">Contact Us</a>
 
-    <!-- CONTACT HERO -->
+            </nav>
 
-    <section class="page-hero">
-      <div class="container reveal-left">
-
-        <div class="eyebrow eyebrow-light">
-          <span></span>
-          GET IN TOUCH
         </div>
 
-        <h1>
-          Let's Discuss<br>
-          Your Next Project.
-        </h1>
-
-        <p>
-          Whether you are planning a new home, a commercial building,
-          a renovation or an architectural project, connect with
-          Viju Builders to discuss your requirements.
-        </p>
-
-      </div>
-    </section>
+    </header>
 
 
-    <!-- CONTACT CONTENT -->
+    <main>
 
-    <section class="page-content">
-      <div class="container contact-layout">
+        <!-- =====================================
+             CONTACT HERO
+        ====================================== -->
 
-        <!-- CONTACT INFORMATION -->
+        <section class="contact-hero">
 
-        <div class="reveal-left">
+            <div class="container">
 
-          <div class="eyebrow">
-            <span></span>
-            CONTACT INFORMATION
-          </div>
+                <div class="contact-hero-content reveal">
 
-          <h2 style="font-size:36px; line-height:1.25; color:var(--navy); margin-bottom:16px;">
-            Connect With Our Team.
-          </h2>
+                    <div class="eyebrow">
+                        <span></span>
+                        GET IN TOUCH
+                    </div>
 
-          <p style="color:var(--muted); font-size:14px; line-height:1.9;">
-            Reach out to us for project discussions and general enquiries.
-            Our team will be glad to hear about your plans.
-          </p>
+                    <h1>
+                        Let's Talk About
+                        <span>Your Project.</span>
+                    </h1>
 
+                    <p>
+                        Whether you are planning a new home, a commercial
+                        building, a renovation or an engineering project,
+                        our team welcomes the opportunity to understand
+                        your requirements.
+                    </p>
 
-          <div class="contact-details-list">
+                    <div class="contact-hero-actions">
 
-            <!-- PHONE -->
+                        <a
+                            href="https://wa.me/918078233805?text=Hello%20Viju%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                            class="button button-gold"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Start an Enquiry <span>→</span>
+                        </a>
 
-            <a class="contact-detail-card"
-               href="https://wa.me/918078233805"
-               target="_blank"
-               rel="noopener noreferrer">
+                        <a href="#contact-details" class="button button-outline-light">
+                            Contact Information
+                        </a>
 
-              <span class="contact-detail-icon" aria-hidden="true">☎</span>
+                    </div>
 
-              <span>
-                <h3>Phone & WhatsApp</h3>
-                <p>8078233805</p>
-              </span>
+                </div>
 
-            </a>
+            </div>
 
-
-            <!-- EMAIL - OPENS WHATSAPP -->
-
-            <a class="contact-detail-card"
-               href="https://wa.me/918078233805?text=Hello%20Viju%20Builders,%20I%20would%20like%20to%20make%20an%20enquiry."
-               target="_blank"
-               rel="noopener noreferrer">
-
-              <span class="contact-detail-icon" aria-hidden="true">✉</span>
-
-              <span>
-                <h3>Email Address</h3>
-                <p>vijubuilders@gmail.com</p>
-              </span>
-
-            </a>
+        </section>
 
 
-            <!-- ADDRESS -->
+        <!-- =====================================
+             CONTACT DETAILS
+        ====================================== -->
 
-            <div class="contact-detail-card">
+        <section class="contact-main-section" id="contact-details">
 
-              <span class="contact-detail-icon" aria-hidden="true">⌖</span>
+            <div class="container">
 
-              <span>
-                <h3>Office Address</h3>
+                <div class="contact-main-heading reveal">
+
+                    <div class="eyebrow">
+                        <span></span>
+                        CONNECT WITH OUR TEAM
+                    </div>
+
+                    <h2>We're Here to Help.</h2>
+
+                    <p>
+                        Reach out to us to discuss your requirements,
+                        ask a question or learn more about our services.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-layout">
+
+                    <div class="contact-details-panel">
+
+                        <!-- PHONE -->
+
+                        <article class="contact-detail-card reveal">
+
+                            <div class="contact-detail-icon">☎</div>
+
+                            <div class="contact-detail-text">
+
+                                <h3>Phone / WhatsApp</h3>
+
+                                <a
+                                    href="https://wa.me/918078233805"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    8078233805
+                                </a>
+
+                                <p>
+                                    Contact our team directly through WhatsApp.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- EMAIL -->
+
+                        <article class="contact-detail-card reveal">
+
+                            <div class="contact-detail-icon">✉</div>
+
+                            <div class="contact-detail-text">
+
+                                <h3>Email Address</h3>
+
+                                <a href="mailto:vijubuilders@gmail.com">
+                                    vijubuilders@gmail.com
+                                </a>
+
+                                <p>
+                                    For general enquiries and business correspondence.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ADDRESS -->
+
+                        <article class="contact-detail-card reveal">
+
+                            <div class="contact-detail-icon">⌖</div>
+
+                            <div class="contact-detail-text">
+
+                                <h3>Business Address</h3>
+
+                                <p>
+                                    ARCADIA COMPLEX, PALAPARAMBU,
+                                    VADAPURAM, Kerala - 676542, India
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- GST -->
+
+                        <article class="contact-detail-card reveal">
+
+                            <div class="contact-detail-icon">▤</div>
+
+                            <div class="contact-detail-text">
+
+                                <h3>GST Registration</h3>
+
+                                <p>32CQYPV2870F1Z8</p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- ENQUIRY PANEL -->
+
+                    <aside class="contact-panel reveal reveal-delay-1">
+
+                        <div class="eyebrow">
+                            <span></span>
+                            PROJECT ENQUIRIES
+                        </div>
+
+                        <h2>Tell Us What You're Planning.</h2>
+
+                        <p>
+                            A little information about your project
+                            will help us understand your requirements
+                            before we connect with you.
+                        </p>
+
+                        <div class="contact-panel-points">
+
+                            <div class="contact-panel-point">
+
+                                <span>1</span>
+
+                                <p>
+                                    Tell us whether your project is
+                                    residential, commercial or renovation-related.
+                                </p>
+
+                            </div>
+
+                            <div class="contact-panel-point">
+
+                                <span>2</span>
+
+                                <p>
+                                    Share your project location and
+                                    a brief description of your requirements.
+                                </p>
+
+                            </div>
+
+                            <div class="contact-panel-point">
+
+                                <span>3</span>
+
+                                <p>
+                                    Let us know how we can contact you
+                                    to discuss the next steps.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <a
+                            href="https://wa.me/918078233805?text=Hello%20Viju%20Builders%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project.%0A%0AProject%20Type%3A%0AProject%20Location%3A%0ARequirements%3A%0AContact%20Name%3A"
+                            class="button button-gold"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Enquire on WhatsApp <span>→</span>
+                        </a>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LOCATION
+        ====================================== -->
+
+        <section class="contact-location-section">
+
+            <div class="container contact-location-grid">
+
+                <div class="contact-location-copy reveal">
+
+                    <div class="eyebrow">
+                        <span></span>
+                        FIND US
+                    </div>
+
+                    <h2>Visit Viju Builders.</h2>
+
+                    <p>
+                        Our business address is located at Arcadia Complex,
+                        Palaparambu, Vadapuram, Kerala.
+                    </p>
+
+                    <div class="contact-location-address">
+
+                        <strong>Viju Builders</strong><br>
+
+                        ARCADIA COMPLEX,<br>
+                        PALAPARAMBU, VADAPURAM,<br>
+                        Kerala - 676542, India
+
+                    </div>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Arcadia+Complex+Palaparambu+Vadapuram+Kerala+676542"
+                        class="button button-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Get Directions <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="contact-map-card reveal reveal-delay-1">
+
+                    <div class="contact-map-icon">⌖</div>
+
+                    <h3>Viju Builders</h3>
+
+                    <p>
+                        Arcadia Complex, Palaparambu,
+                        Vadapuram, Kerala - 676542, India
+                    </p>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Arcadia+Complex+Palaparambu+Vadapuram+Kerala+676542"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-link"
+                    >
+                        Open Location in Google Maps →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CLOSING CTA
+        ====================================== -->
+
+        <section class="contact-closing">
+
+            <div class="container reveal">
+
+                <div class="eyebrow eyebrow-light" style="justify-content:center;">
+                    <span></span>
+                    VIJU BUILDERS
+                </div>
+
+                <h2>Ready to Start a Conversation?</h2>
+
                 <p>
-                  ARCADIA COMPLEX, PALAPARAMBU,<br>
-                  VADAPURAM, Kerala – 676542,<br>
-                  India
+                    From the first idea to the completed project,
+                    let's discuss how we can help bring your plans
+                    to life.
                 </p>
-              </span>
+
+                <a
+                    href="https://wa.me/918078233805?text=Hello%20Viju%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                    class="button button-gold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Contact Our Team <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="footer-logo">
+
+                        <img
+                            src="assets/viju-builders-logo.jpeg"
+                            alt="Viju Builders company logo"
+                            loading="lazy"
+                        >
+
+                    </a>
+
+                    <h2>VIJU BUILDERS</h2>
+
+                    <p>
+                        Architects, Engineers and Builders.
+                        Building with experience, engineering knowledge
+                        and a commitment to quality since 1990.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Explore</h3>
+
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="index.html#services">Our Services</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+
+                </div>
+
+
+                <div class="footer-column footer-contact">
+
+                    <h3>Contact Information</h3>
+
+                    <a
+                        href="https://wa.me/918078233805"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <span class="footer-icon">☎</span>
+
+                        <span>
+                            <small>Phone / WhatsApp</small>
+                            8078233805
+                        </span>
+
+                    </a>
+
+                    <a href="mailto:vijubuilders@gmail.com">
+
+                        <span class="footer-icon">✉</span>
+
+                        <span>
+                            <small>Email</small>
+                            vijubuilders@gmail.com
+                        </span>
+
+                    </a>
+
+                    <div class="footer-detail">
+
+                        <span class="footer-icon">⌖</span>
+
+                        <span>
+                            <small>Address</small>
+                            ARCADIA COMPLEX, PALAPARAMBU,
+                            VADAPURAM, Kerala - 676542, India
+                        </span>
+
+                    </div>
+
+                    <div class="footer-detail">
+
+                        <span class="footer-icon">▤</span>
+
+                        <span>
+                            <small>GST Registration</small>
+                            32CQYPV2870F1Z8
+                        </span>
+
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <!-- GST -->
+            <div class="footer-bottom">
 
-            <div class="contact-detail-card">
+                <p>
+                    © <span data-current-year>2026</span>
+                    Viju Builders. All Rights Reserved.
+                </p>
 
-              <span class="contact-detail-icon" aria-hidden="true">▤</span>
-
-              <span>
-                <h3>GST Registration Number</h3>
-                <p>32CQYPV2870F1Z8</p>
-              </span>
+                <p>
+                    Architects · Engineers · Builders
+                </p>
 
             </div>
 
-          </div>
-
         </div>
 
-
-        <!-- WHATSAPP ENQUIRY PANEL -->
-
-        <aside class="contact-panel reveal-right">
-
-          <div class="eyebrow eyebrow-light">
-            <span></span>
-            PROJECT ENQUIRIES
-          </div>
-
-          <h2>
-            Tell Us What You're Planning.
-          </h2>
-
-          <p>
-            Have a construction, engineering or design requirement?
-            Start a conversation with our team on WhatsApp. You can
-            share your project details and discuss the next steps.
-          </p>
-
-          <a
-            class="button button-gold"
-            href="https://wa.me/918078233805?text=Hello%20Viju%20Builders,%20I%20would%20like%20to%20discuss%20a%20project.%0A%0AProject%20type:%0ALocation:%0ARequirements:"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Start a WhatsApp Enquiry <span aria-hidden="true">→</span>
-          </a>
-
-          <p style="margin-top:25px; margin-bottom:0; font-size:12px;">
-            WhatsApp: 8078233805
-          </p>
-
-        </aside>
-
-      </div>
-    </section>
-
-
-    <!-- LOCATION / ADDRESS SECTION -->
-
-    <section class="page-content alt">
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <div class="eyebrow">
-            <span></span>
-            OUR LOCATION
-          </div>
-
-          <h2>
-            Find Viju Builders.
-          </h2>
-
-          <p>
-            Visit or contact our office at the address below.
-          </p>
-
-        </div>
-
-
-        <div class="location-card reveal">
-
-          <div class="location-card-icon" aria-hidden="true">⌖</div>
-
-          <div>
-            <h3>Viju Builders</h3>
-
-            <p>
-              Arcadia Complex, Palaparambu,<br>
-              Vadapuram, Kerala – 676542, India
-            </p>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Arcadia+Complex+Palaparambu+Vadapuram+676542+India"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-link"
-            >
-              Find the location on Google Maps <span>→</span>
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- FINAL CTA -->
-
-    <section class="home-cta-section">
-      <div class="container">
-
-        <div class="home-cta reveal">
-
-          <div>
-
-            <div class="eyebrow eyebrow-light">
-              <span></span>
-              VIJU BUILDERS
-            </div>
-
-            <h2>
-              Your Project Starts With a Conversation.
-            </h2>
-
-            <p>
-              Get in touch with our team to discuss your construction
-              and engineering requirements.
-            </p>
-
-          </div>
-
-          <a
-            href="https://wa.me/918078233805?text=Hello%20Viju%20Builders,%20I%20would%20like%20to%20discuss%20a%20project."
-            class="button button-gold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contact Our Team <span>→</span>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer class="site-footer">
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-
-          <a href="index.html" class="footer-logo">
-            <img
-              src="assets/viju-builders-logo.jpeg"
-              alt="Viju Builders logo"
-              loading="lazy"
-            >
-          </a>
-
-          <h2>VIJU BUILDERS</h2>
-
-          <p>
-            Architects, Engineers and Builders. Building with experience,
-            engineering knowledge and a commitment to quality since 1990.
-          </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h3>Explore</h3>
-
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="index.html#services">Our Services</a>
-          <a href="index.html#projects">Projects</a>
-          <a href="index.html#approach">Our Approach</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact.html">Contact Us</a>
-
-        </div>
-
-
-        <div class="footer-column footer-contact">
-
-          <h3>Contact Information</h3>
-
-          <a href="https://wa.me/918078233805"
-             target="_blank" rel="noopener noreferrer">
-            <span class="footer-icon">☎</span>
-            <span>
-              <small>Phone / WhatsApp</small>
-              8078233805
-            </span>
-          </a>
-
-          <a href="https://wa.me/918078233805?text=Hello%20Viju%20Builders"
-             target="_blank" rel="noopener noreferrer">
-            <span class="footer-icon">✉</span>
-            <span>
-              <small>Email</small>
-              vijubuilders@gmail.com
-            </span>
-          </a>
-
-          <div class="footer-detail">
-            <span class="footer-icon">⌖</span>
-            <span>
-              <small>Registered Address</small>
-              ARCADIA COMPLEX, PALAPARAMBU,
-              VADAPURAM, Kerala – 676542, India
-            </span>
-          </div>
-
-          <div class="footer-detail">
-            <span class="footer-icon">▤</span>
-            <span>
-              <small>GST Registration</small>
-              32CQYPV2870F1Z8
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="footer-bottom">
-        <p>
-          © <span data-current-year>2026</span> Viju Builders.
-          All Rights Reserved.
-        </p>
-
-        <p>Architects · Engineers · Builders</p>
-      </div>
-
-    </div>
-  </footer>
-
-
-  <!-- FLOATING WHATSAPP -->
-
-  <a
-    class="floating-whatsapp"
-    href="https://wa.me/918078233805"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contact Viju Builders on WhatsApp"
-    title="Contact Viju Builders"
-  >
-    ☎
-  </a>
+    </footer>
+
+
+    <!-- FLOATING WHATSAPP -->
+
+    <a
+        class="floating-whatsapp"
+        href="https://wa.me/918078233805"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact Viju Builders on WhatsApp"
+        title="Contact Viju Builders"
+    >
+        ☎
+    </a>
 
 </body>
 </html>
