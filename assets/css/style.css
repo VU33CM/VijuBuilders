@@ -1,12 +1,13 @@
 
 /* =========================================================
    VIJU BUILDERS
-   MAIN WEBSITE STYLESHEET
-   ========================================================= */
+   COMPLETE CONSOLIDATED WEBSITE STYLESHEET
+   Homepage | About | Careers | Contact
+========================================================= */
 
-/* =========================
+/* =========================================================
    1. ROOT VARIABLES
-========================= */
+========================================================= */
 
 :root {
     --navy: #101e30;
@@ -22,9 +23,9 @@
     --container: 1200px;
 }
 
-/* =========================
+/* =========================================================
    2. RESET AND BASE
-========================= */
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -75,18 +76,11 @@ section {
     position: relative;
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
+h1, h2, h3, h4, p {
     margin-top: 0;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
     line-height: 1.25;
 }
 
@@ -95,10 +89,9 @@ h4 {
     color: var(--navy);
 }
 
-/* =========================
-   3. HEADER
-   COMMON ON ALL PAGES
-========================= */
+/* =========================================================
+   3. COMMON HEADER
+========================================================= */
 
 .site-header {
     position: sticky;
@@ -114,41 +107,33 @@ h4 {
     height: 135px !important;
     min-height: 135px !important;
     max-height: 135px !important;
-
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-
     position: relative;
 }
 
 .site-header .brand {
     display: flex !important;
     align-items: center;
-
     flex: 0 1 600px !important;
     width: 600px !important;
     max-width: 600px !important;
     min-width: 0;
-
     text-decoration: none;
 }
 
 .site-header .brand-combined {
     display: block !important;
-
     width: 600px !important;
     height: 125px !important;
-
     max-width: none !important;
     max-height: none !important;
     min-width: 0;
-
     object-fit: contain !important;
     object-position: left center;
-
     flex: 0 1 600px !important;
 }
 
@@ -179,7 +164,6 @@ h4 {
     color: #ffffff;
     padding: 11px 17px;
     border-radius: 4px;
-    transition: background 0.25s ease;
 }
 
 .site-header .main-nav .nav-contact:hover {
@@ -191,9 +175,9 @@ h4 {
     display: none;
 }
 
-/* =========================
+/* =========================================================
    4. BUTTONS
-========================= */
+========================================================= */
 
 .button,
 .btn {
@@ -201,15 +185,12 @@ h4 {
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     padding: 13px 23px;
     border: 1px solid transparent;
     border-radius: 4px;
-
     font-size: 0.88rem;
     font-weight: 700;
     line-height: 1.3;
-
     cursor: pointer;
     transition: all 0.25s ease;
 }
@@ -264,15 +245,14 @@ h4 {
     color: var(--gold);
 }
 
-/* =========================
-   5. EYEBROW
-========================= */
+/* =========================================================
+   5. EYEBROW AND SECTION HEADINGS
+========================================================= */
 
 .eyebrow {
     display: flex;
     align-items: center;
     gap: 10px;
-
     color: #a27c39;
     font-size: 0.75rem;
     font-weight: 800;
@@ -291,9 +271,38 @@ h4 {
     color: var(--gold-light);
 }
 
-/* =========================
+.section-space {
+    padding: 75px 0;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: var(--navy-light);
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    margin: 14px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.page-content {
+    padding: 70px 0;
+}
+
+.page-content.alt {
+    background: var(--light);
+}
+
+/* =========================================================
    6. HOMEPAGE HERO
-========================= */
+========================================================= */
 
 .home-hero {
     position: relative;
@@ -308,7 +317,6 @@ h4 {
     position: absolute;
     inset: 0;
     pointer-events: none;
-
     background:
         radial-gradient(circle at 80% 30%, rgba(198,161,91,0.13), transparent 35%),
         linear-gradient(120deg, transparent 55%, rgba(255,255,255,0.025));
@@ -317,7 +325,6 @@ h4 {
 .hero-layout {
     position: relative;
     z-index: 1;
-
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 55px;
@@ -356,7 +363,6 @@ h4 {
     align-items: center;
     gap: 13px;
     margin-top: 35px;
-
     color: rgba(255,255,255,0.65);
     font-size: 0.72rem;
     font-weight: 700;
@@ -394,42 +400,9 @@ h4 {
     letter-spacing: 2px;
 }
 
-/* =========================
-   7. GENERAL SECTIONS
-========================= */
-
-.section-space {
-    padding: 75px 0;
-}
-
-.section-heading {
-    max-width: 750px;
-    margin: 0 auto 42px;
-    text-align: center;
-}
-
-.section-heading h2 {
-    color: var(--navy-light);
-    font-size: clamp(1.9rem, 3vw, 2.6rem);
-    margin: 14px 0;
-}
-
-.section-heading p {
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-.page-content {
-    padding: 70px 0;
-}
-
-.page-content.alt {
-    background: var(--light);
-}
-
-/* =========================
-   8. HOMEPAGE INTRODUCTION
-========================= */
+/* =========================================================
+   7. INTRODUCTION
+========================================================= */
 
 .intro-section {
     padding: 80px 0;
@@ -458,10 +431,8 @@ h4 {
     position: absolute;
     bottom: 20px;
     left: 20px;
-
     display: flex;
     flex-direction: column;
-
     padding: 15px 20px;
     background: #ffffff;
     border-left: 4px solid var(--gold);
@@ -490,9 +461,9 @@ h4 {
     line-height: 1.85;
 }
 
-/* =========================
-   9. SERVICES
-========================= */
+/* =========================================================
+   8. SERVICES
+========================================================= */
 
 .services-section {
     padding: 75px 0;
@@ -539,59 +510,101 @@ h4 {
     margin-bottom: 0;
 }
 
-/* =========================
-   10. PROJECTS
-========================= */
+/* =========================================================
+   9. PROJECTS
+   DESKTOP: TWO COLUMNS, TWO ROWS
+========================================================= */
 
 .projects-section {
     padding: 75px 0;
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+    align-items: stretch;
 }
 
 .project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     overflow: hidden;
-    border-radius: 7px;
     background: #ffffff;
-    box-shadow: 0 5px 20px rgba(15,35,55,0.07);
+    border-radius: 7px;
+    box-shadow: 0 8px 25px rgba(15,35,55,0.07);
 }
 
-.project-card img {
+.project-card > img {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
+    margin: 0;
     transition: transform 0.4s ease;
 }
 
-.project-card:hover img {
-    transform: scale(1.04);
+.project-card:hover > img {
+    transform: scale(1.03);
 }
 
-.project-card h3 {
+/* Project information below image */
+.project-card .project-overlay {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    padding: 20px;
+    background: #ffffff !important;
     color: var(--navy);
-    padding: 17px 18px 5px;
-    margin: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
-.project-card p {
+/* Hide RESIDENTIAL, CONSTRUCTION, ARCHITECTURE, INTERIORS */
+.project-card .project-overlay span {
+    display: none !important;
+}
+
+.project-card .project-overlay h3 {
+    color: var(--navy);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.project-card .project-overlay p {
     color: var(--muted);
-    padding: 0 18px 18px;
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin: 0;
-    font-size: 0.9rem;
 }
 
-/* =========================
-   11. APPROACH
-========================= */
+.projects-note {
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   10. OUR APPROACH
+========================================================= */
 
 .approach-section {
     padding: 75px 0;
-    background: var(--light);
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.approach-section .section-heading h2 {
+    color: #ffffff;
+}
+
+.approach-section .section-heading p {
+    color: rgba(255,255,255,0.75);
 }
 
 .approach-grid {
@@ -602,34 +615,34 @@ h4 {
 
 .approach-card {
     padding: 25px;
-    background: #ffffff;
-    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 7px;
 }
 
 .approach-number {
     display: block;
-    color: var(--gold);
+    color: var(--gold-light);
     font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 14px;
 }
 
 .approach-card h3 {
-    color: var(--navy);
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .approach-card p {
-    color: var(--muted);
+    color: rgba(255,255,255,0.72);
     font-size: 0.91rem;
     line-height: 1.75;
     margin-bottom: 0;
 }
 
-/* =========================
-   12. CAREERS HOMEPAGE TEASER
-========================= */
+/* =========================================================
+   11. HOMEPAGE CAREERS TEASER
+========================================================= */
 
 .career-intro {
     display: grid;
@@ -664,9 +677,9 @@ h4 {
     margin-bottom: 0;
 }
 
-/* =========================
-   13. HOMEPAGE CTA
-========================= */
+/* =========================================================
+   12. HOMEPAGE CTA
+========================================================= */
 
 .home-cta-section {
     padding: 65px 0;
@@ -694,9 +707,9 @@ h4 {
     margin-bottom: 0;
 }
 
-/* =========================
-   14. ABOUT PAGE
-========================= */
+/* =========================================================
+   13. ABOUT PAGE
+========================================================= */
 
 .about-hero {
     background: var(--navy);
@@ -851,9 +864,9 @@ h4 {
     margin: 0;
 }
 
-/* =========================
-   15. LEADERSHIP
-========================= */
+/* =========================================================
+   14. LEADERSHIP
+========================================================= */
 
 .leadership-section {
     padding: 75px 0;
@@ -864,20 +877,20 @@ h4 {
     margin: 0 auto;
 }
 
-.leader-card {
+.leadership-section .leader-card {
     display: grid;
     grid-template-columns: 240px 1fr;
     gap: 35px;
     align-items: center;
-    padding: 30px 0;
+    padding: 28px 0;
     border-bottom: 1px solid var(--border);
 }
 
-.leader-card:last-child {
+.leadership-section .leader-card:last-child {
     border-bottom: none;
 }
 
-.leader-photo {
+.leadership-section .leader-photo {
     width: 100%;
     height: 250px;
     overflow: hidden;
@@ -885,7 +898,7 @@ h4 {
     background: #edf0f2;
 }
 
-.leader-photo img {
+.leadership-section .leader-photo img {
     display: block;
     width: 100%;
     height: 100%;
@@ -893,15 +906,13 @@ h4 {
     object-position: center;
 }
 
-.leader-index {
-    color: var(--gold);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+/* Hide 01 / LEADERSHIP, 02 / LEADERSHIP, etc. */
+.leadership-section .leader-index {
+    display: none !important;
 }
 
-.leader-role {
+/* Keep Founder, CEO and CFO labels */
+.leadership-section .leader-role {
     display: inline-block;
     color: #a27c39;
     background: #f8f3e9;
@@ -914,28 +925,28 @@ h4 {
     margin-bottom: 12px;
 }
 
-.leader-content h3 {
+.leadership-section .leader-content h3 {
     color: var(--navy);
     font-size: 1.55rem;
     margin: 0 0 12px;
 }
 
-.leader-description {
+.leadership-section .leader-description {
     color: var(--muted);
     line-height: 1.8;
     margin: 0;
 }
 
-.leader-speciality {
+.leadership-section .leader-speciality {
     margin-top: 14px;
     color: var(--navy);
     font-size: 0.9rem;
     font-weight: 600;
 }
 
-/* =========================
-   16. ABOUT CLOSING
-========================= */
+/* =========================================================
+   15. ABOUT CLOSING SECTION
+========================================================= */
 
 .about-closing {
     padding: 65px 20px;
@@ -956,9 +967,9 @@ h4 {
     line-height: 1.7;
 }
 
-/* =========================
-   17. CAREERS PAGE
-========================= */
+/* =========================================================
+   16. CAREERS PAGE
+========================================================= */
 
 .careers-hero {
     background: var(--navy);
@@ -1131,9 +1142,9 @@ h4 {
     margin-top: 20px;
 }
 
-/* =========================
-   18. CONTACT PAGE
-========================= */
+/* =========================================================
+   17. CONTACT PAGE
+========================================================= */
 
 .contact-section {
     padding: 75px 0;
@@ -1222,9 +1233,9 @@ h4 {
     line-height: 1.8;
 }
 
-/* =========================
-   19. FOOTER
-========================= */
+/* =========================================================
+   18. COMMON FOOTER
+========================================================= */
 
 .site-footer {
     background: #0b1726;
@@ -1239,35 +1250,38 @@ h4 {
     padding-bottom: 40px;
 }
 
-.footer-brand img,
-.footer-logo img {
-    display: block;
-    width: 105px;
-    height: 105px;
-    object-fit: contain;
-    margin-bottom: 16px;
-}
-
-.footer-brand h2,
-.footer-column h3,
-.footer-about h3 {
-    color: #ffffff;
-    font-size: 1.05rem;
-    margin-bottom: 15px;
-}
-
-.footer-brand p,
-.footer-about p {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
 .footer-column {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+}
+
+/* Correctly size the actual footer image element */
+.site-footer .footer-about img.footer-logo {
+    display: block !important;
+    width: 112px !important;
+    height: 112px !important;
+    max-width: 112px !important;
+    max-height: 112px !important;
+    object-fit: contain !important;
+    margin: 0 0 16px !important;
+}
+
+.site-footer .footer-about h3,
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.site-footer .footer-about p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin: 0 0 12px;
 }
 
 .footer-column a {
@@ -1323,30 +1337,25 @@ h4 {
     margin: 0;
 }
 
-/* =========================
-   20. FLOATING WHATSAPP
-========================= */
+/* =========================================================
+   19. FLOATING WHATSAPP
+========================================================= */
 
 .floating-whatsapp {
     position: fixed;
     right: 22px;
     bottom: 22px;
     z-index: 900;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 55px;
     height: 55px;
-
     border-radius: 50%;
     background: #20b866;
     color: #ffffff;
-
     font-size: 1.5rem;
     font-weight: 700;
-
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     transition: transform 0.25s ease;
 }
@@ -1355,9 +1364,9 @@ h4 {
     transform: translateY(-4px);
 }
 
-/* =========================
-   21. REVEAL ANIMATIONS
-========================= */
+/* =========================================================
+   20. REVEAL ANIMATIONS
+========================================================= */
 
 .reveal,
 .reveal-left,
@@ -1404,9 +1413,9 @@ h4 {
     transition-delay: 0.3s !important;
 }
 
-/* =========================
-   22. LAPTOP HEADER
-========================= */
+/* =========================================================
+   21. LAPTOP HEADER
+========================================================= */
 
 @media (max-width: 1250px) {
 
@@ -1434,12 +1443,11 @@ h4 {
     .site-header .main-nav a {
         font-size: 0.7rem;
     }
-
 }
 
-/* =========================
-   23. TABLET AND MOBILE
-========================= */
+/* =========================================================
+   22. TABLET
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -1451,15 +1459,12 @@ h4 {
         width: calc(100% - 32px);
     }
 
-    /* HEADER */
-
+    /* Header */
     .site-header .header-inner {
         width: calc(100% - 32px) !important;
-
         height: 90px !important;
         min-height: 90px !important;
         max-height: 90px !important;
-
         gap: 12px;
     }
 
@@ -1472,25 +1477,20 @@ h4 {
     .site-header .brand-combined {
         width: 100% !important;
         height: 82px !important;
-
         max-width: 100% !important;
         max-height: 82px !important;
-
         flex: 0 1 auto !important;
     }
 
     .site-header .menu-toggle {
         display: flex;
         flex: 0 0 42px;
-
         width: 42px;
         height: 42px;
-
         align-items: center;
         justify-content: center;
         flex-direction: column;
         gap: 5px;
-
         border: 1px solid var(--border);
         border-radius: 6px;
         background: #ffffff;
@@ -1509,14 +1509,11 @@ h4 {
         top: 100%;
         left: 0;
         right: 0;
-
         display: none;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-
         padding: 12px 24px 22px;
-
         background: #ffffff;
         border-top: 1px solid var(--border);
         box-shadow: 0 12px 20px rgba(15,35,55,0.08);
@@ -1541,8 +1538,7 @@ h4 {
         border: none;
     }
 
-    /* HOMEPAGE */
-
+    /* Homepage */
     .home-hero {
         padding: 55px 0;
     }
@@ -1575,9 +1571,16 @@ h4 {
         height: 330px;
     }
 
-    .services-grid,
-    .projects-grid {
+    .services-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .project-card > img {
+        height: 260px;
     }
 
     .approach-grid {
@@ -1589,8 +1592,7 @@ h4 {
         align-items: flex-start;
     }
 
-    /* ABOUT */
-
+    /* About */
     .about-hero,
     .careers-hero {
         padding: 55px 0;
@@ -1612,17 +1614,16 @@ h4 {
         padding: 55px 0;
     }
 
-    .leader-card {
+    .leadership-section .leader-card {
         grid-template-columns: 190px 1fr;
         gap: 22px;
     }
 
-    .leader-photo {
+    .leadership-section .leader-photo {
         height: 220px;
     }
 
-    /* CAREERS */
-
+    /* Careers */
     .career-roles-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1635,18 +1636,16 @@ h4 {
         padding: 30px 22px;
     }
 
-    /* FOOTER */
-
+    /* Footer */
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-
 }
 
-/* =========================
-   24. SMALL MOBILE
-========================= */
+/* =========================================================
+   23. MOBILE
+========================================================= */
 
 @media (max-width: 560px) {
 
@@ -1689,7 +1688,15 @@ h4 {
     .approach-grid,
     .values-grid,
     .career-roles-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+    }
+
+    .project-card > img {
+        height: 260px;
+    }
+
+    .project-card .project-overlay {
+        padding: 18px;
     }
 
     .intro-image img {
@@ -1709,18 +1716,19 @@ h4 {
         height: 260px;
     }
 
-    .leader-card {
+    .leadership-section .leader-card {
         grid-template-columns: 1fr;
         gap: 18px;
+        padding: 24px 0;
     }
 
-    .leader-photo {
+    .leadership-section .leader-photo {
         width: 100%;
         height: 300px;
         max-width: 320px;
     }
 
-    .leader-content h3 {
+    .leadership-section .leader-content h3 {
         font-size: 1.35rem;
     }
 
@@ -1744,12 +1752,11 @@ h4 {
         right: 16px;
         bottom: 16px;
     }
-
 }
 
-/* =========================
-   25. VERY SMALL MOBILE
-========================= */
+/* =========================================================
+   24. VERY SMALL MOBILE
+========================================================= */
 
 @media (max-width: 430px) {
 
@@ -1763,12 +1770,11 @@ h4 {
         height: 70px !important;
         max-height: 70px !important;
     }
-
 }
 
-/* =========================
-   26. ACCESSIBILITY
-========================= */
+/* =========================================================
+   25. ACCESSIBILITY
+========================================================= */
 
 a:focus-visible,
 button:focus-visible {
@@ -1785,5 +1791,4 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
-
 }
