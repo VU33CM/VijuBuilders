@@ -1,321 +1,432 @@
 
-/*
-  VIJU BUILDERS
-  Main Website JavaScript
-*/
+/* =========================================================
+   VIJU BUILDERS
+   GLOBAL WEBSITE INTERACTIONS
+========================================================= */
 
 (function () {
   "use strict";
 
-  const config = window.VIJU_CONFIG || {};
-  const body = document.body;
+  /* =======================================================
+     01. CONFIGURATION & COMPANY DETAILS
+  ======================================================= */
 
-  /* --------------------------------
-     1. MOBILE NAVIGATION
-  -------------------------------- */
+  const config = window.VIJU_CONFIG || {};
+
+  const COMPANY = {
+    phone: config.phone || "8078233805",
+    email: config.email || "vijubuilders@gmail.com",
+
+    address:
+      config.address ||
+      "ARCADIA COMPLEX, PALAPARAMBU, VADAPURAM, Kerala - 676542, India",
+
+    gst:
+      config.gst ||
+      "32CQYPV2870F1Z8",
+
+    whatsappMessage:
+      config.whatsappMessage ||
+      "Hello Viju Builders, I would like to discuss a construction project."
+  };
+
+  const digits = COMPANY.phone.replace(/\D/g, "");
+
+  // Add India's country code when a 10-digit number is supplied.
+  const internationalNumber =
+    digits.length === 10 ? "91" + digits : digits;
+
+  const telephoneNumber =
+    digits.length === 10 ? "+91" + digits : "+" + digits;
+
+  const whatsappURL = internationalNumber
+    ? "https://wa.me/" +
+      internationalNumber +
+      "?text=" +
+      encodeURIComponent(COMPANY.whatsappMessage)
+    : "#contact";
+
+
+  /* =======================================================
+     02. MOBILE NAVIGATION
+  ======================================================= */
 
   const menuButton = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
 
+  function closeMenu() {
+    if (!menuButton || !nav) return;
+
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+
   if (menuButton && nav) {
+
     menuButton.addEventListener("click", function () {
+
       const isOpen = nav.classList.toggle("open");
 
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-      body.classList.toggle("menu-open", isOpen);
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("open");
-        body.classList.remove("menu-open");
-        menuButton.setAttribute("aria-expanded", "false");
-      });
+
+      link.addEventListener("click", closeMenu);
+
     });
 
     document.addEventListener("click", function (event) {
+
       if (
         nav.classList.contains("open") &&
         !nav.contains(event.target) &&
         !menuButton.contains(event.target)
       ) {
-        nav.classList.remove("open");
-        body.classList.remove("menu-open");
-        menuButton.setAttribute("aria-expanded", "false");
+        closeMenu();
       }
+
     });
-  }
 
+    document.addEventListener("keydown", function (event) {
 
-  /* --------------------------------
-     2. LOAD CONFIGURED IMAGES
-  -------------------------------- */
+      if (event.key === "Escape") {
+        closeMenu();
+      }
 
-  document.querySelectorAll("[data-photo]").forEach(function (image) {
-    const key = image.getAttribute("data-photo");
-
-    if (config.images && config.images[key]) {
-      image.src = config.images[key];
-    }
-  });
-
-
-  /* --------------------------------
-     3. COMPANY LOGO
-  -------------------------------- */
-
-  if (config.logo) {
-    document.querySelectorAll("[data-logo]").forEach(function (logo) {
-      logo.src = config.logo;
     });
+
+    window.addEventListener("resize", function () {
+
+      if (window.innerWidth > 760) {
+        closeMenu();
+      }
+
+    });
+
   }
 
 
-  /* --------------------------------
-     4. CONTACT DETAILS
-  -------------------------------- */
-
-  const phone = (config.phone || "").replace(/\D/g, "");
-  const internationalPhone =
-    (config.phoneInternational || "").replace(/\D/g, "");
-
-  const whatsappPhone =
-    (config.whatsappPhone || internationalPhone).replace(/\D/g, "");
-
-  const email = config.email || "";
-
-  // Telephone links
-  document.querySelectorAll(
-    "#phone-link, [data-phone-link]"
-  ).forEach(function (link) {
-    if (phone) {
-      link.textContent = config.phone;
-      link.href = "tel:+" + internationalPhone;
-    }
-  });
-
-  // Email links
-  document.querySelectorAll(
-    "#email-link, [data-email-link]"
-  ).forEach(function (link) {
-    if (email) {
-      link.textContent = email;
-      link.href = "mailto:" + email;
-    }
-  });
-
-  // Business address
-  document.querySelectorAll(
-    "#address-text, [data-address]"
-  ).forEach(function (element) {
-    if (config.address) {
-      element.textContent = config.address;
-    }
-  });
-
-  // GST registration
-  document.querySelectorAll(
-    "#gst-number, [data-gst]"
-  ).forEach(function (element) {
-    if (config.gst) {
-      element.textContent = config.gst;
-    }
-  });
-
-
-  /* --------------------------------
-     5. WHATSAPP INTEGRATION
-  -------------------------------- */
-
-  const whatsappMessage = encodeURIComponent(
-    config.whatsappMessage || "Hello Viju Builders."
-  );
-
-  const whatsappURL = whatsappPhone
-    ? "https://wa.me/" + whatsappPhone + "?text=" + whatsappMessage
-    : "#contact";
-
-  document.querySelectorAll(
-    "#whatsapp-button, #floating-whatsapp, [data-whatsapp]"
-  ).forEach(function (button) {
-    button.href = whatsappURL;
-    button.target = "_blank";
-    button.rel = "noopener noreferrer";
-  });
-
-
-  /* --------------------------------
-     6. FOOTER YEAR
-  -------------------------------- */
-
-  const year = document.getElementById("year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-
-  /* --------------------------------
-     7. HEADER SCROLL EFFECT
-  -------------------------------- */
+  /* =======================================================
+     03. HEADER SCROLL EFFECT
+  ======================================================= */
 
   const header = document.querySelector(".header");
 
   function updateHeader() {
+
     if (!header) return;
 
-    header.classList.toggle("scrolled", window.scrollY > 30);
+    if (window.scrollY > 25) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
   }
 
   updateHeader();
 
-  window.addEventListener("scroll", updateHeader, {
-    passive: true
+  window.addEventListener(
+    "scroll",
+    updateHeader,
+    { passive: true }
+  );
+
+
+  /* =======================================================
+     04. ACTIVE NAVIGATION
+  ======================================================= */
+
+  const currentPath = window.location.pathname;
+  const currentPage =
+    currentPath.split("/").pop() || "index.html";
+
+  const navLinks = document.querySelectorAll(".nav a");
+
+  navLinks.forEach(function (link) {
+
+    const rawHref = link.getAttribute("href");
+
+    if (!rawHref) return;
+
+    let linkURL;
+
+    try {
+      linkURL = new URL(rawHref, window.location.href);
+    } catch (error) {
+      return;
+    }
+
+    const linkPage =
+      linkURL.pathname.split("/").pop() || "index.html";
+
+    const isSamePage = linkPage === currentPage;
+
+    if (!isSamePage) return;
+
+    // For links pointing to a section, let the section
+    // navigation determine the active state.
+    if (linkURL.hash) return;
+
+    link.classList.add("active");
+
   });
 
 
-  /* --------------------------------
-     8. SCROLL REVEAL ANIMATIONS
-  -------------------------------- */
+  /* =======================================================
+     05. IMAGE CONFIGURATION
+  ======================================================= */
 
-  const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-up, .reveal-left, .reveal-right, [data-reveal]"
-  );
+  document.querySelectorAll("[data-photo]").forEach(function (img) {
 
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
-      }
-    );
+    const key = img.getAttribute("data-photo");
 
-    revealElements.forEach(function (element) {
-      revealObserver.observe(element);
-    });
-  } else {
-    revealElements.forEach(function (element) {
-      element.classList.add("visible");
-    });
+    if (
+      config.images &&
+      config.images[key]
+    ) {
+      img.src = config.images[key];
+    }
+
+  });
+
+
+  /* =======================================================
+     06. CONTACT DETAILS
+  ======================================================= */
+
+  // Telephone
+
+  const phoneLink = document.getElementById("phone-link");
+
+  if (phoneLink && internationalNumber) {
+
+    phoneLink.textContent = COMPANY.phone;
+
+    phoneLink.href = "tel:" + telephoneNumber;
+
   }
 
 
-  /* --------------------------------
-     9. SMOOTH SCROLLING
-  -------------------------------- */
+  // Email
+
+  const emailLink = document.getElementById("email-link");
+
+  if (emailLink && COMPANY.email) {
+
+    emailLink.textContent = COMPANY.email;
+
+    emailLink.href = "mailto:" + COMPANY.email;
+
+  }
+
+
+  // Address
+
+  const addressElement =
+    document.getElementById("address-text");
+
+  if (addressElement) {
+    addressElement.textContent = COMPANY.address;
+  }
+
+
+  // GST Registration
+
+  const gstElement =
+    document.getElementById("gst-text");
+
+  if (gstElement) {
+    gstElement.textContent = COMPANY.gst;
+  }
+
+
+  /* =======================================================
+     07. WHATSAPP LINKS
+  ======================================================= */
+
+  const whatsappElements = document.querySelectorAll(
+    "#whatsapp-button, #floating-whatsapp, .whatsapp-link"
+  );
+
+  whatsappElements.forEach(function (element) {
+
+    element.href = whatsappURL;
+
+    element.target = "_blank";
+
+    element.rel = "noopener noreferrer";
+
+    element.setAttribute(
+      "aria-label",
+      "Contact Viju Builders on WhatsApp"
+    );
+
+  });
+
+
+  /* =======================================================
+     08. SCROLL REVEAL ANIMATIONS
+  ======================================================= */
+
+  const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+  );
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+
+    revealElements.forEach(function (element) {
+
+      element.style.opacity = "1";
+      element.style.transform = "none";
+
+    });
+
+  } else {
+
+    revealElements.forEach(function (element) {
+
+      element.style.opacity = "0";
+
+      if (element.classList.contains("reveal-left")) {
+
+        element.style.transform = "translate3d(-28px, 0, 0)";
+
+      } else if (element.classList.contains("reveal-right")) {
+
+        element.style.transform = "translate3d(28px, 0, 0)";
+
+      } else {
+
+        element.style.transform = "translate3d(0, 22px, 0)";
+
+      }
+
+    });
+
+
+    const revealObserver = new IntersectionObserver(
+
+      function (entries, observer) {
+
+        entries.forEach(function (entry) {
+
+          if (!entry.isIntersecting) return;
+
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translate3d(0, 0, 0)";
+
+          observer.unobserve(entry.target);
+
+        });
+
+      },
+
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -45px 0px"
+      }
+
+    );
+
+
+    revealElements.forEach(function (element) {
+
+      revealObserver.observe(element);
+
+    });
+
+  }
+
+
+  /* =======================================================
+     09. SMOOTH INTERNAL NAVIGATION
+  ======================================================= */
 
   document.querySelectorAll('a[href*="#"]').forEach(function (link) {
+
     link.addEventListener("click", function (event) {
-      const href = link.getAttribute("href");
 
-      if (!href || href === "#") return;
+      const rawHref = link.getAttribute("href");
 
-      let target;
+      if (!rawHref) return;
+
+      let destination;
 
       try {
-        const url = new URL(href, window.location.href);
-
-        if (
-          url.pathname !== window.location.pathname ||
-          url.origin !== window.location.origin
-        ) {
-          return;
-        }
-
-        target = document.querySelector(url.hash);
+        destination = new URL(rawHref, window.location.href);
       } catch (error) {
         return;
       }
+
+      // Only handle links pointing to the current page.
+      if (
+        destination.pathname !== window.location.pathname ||
+        !destination.hash
+      ) {
+        return;
+      }
+
+      const target = document.querySelector(destination.hash);
 
       if (!target) return;
 
       event.preventDefault();
 
+      closeMenu();
+
       target.scrollIntoView({
-        behavior: window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches ? "auto" : "smooth",
+        behavior: prefersReducedMotion ? "auto" : "smooth",
         block: "start"
       });
 
-      if (history.replaceState) {
-        history.replaceState(null, "", href);
-      }
+      history.replaceState(null, "", destination.hash);
+
     });
+
   });
 
 
-  /* --------------------------------
-     10. ACTIVE NAVIGATION
-  -------------------------------- */
+  /* =======================================================
+     10. CURRENT YEAR
+  ======================================================= */
 
-  const sections = document.querySelectorAll(
-    "main section[id], section[id]"
-  );
+  const yearElements = document.querySelectorAll("#year");
 
-  const navLinks = document.querySelectorAll(
-    ".nav a[href*='#']"
-  );
+  yearElements.forEach(function (element) {
 
-  if ("IntersectionObserver" in window && sections.length) {
-    const sectionObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
+    element.textContent = new Date().getFullYear();
 
-          const currentId = entry.target.id;
-
-          navLinks.forEach(function (link) {
-            const href = link.getAttribute("href");
-
-            link.classList.toggle(
-              "active",
-              href === "#" + currentId ||
-              href.endsWith("#" + currentId)
-            );
-          });
-        });
-      },
-      {
-        rootMargin: "-35% 0px -55% 0px"
-      }
-    );
-
-    sections.forEach(function (section) {
-      sectionObserver.observe(section);
-    });
-  }
+  });
 
 
-  /* --------------------------------
-     11. IMAGE LOADING EFFECT
-  -------------------------------- */
+  /* =======================================================
+     11. EXTERNAL LINKS
+  ======================================================= */
 
-  document.querySelectorAll("img").forEach(function (image) {
-    image.addEventListener("load", function () {
-      image.classList.add("image-loaded");
-    });
+  document.querySelectorAll('a[target="_blank"]').forEach(
+    function (link) {
 
-    if (image.complete && image.naturalWidth > 0) {
-      image.classList.add("image-loaded");
+      link.rel = "noopener noreferrer";
+
     }
-  });
+  );
 
 
-  /* --------------------------------
-     12. CURRENT YEAR AND PAGE READY
-  -------------------------------- */
+  /* =======================================================
+     12. PAGE READY
+  ======================================================= */
 
-  window.addEventListener("load", function () {
-    body.classList.add("page-loaded");
-  });
+  document.documentElement.classList.add("js-ready");
 
 })();
