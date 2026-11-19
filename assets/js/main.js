@@ -1,248 +1,425 @@
 
 /* =========================================================
-   VIJU BUILDERS — MAIN JAVASCRIPT
-   ========================================================= */
+   VIJU BUILDERS
+   Main Website JavaScript
+   File: assets/js/main.js
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-  /* -------------------------------------------------------
-     1. HEADER SCROLL EFFECT
-  ------------------------------------------------------- */
-
-  const header = document.querySelector(".site-header");
-
-  const updateHeader = () => {
-    if (!header) return;
-
-    header.classList.toggle("scrolled", window.scrollY > 30);
-  };
-
-  updateHeader();
-
-  window.addEventListener("scroll", updateHeader, {
-    passive: true
-  });
+    "use strict";
 
 
-  /* -------------------------------------------------------
-     2. MOBILE NAVIGATION
-  ------------------------------------------------------- */
+    /* =====================================================
+       01. CONFIGURATION
+    ===================================================== */
 
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mainNav = document.querySelector(".main-nav");
+    const config = window.VIJU_CONFIG || {};
 
-  const closeMenu = () => {
-    if (!menuToggle || !mainNav) return;
-
-    menuToggle.setAttribute("aria-expanded", "false");
-    mainNav.classList.remove("open");
-    document.body.classList.remove("menu-open");
-  };
-
-  if (menuToggle && mainNav) {
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen =
-        menuToggle.getAttribute("aria-expanded") === "true";
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(!isOpen)
-      );
-
-      mainNav.classList.toggle("open", !isOpen);
-      document.body.classList.toggle("menu-open", !isOpen);
-    });
-
-    mainNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    document.addEventListener("click", event => {
-      const clickedInsideNav = mainNav.contains(event.target);
-      const clickedToggle = menuToggle.contains(event.target);
-
-      if (!clickedInsideNav && !clickedToggle) {
-        closeMenu();
-      }
-    });
-
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 820) {
-        closeMenu();
-      }
-    });
-  }
+    const images = config.images || {};
 
 
-  /* -------------------------------------------------------
-     3. SCROLL REVEAL ANIMATIONS
-  ------------------------------------------------------- */
+    /* =====================================================
+       02. MOBILE NAVIGATION
+    ===================================================== */
 
-  const revealElements = document.querySelectorAll(
-    ".reveal, .reveal-left, .reveal-right"
-  );
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-  if ("IntersectionObserver" in window) {
+    function openMenu() {
+        if (!menuToggle || !mainNav) return;
 
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
+        mainNav.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation");
+    }
+
+
+    function closeMenu() {
+        if (!menuToggle || !mainNav) return;
+
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Toggle navigation");
+    }
+
+
+    if (menuToggle && mainNav) {
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = mainNav.classList.contains("open");
+
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+
         });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
-      }
+
+
+        // Close menu after selecting a navigation link
+
+        mainNav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+                closeMenu();
+            });
+
+        });
+
+
+        // Close menu when clicking outside
+
+        document.addEventListener("click", function (event) {
+
+            const clickedInsideNav = mainNav.contains(event.target);
+            const clickedToggle = menuToggle.contains(event.target);
+
+            if (!clickedInsideNav && !clickedToggle) {
+                closeMenu();
+            }
+
+        });
+
+
+        // Close menu with Escape key
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+
+        });
+
+
+        // Reset menu when switching to desktop layout
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       03. HEADER SCROLL EFFECT
+    ===================================================== */
+
+    const siteHeader = document.querySelector(".site-header");
+
+
+    function updateHeader() {
+
+        if (!siteHeader) return;
+
+        if (window.scrollY > 30) {
+            siteHeader.classList.add("scrolled");
+        } else {
+            siteHeader.classList.remove("scrolled");
+        }
+
+    }
+
+
+    window.addEventListener("scroll", updateHeader, {
+        passive: true
+    });
+
+    updateHeader();
+
+
+    /* =====================================================
+       04. SCROLL REVEAL ANIMATIONS
+    ===================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right"
     );
 
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
-    });
 
-  } else {
+    if ("IntersectionObserver" in window) {
 
-    revealElements.forEach(element => {
-      element.classList.add("is-visible");
-    });
+        const revealObserver = new IntersectionObserver(
 
-  }
+            function (entries, observer) {
 
+                entries.forEach(function (entry) {
 
-  /* -------------------------------------------------------
-     4. SMOOTH SCROLL FOR SAME-PAGE LINKS
-  ------------------------------------------------------- */
+                    if (entry.isIntersecting) {
 
-  document.querySelectorAll('a[href*="#"]').forEach(link => {
+                        entry.target.classList.add("is-visible");
 
-    link.addEventListener("click", event => {
+                        observer.unobserve(entry.target);
 
-      const url = new URL(link.href, window.location.href);
+                    }
 
-      const isSamePage =
-        url.pathname === window.location.pathname &&
-        url.origin === window.location.origin;
+                });
 
-      if (!isSamePage || !url.hash) return;
+            },
 
-      const target = document.querySelector(
-        decodeURIComponent(url.hash)
-      );
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
 
-      if (!target) return;
-
-      event.preventDefault();
-
-      closeMenu();
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-      history.replaceState(null, "", url.hash);
-    });
-
-  });
+        );
 
 
-  /* -------------------------------------------------------
-     5. ACTIVE NAVIGATION LINK
-  ------------------------------------------------------- */
+        revealElements.forEach(function (element) {
+            revealObserver.observe(element);
+        });
 
-  const currentPage = window.location.pathname
-    .split("/")
-    .pop() || "index.html";
+    } else {
 
-  const navLinks = document.querySelectorAll(
-    ".main-nav a"
-  );
+        // Fallback for browsers without IntersectionObserver
 
-  navLinks.forEach(link => {
+        revealElements.forEach(function (element) {
+            element.classList.add("is-visible");
+        });
 
-    const linkUrl = new URL(link.href, window.location.href);
-
-    const linkPage = linkUrl.pathname
-      .split("/")
-      .pop() || "index.html";
-
-    const isCurrentPage = linkPage === currentPage;
-
-    const isHomeSectionLink =
-      currentPage === "index.html" &&
-      linkUrl.hash &&
-      linkPage === "index.html";
-
-    if (isCurrentPage && !isHomeSectionLink) {
-      link.classList.add("active");
     }
 
-  });
 
+    /* =====================================================
+       05. SMOOTH INTERNAL NAVIGATION
+    ===================================================== */
 
-  /* -------------------------------------------------------
-     6. PROJECT IMAGE HOVER EFFECT
-  ------------------------------------------------------- */
+    document.querySelectorAll('a[href*="#"]').forEach(function (link) {
 
-  document.querySelectorAll(".project-card").forEach(card => {
+        link.addEventListener("click", function (event) {
 
-    const image = card.querySelector("img");
+            const url = new URL(link.href, window.location.href);
 
-    if (!image) return;
+            const samePage =
+                url.origin === window.location.origin &&
+                url.pathname === window.location.pathname;
 
-    card.addEventListener("mouseenter", () => {
-      image.style.transform = "scale(1.05)";
+            if (!samePage || !url.hash || url.hash === "#") {
+                return;
+            }
+
+            const target = document.querySelector(
+                decodeURIComponent(url.hash)
+            );
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            // Update the URL without a sudden jump
+
+            history.pushState(null, "", url.hash);
+
+        });
+
     });
 
-    card.addEventListener("mouseleave", () => {
-      image.style.transform = "";
-    });
 
-  });
+    /* =====================================================
+       06. ACTIVE NAVIGATION LINK
+    ===================================================== */
 
+    function updateActiveNavigation() {
 
-  /* -------------------------------------------------------
-     7. CLOSE MOBILE MENU ON PAGE NAVIGATION
-  ------------------------------------------------------- */
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
 
-  window.addEventListener("pageshow", () => {
-    closeMenu();
-  });
+        const navLinks = document.querySelectorAll(".main-nav a");
 
 
-  /* -------------------------------------------------------
-     8. FOOTER YEAR
-  ------------------------------------------------------- */
+        navLinks.forEach(function (link) {
 
-  const yearElements = document.querySelectorAll(
-    "[data-current-year]"
-  );
+            const linkUrl = new URL(link.href, window.location.href);
 
-  yearElements.forEach(element => {
-    element.textContent = new Date().getFullYear();
-  });
+            const linkPath = linkUrl.pathname;
+            const linkHash = linkUrl.hash;
+
+            link.classList.remove("active");
 
 
-  /* -------------------------------------------------------
-     9. ACCESSIBILITY: IMAGE LOADING
-  ------------------------------------------------------- */
+            // Homepage section navigation
 
-  document.querySelectorAll("img").forEach(image => {
+            if (
+                linkPath === currentPath &&
+                linkHash &&
+                currentHash === linkHash
+            ) {
+                link.classList.add("active");
+                return;
+            }
 
-    if (!image.hasAttribute("decoding")) {
-      image.setAttribute("decoding", "async");
+
+            // Current page navigation
+
+            const isSamePage =
+                linkPath === currentPath &&
+                !linkHash;
+
+            const isHomePage =
+                (currentPath === "/" || currentPath.endsWith("/index.html")) &&
+                (linkPath === "/" || linkPath.endsWith("/index.html")) &&
+                !linkHash;
+
+            if (isSamePage || isHomePage) {
+                link.classList.add("active");
+            }
+
+        });
+
     }
 
-  });
+
+    updateActiveNavigation();
+
+
+    window.addEventListener("hashchange", updateActiveNavigation);
+
+    window.addEventListener("popstate", updateActiveNavigation);
+
+
+    /* =====================================================
+       07. HOMEPAGE IMAGE CONFIGURATION
+    ===================================================== */
+
+    document.querySelectorAll("[data-photo]").forEach(function (element) {
+
+        const photoKey = element.getAttribute("data-photo");
+
+        if (!photoKey) return;
+
+
+        const imageUrl = images[photoKey];
+
+
+        if (!imageUrl) {
+
+            console.warn(
+                "Viju Builders: Image configuration missing for:",
+                photoKey
+            );
+
+            return;
+
+        }
+
+
+        // Support both image elements and background images
+
+        if (element.tagName.toLowerCase() === "img") {
+
+            element.src = imageUrl;
+            element.loading = "lazy";
+            element.decoding = "async";
+
+        } else {
+
+            element.style.backgroundImage =
+                'url("' + imageUrl.replace(/"/g, '\\"') + '")';
+
+        }
+
+    });
+
+
+    /* =====================================================
+       08. IMAGE LOADING OPTIMISATION
+    ===================================================== */
+
+    document.querySelectorAll("img").forEach(function (image) {
+
+        if (!image.hasAttribute("loading")) {
+            image.loading = "lazy";
+        }
+
+        image.decoding = "async";
+
+
+        image.addEventListener("error", function () {
+
+            console.warn(
+                "Viju Builders: Unable to load image:",
+                image.src
+            );
+
+            image.classList.add("image-load-error");
+
+        });
+
+    });
+
+
+    /* =====================================================
+       09. AUTOMATIC FOOTER YEAR
+    ===================================================== */
+
+    const yearElements = document.querySelectorAll(
+        "[data-current-year]"
+    );
+
+
+    yearElements.forEach(function (element) {
+
+        element.textContent = new Date().getFullYear();
+
+    });
+
+
+    /* =====================================================
+       10. PROJECT CARD INTERACTIONS
+    ===================================================== */
+
+    const projectCards = document.querySelectorAll(".project-card");
+
+
+    projectCards.forEach(function (card) {
+
+        const image = card.querySelector("img");
+
+        if (!image) return;
+
+
+        card.addEventListener("mouseenter", function () {
+            image.style.transform = "scale(1.04)";
+        });
+
+
+        card.addEventListener("mouseleave", function () {
+            image.style.transform = "";
+        });
+
+    });
+
+
+    /* =====================================================
+       11. EXTERNAL LINK SECURITY
+    ===================================================== */
+
+    document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+
+        link.setAttribute("rel", "noopener noreferrer");
+
+    });
+
+
+    /* =====================================================
+       12. CURRENT PAGE INITIALISATION
+    ===================================================== */
+
+    document.body.classList.add("js-loaded");
+
+
+    console.log("Viju Builders website initialised successfully.");
 
 });
