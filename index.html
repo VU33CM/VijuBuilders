@@ -20,7 +20,7 @@
 
     <style>
         /* =========================================
-           HOMEPAGE HEADER - LOGO + WORDMARK
+           HOMEPAGE HEADER - COMBINED BRAND IMAGE
         ========================================= */
 
         .site-header {
@@ -32,69 +32,36 @@
 
         .site-header .header-inner {
             width: min(1180px, calc(100% - 48px));
-            height: 88px;
-            min-height: 88px;
-            max-height: 88px;
+            min-height: 100px;
+            height: 100px;
+            max-height: 100px;
             margin: 0 auto;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 25px;
+            gap: 22px;
         }
 
         .site-header .brand {
             display: flex;
             align-items: center;
-            gap: 13px;
-            flex: 0 0 auto;
-            width: auto;
-            max-width: 430px;
+            flex: 0 1 420px;
+            width: 420px;
+            max-width: 420px;
             min-width: 0;
+            text-decoration: none;
         }
 
-        /* Original circular logo */
+        /* Combined emblem + wordmark + tagline */
 
-        .site-header .brand-icon {
+        .site-header .brand-combined {
             display: block;
-            width: 62px;
-            height: 62px;
-            min-width: 62px;
-            max-width: 62px;
-            object-fit: contain;
-            flex: 0 0 62px;
-        }
-
-        /* Larger wordmark */
-
-        .site-header .brand-identity {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 2px;
-            min-width: 0;
-        }
-
-        .site-header .brand-wordmark {
-            display: block;
-            width: 290px;
-            height: 51px;
-            max-width: 100%;
+            width: 100%;
+            height: 88px;
+            max-width: 420px;
             object-fit: contain;
             object-position: left center;
-        }
-
-        /* Retained tagline */
-
-        .site-header .brand-tagline {
-            display: block;
-            color: #a77b2e;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.105em;
-            line-height: 1.4;
-            white-space: nowrap;
         }
 
         /* Navigation */
@@ -103,20 +70,20 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 20px;
-            flex: 0 1 auto;
+            gap: 18px;
+            flex: 1 1 auto;
         }
 
         .site-header .main-nav a {
             white-space: nowrap;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
         }
 
         .site-header .menu-toggle {
             display: none;
         }
 
-        /* Hero logo */
+        /* Keep the hero's original circular logo */
 
         .hero-brand img {
             display: block;
@@ -128,67 +95,55 @@
         }
 
         /* =========================================
-           RESPONSIVE HEADER
+           TABLET
         ========================================= */
 
         @media (max-width: 1100px) {
             .site-header .header-inner {
-                gap: 15px;
+                gap: 14px;
             }
 
             .site-header .brand {
-                gap: 9px;
+                flex-basis: 340px;
+                width: 340px;
+                max-width: 340px;
             }
 
-            .site-header .brand-icon {
-                width: 54px;
-                height: 54px;
-                min-width: 54px;
-                max-width: 54px;
-                flex-basis: 54px;
-            }
-
-            .site-header .brand-wordmark {
-                width: 235px;
-                height: 45px;
-            }
-
-            .site-header .brand-tagline {
-                font-size: 0.55rem;
+            .site-header .brand-combined {
+                height: 78px;
             }
 
             .site-header .main-nav {
-                gap: 12px;
+                gap: 11px;
             }
 
             .site-header .main-nav a {
-                font-size: 0.73rem;
+                font-size: 0.71rem;
             }
         }
+
+        /* =========================================
+           MOBILE NAVIGATION
+        ========================================= */
 
         @media (max-width: 800px) {
             .site-header .header-inner {
                 width: calc(100% - 32px);
-                height: 76px;
-                min-height: 76px;
-                max-height: 76px;
+                height: 82px;
+                min-height: 82px;
+                max-height: 82px;
+                gap: 12px;
             }
 
-            .site-header .brand-icon {
-                width: 51px;
-                height: 51px;
-                min-width: 51px;
-                max-width: 51px;
-                flex-basis: 51px;
+            .site-header .brand {
+                flex: 0 1 330px;
+                width: 330px;
+                max-width: calc(100% - 55px);
             }
 
-            .site-header .brand-wordmark {
-                width: 215px;
-                height: 41px;
-            }
-
-            .site-header .brand-tagline {
-                font-size: 0.51rem;
+            .site-header .brand-combined {
+                width: 100%;
+                height: 72px;
             }
 
             .site-header .menu-toggle {
@@ -218,10 +173,12 @@
                 top: 100%;
                 left: 0;
                 right: 0;
+
                 display: none;
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0;
+
                 padding: 12px 24px 22px;
                 background: #ffffff;
                 border-top: 1px solid #e5e8ec;
@@ -249,37 +206,14 @@
         }
 
         @media (max-width: 430px) {
-            .site-header .brand {
-                gap: 7px;
+            .site-header .header-inner {
+                height: 74px;
+                min-height: 74px;
+                max-height: 74px;
             }
 
-            .site-header .brand-icon {
-                width: 45px;
-                height: 45px;
-                min-width: 45px;
-                max-width: 45px;
-                flex-basis: 45px;
-            }
-
-            .site-header .brand-wordmark {
-                width: 180px;
-                height: 35px;
-            }
-
-            .site-header .brand-tagline {
-                font-size: 0.44rem;
-                letter-spacing: 0.07em;
-            }
-        }
-
-        @media (max-width: 350px) {
-            .site-header .brand-wordmark {
-                width: 150px;
-                height: 31px;
-            }
-
-            .site-header .brand-tagline {
-                font-size: 0.39rem;
+            .site-header .brand-combined {
+                height: 64px;
             }
         }
     </style>
@@ -290,7 +224,9 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================================
+         HEADER
+    ========================================= -->
 
     <header class="site-header">
 
@@ -299,24 +235,10 @@
             <a href="index.html" class="brand" aria-label="Viju Builders Home">
 
                 <img
-                    src="assets/viju-builders-logo.jpeg"
-                    alt="Viju Builders circular logo"
-                    class="brand-icon"
+                    src="assets/viju-builders-wordmark.png"
+                    alt="Viju Builders - Architects, Engineers and Builders"
+                    class="brand-combined"
                 >
-
-                <span class="brand-identity">
-
-                    <img
-                        src="assets/viju-builders-wordmark.png"
-                        alt="VIJU BUILDERS"
-                        class="brand-wordmark"
-                    >
-
-                    <span class="brand-tagline">
-                        ARCHITECTS · ENGINEERS · BUILDERS
-                    </span>
-
-                </span>
 
             </a>
 
@@ -333,6 +255,7 @@
             </button>
 
             <nav class="main-nav" id="main-navigation">
+
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="#services">Services</a>
@@ -340,6 +263,7 @@
                 <a href="#approach">Our Approach</a>
                 <a href="careers.html">Careers</a>
                 <a href="contact.html" class="nav-contact">Contact Us</a>
+
             </nav>
 
         </div>
@@ -349,7 +273,9 @@
 
     <main>
 
-        <!-- HERO -->
+        <!-- =========================================
+             HERO SECTION
+        ========================================= -->
 
         <section class="home-hero">
 
@@ -398,6 +324,7 @@
 
                 </div>
 
+
                 <div class="hero-brand reveal-right">
 
                     <img
@@ -414,7 +341,9 @@
         </section>
 
 
-        <!-- ABOUT INTRODUCTION -->
+        <!-- =========================================
+             ABOUT INTRODUCTION
+        ========================================= -->
 
         <section class="intro-section section-space">
 
@@ -435,6 +364,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="intro-copy reveal-right">
 
@@ -475,7 +405,9 @@
         </section>
 
 
-        <!-- SERVICES -->
+        <!-- =========================================
+             SERVICES
+        ========================================= -->
 
         <section class="services-section section-space" id="services">
 
@@ -498,6 +430,7 @@
 
                 </div>
 
+
                 <div class="services-grid">
 
                     <article class="service-card reveal">
@@ -510,6 +443,7 @@
                         </p>
                     </article>
 
+
                     <article class="service-card reveal reveal-delay-1">
                         <div class="service-symbol">02</div>
                         <h3>Commercial Buildings</h3>
@@ -519,6 +453,7 @@
                             and functional design.
                         </p>
                     </article>
+
 
                     <article class="service-card reveal reveal-delay-2">
                         <div class="service-symbol">03</div>
@@ -530,6 +465,7 @@
                         </p>
                     </article>
 
+
                     <article class="service-card reveal">
                         <div class="service-symbol">04</div>
                         <h3>Renovation & Extensions</h3>
@@ -538,6 +474,7 @@
                             buildings to meet changing requirements.
                         </p>
                     </article>
+
 
                     <article class="service-card reveal reveal-delay-1">
                         <div class="service-symbol">05</div>
@@ -548,6 +485,7 @@
                             forms and design concepts before construction.
                         </p>
                     </article>
+
 
                     <article class="service-card reveal reveal-delay-2">
                         <div class="service-symbol">06</div>
@@ -566,7 +504,9 @@
         </section>
 
 
-        <!-- PROJECTS -->
+        <!-- =========================================
+             PROJECTS
+        ========================================= -->
 
         <section class="projects-section section-space" id="projects">
 
@@ -589,6 +529,7 @@
 
                 </div>
 
+
                 <div class="projects-grid">
 
                     <article class="project-card reveal">
@@ -608,6 +549,7 @@
 
                     </article>
 
+
                     <article class="project-card reveal reveal-delay-1">
 
                         <img
@@ -625,6 +567,7 @@
 
                     </article>
 
+
                     <article class="project-card reveal">
 
                         <img
@@ -641,6 +584,7 @@
                         </div>
 
                     </article>
+
 
                     <article class="project-card reveal reveal-delay-1">
 
@@ -661,6 +605,7 @@
 
                 </div>
 
+
                 <p class="projects-note">
                     Illustrative project imagery. Replace with photographs
                     of completed Viju Builders projects as they become available.
@@ -671,7 +616,9 @@
         </section>
 
 
-        <!-- OUR APPROACH -->
+        <!-- =========================================
+             OUR APPROACH
+        ========================================= -->
 
         <section class="approach-section section-space" id="approach">
 
@@ -694,6 +641,7 @@
 
                 </div>
 
+
                 <div class="approach-grid">
 
                     <article class="approach-card reveal">
@@ -706,6 +654,7 @@
                         </p>
                     </article>
 
+
                     <article class="approach-card reveal reveal-delay-1">
                         <span class="approach-number">02</span>
                         <h3>Plan</h3>
@@ -715,6 +664,7 @@
                         </p>
                     </article>
 
+
                     <article class="approach-card reveal reveal-delay-2">
                         <span class="approach-number">03</span>
                         <h3>Execute</h3>
@@ -723,6 +673,7 @@
                             construction and careful attention to quality.
                         </p>
                     </article>
+
 
                     <article class="approach-card reveal reveal-delay-3">
                         <span class="approach-number">04</span>
@@ -740,7 +691,9 @@
         </section>
 
 
-        <!-- CAREERS -->
+        <!-- =========================================
+             CAREERS
+        ========================================= -->
 
         <section class="page-content alt">
 
@@ -772,6 +725,7 @@
 
                 </div>
 
+
                 <div class="career-highlight reveal-right">
 
                     <h3>Grow Through Meaningful Work</h3>
@@ -790,7 +744,9 @@
         </section>
 
 
-        <!-- CONTACT CTA -->
+        <!-- =========================================
+             CONTACT CALL TO ACTION
+        ========================================= -->
 
         <section class="home-cta-section">
 
@@ -818,6 +774,7 @@
 
                     </div>
 
+
                     <a class="button button-gold" href="contact.html">
                         Connect With Our Team <span>→</span>
                     </a>
@@ -831,7 +788,9 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
 
     <footer class="site-footer">
 
@@ -892,6 +851,7 @@
 
                     </a>
 
+
                     <a href="mailto:vijubuilders@gmail.com">
 
                         <span class="footer-icon">✉</span>
@@ -902,6 +862,7 @@
                         </span>
 
                     </a>
+
 
                     <div class="footer-detail">
 
@@ -914,6 +875,7 @@
                         </span>
 
                     </div>
+
 
                     <div class="footer-detail">
 
