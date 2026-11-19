@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Viju Builders | Architects, Engineers & Builders</title>
-
     <meta name="description" content="Viju Builders, established in 1990. Residential construction, commercial buildings, civil engineering, renovation and 3D architectural modelling in Kerala.">
-
     <meta name="theme-color" content="#14283f">
 
     <link rel="icon" href="assets/viju-builders-logo.jpeg" type="image/jpeg">
@@ -22,7 +20,7 @@
 
     <style>
         /* =========================================
-           HOMEPAGE HEADER - LARGE BRAND IMAGE
+           HOMEPAGE HEADER - SUBSTANTIALLY LARGER
         ========================================= */
 
         .site-header {
@@ -33,10 +31,10 @@
         }
 
         .site-header .header-inner {
-            width: min(1280px, calc(100% - 48px));
-            height: 110px;
-            min-height: 110px;
-            max-height: 110px;
+            width: min(1400px, calc(100% - 48px)) !important;
+            height: 135px !important;
+            min-height: 135px !important;
+            max-height: 135px !important;
             margin: 0 auto;
 
             display: flex;
@@ -46,29 +44,32 @@
         }
 
         .site-header .brand {
-            display: flex;
+            display: flex !important;
             align-items: center;
-            flex: 0 1 500px;
-            width: 500px;
-            max-width: 500px;
+            flex: 0 1 600px !important;
+            width: 600px !important;
+            max-width: 600px !important;
             min-width: 0;
             text-decoration: none;
         }
 
         .site-header .brand-combined {
-            display: block;
-            width: 500px;
-            height: 100px;
-            max-width: 100%;
-            object-fit: contain;
+            display: block !important;
+            width: 600px !important;
+            height: 125px !important;
+            max-width: none !important;
+            max-height: none !important;
+            min-width: 0;
+            object-fit: contain !important;
             object-position: left center;
+            flex: 0 1 600px !important;
         }
 
         .site-header .main-nav {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 17px;
+            gap: 16px;
             flex: 1 1 auto;
         }
 
@@ -81,9 +82,7 @@
             display: none;
         }
 
-        /* =========================================
-           HERO IMAGE
-        ========================================= */
+        /* HERO LOGO - UNCHANGED */
 
         .hero-brand img {
             display: block;
@@ -95,25 +94,26 @@
         }
 
         /* =========================================
-           LAPTOP / TABLET
+           LAPTOP
         ========================================= */
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1250px) {
 
             .site-header .header-inner {
-                width: calc(100% - 36px);
+                width: calc(100% - 36px) !important;
                 gap: 12px;
             }
 
             .site-header .brand {
-                flex: 0 1 400px;
-                width: 400px;
-                max-width: 400px;
+                flex-basis: 460px !important;
+                width: 460px !important;
+                max-width: 460px !important;
             }
 
             .site-header .brand-combined {
-                width: 400px;
-                height: 85px;
+                width: 460px !important;
+                height: 105px !important;
+                flex-basis: 460px !important;
             }
 
             .site-header .main-nav {
@@ -126,28 +126,31 @@
         }
 
         /* =========================================
-           MOBILE
+           MOBILE NAVIGATION
         ========================================= */
 
         @media (max-width: 800px) {
 
             .site-header .header-inner {
-                width: calc(100% - 32px);
-                height: 82px;
-                min-height: 82px;
-                max-height: 82px;
+                width: calc(100% - 32px) !important;
+                height: 90px !important;
+                min-height: 90px !important;
+                max-height: 90px !important;
                 gap: 12px;
             }
 
             .site-header .brand {
-                flex: 0 1 340px;
-                width: 340px;
-                max-width: calc(100% - 55px);
+                flex: 0 1 340px !important;
+                width: 340px !important;
+                max-width: calc(100% - 55px) !important;
             }
 
             .site-header .brand-combined {
-                width: 100%;
-                height: 75px;
+                width: 100% !important;
+                height: 82px !important;
+                max-width: 100% !important;
+                max-height: 82px !important;
+                flex: 0 1 auto !important;
             }
 
             .site-header .menu-toggle {
@@ -212,13 +215,14 @@
         @media (max-width: 430px) {
 
             .site-header .header-inner {
-                height: 74px;
-                min-height: 74px;
-                max-height: 74px;
+                height: 78px !important;
+                min-height: 78px !important;
+                max-height: 78px !important;
             }
 
             .site-header .brand-combined {
-                height: 64px;
+                height: 70px !important;
+                max-height: 70px !important;
             }
         }
     </style>
@@ -274,7 +278,7 @@
 
     <main>
 
-        <!-- HERO SECTION -->
+        <!-- HERO -->
 
         <section class="home-hero">
 
@@ -302,7 +306,6 @@
                     </p>
 
                     <div class="hero-actions">
-
                         <a href="#projects" class="button button-gold">
                             Explore Our Work <span>→</span>
                         </a>
@@ -310,7 +313,6 @@
                         <a href="about.html" class="button button-outline-light">
                             Discover Our Story
                         </a>
-
                     </div>
 
                     <div class="hero-trust">
