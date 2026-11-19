@@ -1,568 +1,745 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | Viju Builders</title>
+    <title>About Us | Viju Builders</title>
 
-  <meta name="description" content="Discover Viju Builders, established in 1990. Meet our leadership team and learn about our experience in architecture, engineering and construction.">
+    <meta name="description" content="Learn about Viju Builders, established in 1990, and meet the leadership team behind the company.">
 
-  <meta name="theme-color" content="#101e30">
+    <link rel="icon" href="assets/viju-builders-logo.jpeg" type="image/jpeg">
 
-  <link rel="icon" href="assets/viju-builders-logo.jpeg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* =========================================
+           ABOUT PAGE - COMPACT DESIGN
+        ========================================= */
 
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js" defer></script>
+        .about-page {
+            background: #ffffff;
+        }
+
+        .about-page .about-heading {
+            padding: 55px 0 45px;
+            background: #f8f6f1;
+        }
+
+        .about-heading-inner {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .about-heading-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .about-heading .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .about-heading h1 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            margin-bottom: 12px;
+            color: #14283f;
+        }
+
+        .about-heading p {
+            max-width: 720px;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .about-story {
+            padding: 55px 0;
+        }
+
+        .about-story-inner {
+            max-width: 850px;
+        }
+
+        .about-story h2 {
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+        }
+
+        .about-story p {
+            font-size: 0.96rem;
+            line-height: 1.85;
+            margin-bottom: 13px;
+        }
+
+        .about-experience {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            padding: 13px 19px;
+            background: #f8f6f1;
+            border-left: 3px solid #c49a4a;
+            color: #14283f;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* Leadership */
+
+        .about-leadership {
+            padding: 65px 0 75px;
+            background: #f8f6f1;
+        }
+
+        .about-section-heading {
+            margin-bottom: 35px;
+        }
+
+        .about-section-heading .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .about-section-heading h2 {
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            margin-bottom: 10px;
+        }
+
+        .about-section-heading p {
+            max-width: 650px;
+            font-size: 0.94rem;
+        }
+
+        .about-leaders {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .about-leader {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            align-items: center;
+            gap: 38px;
+
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #e9e6df;
+            border-radius: 12px;
+        }
+
+        .about-leader-photo {
+            width: 270px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #e9e6df;
+        }
+
+        .about-leader-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .about-leader-info {
+            padding: 12px 10px;
+        }
+
+        .about-leader-role {
+            display: block;
+            margin-bottom: 10px;
+            color: #a77b2e;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .about-leader-info h3 {
+            margin-bottom: 14px;
+            color: #14283f;
+            font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+            letter-spacing: -0.03em;
+        }
+
+        .about-leader-info p {
+            max-width: 650px;
+            font-size: 0.94rem;
+            line-height: 1.8;
+            margin-bottom: 13px;
+        }
+
+        .about-leader-detail {
+            padding-top: 13px;
+            border-top: 2px solid #c49a4a;
+            color: #14283f;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .about-closing {
+            padding: 55px 0;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .about-closing h2 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .about-closing p {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        /* Header */
+
+        .site-header .header-inner {
+            height: 88px !important;
+            min-height: 88px !important;
+            max-height: 88px !important;
+        }
+
+        .site-header .brand > img {
+            width: 64px !important;
+            height: 64px !important;
+            min-width: 64px !important;
+            min-height: 64px !important;
+            max-width: 64px !important;
+            max-height: 64px !important;
+            object-fit: contain !important;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+            .site-header .header-inner {
+                height: 72px !important;
+                min-height: 72px !important;
+                max-height: 72px !important;
+            }
+
+            .about-heading {
+                padding: 38px 0 !important;
+            }
+
+            .about-heading-inner {
+                grid-template-columns: 95px 1fr;
+                gap: 20px;
+            }
+
+            .about-heading-logo {
+                width: 95px;
+                height: 95px;
+            }
+
+            .about-story {
+                padding: 42px 0;
+            }
+
+            .about-leadership {
+                padding: 45px 0;
+            }
+
+            .about-leader {
+                grid-template-columns: 220px 1fr;
+                gap: 22px;
+                padding: 18px;
+            }
+
+            .about-leader-photo {
+                width: 220px;
+                height: 260px;
+            }
+
+            .about-leader-info {
+                padding: 5px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .about-heading-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+
+            .about-heading .eyebrow {
+                justify-content: center;
+            }
+
+            .about-heading h1 {
+                font-size: 2rem;
+            }
+
+            .about-leader {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 16px;
+            }
+
+            .about-leader-photo {
+                width: 100%;
+                height: 300px;
+            }
+
+            .about-leader-info {
+                padding: 5px 3px 8px;
+            }
+
+            .about-leader-info h3 {
+                font-size: 1.45rem;
+            }
+
+            .about-leader-info p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
 
-<body>
-
-  <!-- ================= HEADER ================= -->
-
-  <header class="site-header">
-    <div class="container header-inner">
-
-      <a href="index.html" class="brand" aria-label="Viju Builders Home">
-        <img src="assets/viju-builders-logo.jpeg" alt="Viju Builders logo">
-
-        <span class="brand-copy">
-          <strong>VIJU BUILDERS</strong>
-          <small>ARCHITECTS · ENGINEERS · BUILDERS</small>
-        </span>
-      </a>
-
-      <button class="menu-toggle"
-              type="button"
-              aria-label="Toggle navigation"
-              aria-expanded="false"
-              aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="main-navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#approach">Our Approach</a>
-        <a href="contact.html" class="nav-contact">Contact Us</a>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <main>
-
-    <!-- ================= ABOUT HERO ================= -->
-
-    <section class="about-hero">
-
-      <div class="hero-pattern"></div>
-
-      <div class="container about-hero-grid">
-
-        <div class="about-hero-copy reveal-left">
-
-          <div class="eyebrow eyebrow-light">
-            <span></span>
-            ABOUT VIJU BUILDERS
-          </div>
-
-          <h1>
-            Built on Experience.<br>
-            <span>Driven by Vision.</span>
-          </h1>
-
-          <p>
-            Since 1990, Viju Builders has brought together construction
-            experience, engineering knowledge and a commitment to quality.
-            Our identity reflects the values that guide our work and the
-            people behind the company.
-          </p>
-
-          <div class="about-hero-meta">
-            <span>ESTABLISHED 1990</span>
-            <span class="trust-divider"></span>
-            <span>30+ YEARS OF EXPERIENCE</span>
-          </div>
-
-        </div>
-
-
-        <div class="about-hero-logo reveal-right">
-
-          <img
-            src="assets/viju-builders-logo.jpeg"
-            alt="Official Viju Builders emblem"
-          >
-
-          <p>ARCHITECTS · ENGINEERS · BUILDERS</p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= COMPANY STORY ================= -->
-
-    <section class="about-story section-space">
-
-      <div class="container about-story-grid">
-
-        <div class="about-story-content reveal-left">
-
-          <div class="eyebrow">
-            <span></span>
-            OUR FOUNDATION
-          </div>
-
-          <h2>
-            Experience, Engineering and a Commitment to Quality.
-          </h2>
-
-          <p>
-            Established in 1990, Viju Builders has developed its
-            foundation through years of experience in construction
-            and civil engineering.
-          </p>
-
-          <p>
-            We bring together practical construction knowledge,
-            technical understanding and a considered approach to
-            every project. From residential buildings to commercial
-            developments and renovation works, our aim is to create
-            structures that serve their purpose and offer lasting value.
-          </p>
-
-          <p>
-            We believe that good construction begins with understanding
-            the client's requirements and continues through careful
-            planning, coordination and execution.
-          </p>
-
-        </div>
-
-
-        <div class="about-story-highlight reveal-right">
-
-          <span class="story-year">1990</span>
-
-          <h3>
-            A Foundation Built on Experience.
-          </h3>
-
-          <p>
-            More than three decades of experience, guided by
-            practical knowledge and a focus on dependable work.
-          </p>
-
-          <div class="story-highlight-line"></div>
-
-          <span class="story-highlight-label">
-            VIJU BUILDERS · ESTABLISHED 1990
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= VALUES ================= -->
-
-    <section class="values-section section-space">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <div class="eyebrow">
-            <span></span>
-            WHAT DEFINES US
-          </div>
-
-          <h2>
-            The Principles Behind Our Work.
-          </h2>
-
-          <p>
-            Our approach is shaped by the values that matter throughout
-            the construction process.
-          </p>
-
-        </div>
-
-
-        <div class="values-grid">
-
-          <article class="value-card reveal">
-            <span class="value-number">01</span>
-            <h3>Experience</h3>
-            <p>
-              Applying practical knowledge gained through years of
-              involvement in construction and engineering.
-            </p>
-          </article>
-
-
-          <article class="value-card reveal reveal-delay-1">
-            <span class="value-number">02</span>
-            <h3>Technical Understanding</h3>
-            <p>
-              Bringing engineering knowledge and considered planning
-              into the development of each project.
-            </p>
-          </article>
-
-
-          <article class="value-card reveal reveal-delay-2">
-            <span class="value-number">03</span>
-            <h3>Quality Commitment</h3>
-            <p>
-              Paying attention to detail and working towards dependable
-              construction outcomes.
-            </p>
-          </article>
-
-
-          <article class="value-card reveal">
-            <span class="value-number">04</span>
-            <h3>Client Focus</h3>
-            <p>
-              Understanding individual requirements and working towards
-              solutions that reflect each client's vision.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= LEADERSHIP ================= -->
-
-    <section class="leadership-section section-space">
-
-      <div class="container">
-
-        <div class="section-heading reveal">
-
-          <div class="eyebrow">
-            <span></span>
-            THE PEOPLE BEHIND VIJU BUILDERS
-          </div>
-
-          <h2>
-            Leadership Built on Experience and Vision.
-          </h2>
-
-          <p>
-            The people guiding Viju Builders bring together construction
-            experience, engineering education and business management.
-          </p>
-
-        </div>
-
-
-        <div class="leadership-list">
-
-
-          <!-- FOUNDER -->
-
-          <article class="leader-card reveal">
-
-            <div class="leader-photo">
-
-              <img
-                src="assets/FOUNDER.png"
-                alt="Viju Pallikkaparambil, Founder of Viju Builders"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="leader-content">
-
-              <span class="leader-role">FOUNDER</span>
-
-              <h3>Viju Pallikkaparambil</h3>
-
-              <p class="leader-description">
-                Bringing over three decades of experience in civil
-                engineering and construction, the founder established
-                Viju Builders in 1990 with a focus on practical
-                construction knowledge and quality workmanship.
-              </p>
-
-              <div class="leader-divider"></div>
-
-              <p class="leader-speciality">
-                <strong>Focus</strong>
-                Construction Experience · Civil Engineering
-              </p>
-
-            </div>
-
-            <span class="leader-index">01</span>
-
-          </article>
-
-
-          <!-- CEO -->
-
-          <article class="leader-card leader-reverse reveal">
-
-            <div class="leader-photo">
-
-              <img
-                src="assets/CEO.png"
-                alt="Jithin Pallikkaparambil, CEO of Viju Builders"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="leader-content">
-
-              <span class="leader-role">CHIEF EXECUTIVE OFFICER</span>
-
-              <h3>Jithin Pallikkaparambil</h3>
-
-              <p class="leader-description">
-                As CEO, Jithin brings an engineering-led perspective
-                to the company's direction and operations. His academic
-                background combines civil engineering with advanced
-                specialisation in structural engineering.
-              </p>
-
-              <div class="leader-divider"></div>
-
-              <p class="leader-speciality">
-                <strong>Education</strong>
-                B.Tech Civil Engineering · M.Tech Structural Engineering
-              </p>
-
-            </div>
-
-            <span class="leader-index">02</span>
-
-          </article>
-
-
-          <!-- CFO -->
-
-          <article class="leader-card reveal">
-
-            <div class="leader-photo">
-
-              <img
-                src="assets/CFO.png"
-                alt="Jibin Pallikkaparambil, CFO of Viju Builders"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="leader-content">
-
-              <span class="leader-role">CHIEF FINANCIAL OFFICER</span>
-
-              <h3>Jibin Pallikkaparambil</h3>
-
-              <p class="leader-description">
-                Jibin contributes to the company's financial and
-                management functions, bringing experience in civil
-                engineering and management to the business.
-              </p>
-
-              <div class="leader-divider"></div>
-
-              <p class="leader-speciality">
-                <strong>Focus</strong>
-                Financial Management · Business Operations
-              </p>
-
-            </div>
-
-            <span class="leader-index">03</span>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CLOSING STATEMENT ================= -->
-
-    <section class="about-closing-section">
-
-      <div class="container">
-
-        <div class="about-closing reveal">
-
-          <div class="eyebrow eyebrow-light">
-            <span></span>
-            THE VIJU BUILDERS COMMITMENT
-          </div>
-
-          <h2>
-            Building Today.<br>
-            Creating Value for Tomorrow.
-          </h2>
-
-          <p>
-            We continue to bring experience, engineering knowledge
-            and a commitment to quality to every project we undertake.
-          </p>
-
-          <a href="contact.html" class="button button-gold">
-            Connect With Our Team <span>→</span>
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer class="site-footer">
-
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-
-          <a href="index.html" class="footer-logo">
-            <img
-              src="assets/viju-builders-logo.jpeg"
-              alt="Viju Builders logo"
-              loading="lazy"
+<body class="about-page">
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+                <img
+                    src="assets/viju-builders-logo.jpeg"
+                    alt="Viju Builders logo"
+                >
+
+                <span class="brand-copy">
+                    <strong>VIJU BUILDERS</strong>
+                    <small>ARCHITECTS · ENGINEERS · BUILDERS</small>
+                </span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="main-navigation"
             >
-          </a>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-          <h2>VIJU BUILDERS</h2>
-
-          <p>
-            Architects, Engineers and Builders. Building with experience,
-            engineering knowledge and a commitment to quality since 1990.
-          </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h3>Explore</h3>
-
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="index.html#services">Our Services</a>
-          <a href="index.html#projects">Projects</a>
-          <a href="index.html#approach">Our Approach</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact.html">Contact Us</a>
+            <nav class="main-nav" id="main-navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#approach">Our Approach</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html" class="nav-contact">Contact Us</a>
+            </nav>
 
         </div>
 
+    </header>
 
-        <div class="footer-column footer-contact">
 
-          <h3>Contact Information</h3>
+    <main>
 
-          <a href="https://wa.me/918078233805" target="_blank" rel="noopener">
-            <span class="footer-icon">☎</span>
-            <span>
-              <small>Phone / WhatsApp</small>
-              8078233805
-            </span>
-          </a>
+        <!-- ABOUT INTRODUCTION -->
 
-          <a href="mailto:vijubuilders@gmail.com">
-            <span class="footer-icon">✉</span>
-            <span>
-              <small>Email</small>
-              vijubuilders@gmail.com
-            </span>
-          </a>
+        <section class="about-heading">
 
-          <div class="footer-detail">
-            <span class="footer-icon">⌖</span>
-            <span>
-              <small>Registered Address</small>
-              ARCADIA COMPLEX, PALAPARAMBU,
-              VADAPURAM, Kerala - 676542, India
-            </span>
-          </div>
+            <div class="container about-heading-inner">
 
-          <div class="footer-detail">
-            <span class="footer-icon">▤</span>
-            <span>
-              <small>GST Registration</small>
-              32CQYPV2870F1Z8
-            </span>
-          </div>
+                <img
+                    class="about-heading-logo"
+                    src="assets/viju-builders-logo.jpeg"
+                    alt="Viju Builders company emblem"
+                >
+
+                <div>
+
+                    <div class="eyebrow">
+                        <span></span>
+                        ABOUT OUR COMPANY
+                    </div>
+
+                    <h1>Built on Experience. Driven by Quality.</h1>
+
+                    <p>
+                        Viju Builders is an established construction and
+                        engineering company, bringing together experience,
+                        technical knowledge and a commitment to quality.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPANY STORY -->
+
+        <section class="about-story">
+
+            <div class="container">
+
+                <div class="about-story-inner">
+
+                    <div class="eyebrow">
+                        <span></span>
+                        OUR STORY
+                    </div>
+
+                    <h2>Building Since 1990</h2>
+
+                    <p>
+                        Established in 1990, Viju Builders has been involved
+                        in residential construction, commercial buildings
+                        and civil engineering works.
+                    </p>
+
+                    <p>
+                        Our approach combines practical construction
+                        experience with engineering knowledge, thoughtful
+                        planning and attention to detail.
+                    </p>
+
+                    <p>
+                        We believe that every project deserves a careful
+                        approach, from understanding the requirements
+                        to delivering the finished structure.
+                    </p>
+
+                    <div class="about-experience">
+                        <strong>30+ Years</strong>
+                        <span>of Construction Experience</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEADERSHIP -->
+
+        <section class="about-leadership">
+
+            <div class="container">
+
+                <div class="about-section-heading">
+
+                    <div class="eyebrow">
+                        <span></span>
+                        OUR LEADERSHIP
+                    </div>
+
+                    <h2>The People Behind Viju Builders</h2>
+
+                    <p>
+                        Meet the leadership team guiding the company's
+                        engineering, business and operational activities.
+                    </p>
+
+                </div>
+
+
+                <div class="about-leaders">
+
+
+                    <!-- FOUNDER -->
+
+                    <article class="about-leader">
+
+                        <div class="about-leader-photo">
+
+                            <img
+                                src="assets/FOUNDER.png"
+                                alt="Viju Pallikkaparambil, Founder of Viju Builders"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="about-leader-info">
+
+                            <span class="about-leader-role">
+                                Founder
+                            </span>
+
+                            <h3>Viju Pallikkaparambil</h3>
+
+                            <p>
+                                With over 30 years of experience in civil
+                                engineering and construction, Viju
+                                Pallikkaparambil established the foundation
+                                of Viju Builders in 1990.
+                            </p>
+
+                            <div class="about-leader-detail">
+                                Experience: 30+ Years in Construction
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CEO -->
+
+                    <article class="about-leader">
+
+                        <div class="about-leader-photo">
+
+                            <img
+                                src="assets/CEO.png"
+                                alt="Jithin Pallikkaparambil, CEO of Viju Builders"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="about-leader-info">
+
+                            <span class="about-leader-role">
+                                Chief Executive Officer
+                            </span>
+
+                            <h3>Jithin Pallikkaparambil</h3>
+
+                            <p>
+                                Jithin brings an engineering-led perspective
+                                to the company's direction and operations,
+                                combining civil engineering knowledge with
+                                advanced specialisation in structural
+                                engineering.
+                            </p>
+
+                            <div class="about-leader-detail">
+                                B.Tech Civil Engineering · M.Tech Structural Engineering
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CFO -->
+
+                    <article class="about-leader">
+
+                        <div class="about-leader-photo">
+
+                            <img
+                                src="assets/CFO.png"
+                                alt="Jibin Pallikkaparambil, CFO of Viju Builders"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="about-leader-info">
+
+                            <span class="about-leader-role">
+                                Chief Financial Officer
+                            </span>
+
+                            <h3>Jibin Pallikkaparambil</h3>
+
+                            <p>
+                                Jibin contributes to the company's financial
+                                and management functions, bringing experience
+                                in civil engineering and business management.
+                            </p>
+
+                            <div class="about-leader-detail">
+                                Focus: Financial Management · Business Operations
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLOSING -->
+
+        <section class="about-closing">
+
+            <div class="container">
+
+                <div class="eyebrow" style="justify-content:center;">
+                    <span></span>
+                    VIJU BUILDERS
+                </div>
+
+                <h2>Experience. Engineering. Commitment.</h2>
+
+                <p>
+                    We look forward to creating spaces that bring together
+                    thoughtful design, sound engineering and quality
+                    construction.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="footer-logo">
+                        <img
+                            src="assets/viju-builders-logo.jpeg"
+                            alt="Viju Builders logo"
+                            loading="lazy"
+                        >
+                    </a>
+
+                    <h2>VIJU BUILDERS</h2>
+
+                    <p>
+                        Architects, Engineers and Builders.
+                        Building with experience since 1990.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Explore</h3>
+
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+
+                </div>
+
+
+                <div class="footer-column footer-contact">
+
+                    <h3>Contact Information</h3>
+
+                    <a href="https://wa.me/918078233805"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <span class="footer-icon">☎</span>
+
+                        <span>
+                            <small>Phone / WhatsApp</small>
+                            8078233805
+                        </span>
+
+                    </a>
+
+                    <a href="mailto:vijubuilders@gmail.com">
+
+                        <span class="footer-icon">✉</span>
+
+                        <span>
+                            <small>Email</small>
+                            vijubuilders@gmail.com
+                        </span>
+
+                    </a>
+
+                    <div class="footer-detail">
+
+                        <span class="footer-icon">⌖</span>
+
+                        <span>
+                            <small>Address</small>
+                            ARCADIA COMPLEX, PALAPARAMBU,
+                            VADAPURAM, Kerala - 676542, India
+                        </span>
+
+                    </div>
+
+                    <div class="footer-detail">
+
+                        <span class="footer-icon">▤</span>
+
+                        <span>
+                            <small>GST</small>
+                            32CQYPV2870F1Z8
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span data-current-year>2026</span>
+                    Viju Builders. All Rights Reserved.
+                </p>
+
+                <p>Architects · Engineers · Builders</p>
+
+            </div>
 
         </div>
 
-      </div>
+    </footer>
 
 
-      <div class="footer-bottom">
+    <!-- WHATSAPP -->
 
-        <p>
-          © <span data-current-year>2026</span> Viju Builders.
-          All Rights Reserved.
-        </p>
-
-        <p>
-          Architects · Engineers · Builders
-        </p>
-
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- ================= FLOATING WHATSAPP ================= -->
-
-  <a
-    class="floating-whatsapp"
-    href="https://wa.me/918078233805"
-    target="_blank"
-    rel="noopener"
-    aria-label="Contact Viju Builders on WhatsApp"
-    title="Contact Viju Builders"
-  >
-    ☎
-  </a>
-
+    <a
+        class="floating-whatsapp"
+        href="https://wa.me/918078233805"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact Viju Builders on WhatsApp"
+    >
+        ☎
+    </a>
 
 </body>
 </html>
