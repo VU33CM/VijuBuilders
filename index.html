@@ -1,114 +1,735 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Viju Builders — thoughtful construction, dependable project execution. Get in touch to discuss your building project.">
-  <meta name="theme-color" content="#111820">
-  <title>Viju Builders | Building with Purpose</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Viju Builders | Architects, Engineers & Builders Since 1990</title>
+
+  <meta name="description" content="Viju Builders — Architects, Engineers and Builders. Residential construction, commercial buildings, renovation, civil engineering and 3D architectural modelling in Kerala.">
+
+  <meta name="theme-color" content="#101e30">
+
+  <link rel="icon" href="assets/viju-builders-logo.jpeg">
+  <link rel="apple-touch-icon" href="assets/viju-builders-logo.jpeg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
-  <div class="topline"><span>VIJU BUILDERS</span><span>Planning · Construction · Care</span></div>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Viju Builders home">
-      <span class="brand-mark">VB</span><span>VIJU <b>BUILDERS</b><small>BUILDING WITH PURPOSE</small></span>
-    </a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><i></i><i></i></button>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#approach">Our approach</a><a class="nav-cta" href="#contact">Get a quote <span>↗</span></a>
-    </nav>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="Viju Builders homepage">
+        <img
+          src="assets/viju-builders-logo.jpeg"
+          data-logo
+          alt="Viju Builders official logo"
+        >
+
+        <div class="brand-text">
+          <strong>VIJU BUILDERS</strong>
+          <span>Architects · Engineers · Builders</span>
+        </div>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </nav>
+
+    </div>
   </header>
 
+
   <main>
-    <section class="hero">
-      <div class="hero-image" role="img" aria-label="Modern residential architecture"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow light">CIVIL CONSTRUCTION & ENGINEERING</p>
-        <h1>Built on good<br><em>foundations.</em></h1>
-        <p class="hero-copy">Thoughtful planning. Quality workmanship. Construction you can feel confident about.</p>
-        <div class="hero-actions"><a class="button button-light" href="#contact">Discuss your project <span>↗</span></a><a class="text-link light-link" href="#projects">Explore our work <span>↓</span></a></div>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Established 1990 · Over 30 Years of Experience
+          </span>
+
+          <h1>
+            Building Spaces.<br>
+            <span>Creating Legacies.</span>
+          </h1>
+
+          <p>
+            From thoughtful architectural concepts to carefully executed
+            construction, Viju Builders brings experience, engineering
+            knowledge and craftsmanship together to create spaces
+            built to last.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#projects" class="btn btn-primary">
+              Explore Our Work
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="about.html" class="btn btn-outline">
+              Discover Our Story
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
-      <div class="hero-note"><span>01 / 04</span><span>DESIGN · BUILD · DELIVER</span></div>
+
     </section>
 
-    <section class="intro section-wrap" id="about">
-      <div class="section-kicker"><span>01</span><span>WHO WE ARE</span></div>
-      <div class="intro-grid">
-        <h2>Creating spaces<br>made to <em>last.</em></h2>
-        <div class="intro-text">
-          <p class="lead">Viju Builders is a civil construction firm focused on practical solutions, careful execution and clear communication.</p>
-          <p>From the first conversation to the finishing details, our aim is to make the building process straightforward and dependable. Tell us about your project and let's explore how we can bring it to life.</p>
-          <a class="text-link dark-link" href="#contact">Get to know us <span>↗</span></a>
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="about-section" id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image reveal-left">
+
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+              data-photo="photo1"
+              alt="Modern architectural residential building"
+              loading="lazy"
+            >
+
+            <div class="experience-box">
+              <strong>30+</strong>
+              <span>Years of Experience</span>
+            </div>
+
+          </div>
+
+
+          <div class="about-content reveal-right">
+
+            <span class="eyebrow">About Viju Builders</span>
+
+            <h2>
+              Experience That Shapes
+              Every Structure.
+            </h2>
+
+            <p>
+              Established in 1990, Viju Builders has built its foundation
+              on experience, technical knowledge and a commitment to
+              quality construction.
+            </p>
+
+            <p>
+              With expertise spanning civil engineering, residential
+              construction, commercial projects and renovation, we
+              approach every project with careful planning and attention
+              to detail.
+            </p>
+
+            <p>
+              Our focus is simple: understand the client's vision,
+              deliver practical solutions and create buildings that
+              stand the test of time.
+            </p>
+
+            <a href="about.html" class="btn btn-dark">
+              More About Us
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
         </div>
+
       </div>
-      <div class="stats-row">
-        <div><strong>01</strong><span>PERSONAL<br>ATTENTION</span></div>
-        <div><strong>02</strong><span>QUALITY-LED<br>EXECUTION</span></div>
-        <div><strong>03</strong><span>OPEN<br>COMMUNICATION</span></div>
-        <p>Every project deserves care, clarity and a strong foundation.</p>
-      </div>
+
     </section>
+
+
+    <!-- ================= SERVICES ================= -->
 
     <section class="services-section" id="services">
-      <div class="section-wrap">
-        <div class="section-kicker light-kicker"><span>02</span><span>WHAT WE DO</span></div>
-        <div class="section-heading"><h2>Construction,<br><em>considered.</em></h2><p>Services can be tailored to your requirements. Speak with us about the scope, site and timeline of your project.</p></div>
-        <div class="service-list">
-          <article class="service-item"><span class="service-no">01</span><div><h3>Residential construction</h3><p>Homes and residential spaces planned around the people who use them.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span class="service-no">02</span><div><h3>Commercial buildings</h3><p>Functional spaces designed to support businesses, teams and customers.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span class="service-no">03</span><div><h3>Civil engineering works</h3><p>Construction and civil works delivered with attention to site conditions and detail.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span class="service-no">04</span><div><h3>Renovation & extensions</h3><p>Thoughtful upgrades that help existing spaces work better.</p></div><span class="service-arrow">↗</span></article>
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">What We Do</span>
+
+          <h2>
+            Comprehensive Building
+            & Engineering Solutions.
+          </h2>
+
+          <p>
+            From initial design concepts to construction and
+            transformation, we offer integrated solutions for
+            residential and commercial requirements.
+          </p>
+
         </div>
-        <p class="small-note">Please confirm the final service list with the company before publishing.</p>
-      </div>
-    </section>
 
-    <section class="projects section-wrap" id="projects">
-      <div class="section-kicker"><span>03</span><span>SELECTED WORK</span></div>
-      <div class="section-heading project-heading"><h2>Made real,<br><em>one project at a time.</em></h2><p>Replace these sample photographs with Viju Builders' own site photographs and project details when available.</p></div>
-      <div class="project-grid">
-        <article class="project-card project-large"><img data-photo="photo2" alt="Modern house exterior" loading="lazy"><div class="project-caption"><span>01 / RESIDENTIAL</span><h3>Residential spaces</h3><p>Sample image · Replace with company project</p></div></article>
-        <article class="project-card"><img data-photo="photo3" alt="Building construction site" loading="lazy"><div class="project-caption"><span>02 / CONSTRUCTION</span><h3>On-site execution</h3><p>Sample image · Replace with company project</p></div></article>
-        <article class="project-card"><img data-photo="photo4" alt="Contemporary commercial architecture" loading="lazy"><div class="project-caption"><span>03 / COMMERCIAL</span><h3>Commercial spaces</h3><p>Sample image · Replace with company project</p></div></article>
-      </div>
-    </section>
 
-    <section class="approach" id="approach">
-      <div class="approach-photo"></div>
-      <div class="approach-content">
-        <div class="section-kicker light-kicker"><span>04</span><span>HOW WE WORK</span></div>
-        <h2>Good work starts<br>with a <em>good conversation.</em></h2>
-        <p>We believe a successful project begins with understanding what matters to you. We take time to discuss your needs, explain the next steps and keep communication clear as work progresses.</p>
-        <a class="button button-outline" href="#contact">Start a conversation <span>↗</span></a>
-      </div>
-    </section>
+        <div class="services-grid">
 
-    <section class="contact section-wrap" id="contact">
-      <div class="section-kicker"><span>05</span><span>LET'S TALK</span></div>
-      <div class="contact-grid">
-        <div><h2>Have a project<br>in <em>mind?</em></h2><p class="lead">Tell us what you're planning. We'd be glad to hear from you.</p></div>
-        <div class="contact-details">
-          <div><span class="detail-label">CALL / WHATSAPP</span><a id="phone-link" href="#">Add phone number</a></div>
-          <div><span class="detail-label">EMAIL</span><a id="email-link" href="#">Add email address</a></div>
-          <div><span class="detail-label">LOCATION</span><p id="address-text">Add business location</p></div>
-          <a class="button button-dark" id="whatsapp-button" href="#" target="_blank" rel="noopener">Send an enquiry on WhatsApp <span>↗</span></a>
+          <article class="service-card reveal">
+
+            <div class="service-icon" aria-hidden="true">⌂</div>
+
+            <h3>Residential Construction</h3>
+
+            <p>
+              Thoughtfully planned homes designed around functionality,
+              comfort, quality and the needs of modern living.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal reveal-delay-1">
+
+            <div class="service-icon" aria-hidden="true">▦</div>
+
+            <h3>Commercial Buildings</h3>
+
+            <p>
+              Practical and professionally executed commercial
+              spaces that combine structural reliability and
+              functional design.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal reveal-delay-2">
+
+            <div class="service-icon" aria-hidden="true">⌖</div>
+
+            <h3>Civil Engineering Works</h3>
+
+            <p>
+              Engineering-focused construction solutions supported
+              by technical planning and attention to structural details.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon" aria-hidden="true">↗</div>
+
+            <h3>Renovation & Extensions</h3>
+
+            <p>
+              Upgrading, extending and transforming existing
+              buildings to meet changing requirements.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal reveal-delay-1">
+
+            <div class="service-icon" aria-hidden="true">◇</div>
+
+            <h3>3D Architectural Modelling</h3>
+
+            <p>
+              Three-dimensional architectural models that help
+              clients understand building layouts, forms and
+              design concepts before construction.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal reveal-delay-2">
+
+            <div class="service-icon" aria-hidden="true">▧</div>
+
+            <h3>3D Visualization & Rendering</h3>
+
+            <p>
+              Realistic visual representations of architectural
+              concepts to communicate design ideas and
+              proposed spaces more clearly.
+            </p>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="projects-section" id="projects">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">Our Work</span>
+
+          <h2>
+            Built With Purpose.
+            Designed to Last.
+          </h2>
+
+          <p>
+            Every building begins with an idea. Our work brings
+            together planning, engineering and construction to
+            turn those ideas into reality.
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85"
+              data-photo="photo2"
+              alt="Contemporary residential architecture"
+              loading="lazy"
+            >
+
+            <div class="project-info">
+              <h3>Residential Architecture</h3>
+              <p>Thoughtful spaces for modern living</p>
+            </div>
+
+          </article>
+
+
+          <article class="project-card reveal reveal-delay-1">
+
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
+              data-photo="photo3"
+              alt="Construction and civil engineering work"
+              loading="lazy"
+            >
+
+            <div class="project-info">
+              <h3>Construction & Engineering</h3>
+              <p>Precision in every stage of construction</p>
+            </div>
+
+          </article>
+
+
+          <article class="project-card reveal">
+
+            <img
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=85"
+              data-photo="photo4"
+              alt="Modern building exterior"
+              loading="lazy"
+            >
+
+            <div class="project-info">
+              <h3>Modern Building Design</h3>
+              <p>Balancing aesthetics and functionality</p>
+            </div>
+
+          </article>
+
+
+          <article class="project-card reveal reveal-delay-1">
+
+            <img
+              src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+              alt="Contemporary interior architectural design"
+              loading="lazy"
+            >
+
+            <div class="project-info">
+              <h3>Interior & Spatial Design</h3>
+              <p>Spaces designed around people</p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= APPROACH ================= -->
+
+    <section class="approach-section" id="approach">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="eyebrow">Our Approach</span>
+
+          <h2>
+            A Thoughtful Process.
+            A Stronger Outcome.
+          </h2>
+
+          <p>
+            A successful construction project requires more than
+            execution. It requires understanding, coordination,
+            planning and attention to detail.
+          </p>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+          <article class="approach-card reveal">
+
+            <span class="approach-number">01</span>
+
+            <h3>Understand</h3>
+
+            <p>
+              We begin by understanding the client's requirements,
+              vision and project expectations.
+            </p>
+
+          </article>
+
+
+          <article class="approach-card reveal reveal-delay-1">
+
+            <span class="approach-number">02</span>
+
+            <h3>Plan</h3>
+
+            <p>
+              We focus on thoughtful planning, engineering
+              considerations and practical solutions.
+            </p>
+
+          </article>
+
+
+          <article class="approach-card reveal reveal-delay-2">
+
+            <span class="approach-number">03</span>
+
+            <h3>Execute</h3>
+
+            <p>
+              We bring plans to life through coordinated
+              construction and attention to quality.
+            </p>
+
+          </article>
+
+
+          <article class="approach-card reveal reveal-delay-3">
+
+            <span class="approach-number">04</span>
+
+            <h3>Deliver</h3>
+
+            <p>
+              We aim to deliver spaces that meet the intended
+              requirements and provide lasting value.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact-section" id="contact">
+
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <div class="contact-content reveal-left">
+
+            <span class="eyebrow">Get In Touch</span>
+
+            <h2>
+              Let's Build Something
+              Meaningful Together.
+            </h2>
+
+            <p>
+              Have a construction project in mind?
+              Get in touch with Viju Builders to discuss
+              your requirements.
+            </p>
+
+
+            <div class="contact-details">
+
+
+              <div class="contact-item">
+
+                <div class="contact-icon" aria-hidden="true">☎</div>
+
+                <div>
+                  <h4>Call Us</h4>
+
+                  <a
+                    id="phone-link"
+                    data-phone-link
+                    href="tel:+918078233805"
+                  >
+                    8078233805
+                  </a>
+                </div>
+
+              </div>
+
+
+              <div class="contact-item">
+
+                <div class="contact-icon" aria-hidden="true">✉</div>
+
+                <div>
+                  <h4>Email Us</h4>
+
+                  <a
+                    id="email-link"
+                    data-email-link
+                    href="mailto:vijubuilders@gmail.com"
+                  >
+                    vijubuilders@gmail.com
+                  </a>
+                </div>
+
+              </div>
+
+
+              <div class="contact-item">
+
+                <div class="contact-icon" aria-hidden="true">⌖</div>
+
+                <div>
+                  <h4>Our Address</h4>
+
+                  <p id="address-text" data-address>
+                    ARCADIA COMPLEX, PALAPARAMBU,
+                    VADAPURAM, Kerala - 676542, India
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="contact-item">
+
+                <div class="contact-icon" aria-hidden="true">▤</div>
+
+                <div>
+                  <h4>GST Registration</h4>
+
+                  <p id="gst-number" data-gst>
+                    32CQYPV2870F1Z8
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-panel reveal-right">
+
+            <span class="eyebrow">Start a Conversation</span>
+
+            <h3>Tell Us About Your Project.</h3>
+
+            <p>
+              Whether you are planning a new home, a commercial
+              building, a renovation or an architectural design,
+              we would be happy to hear from you.
+            </p>
+
+            <a
+              id="whatsapp-button"
+              data-whatsapp
+              href="https://wa.me/918078233805"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Chat With Us on WhatsApp
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+
+  <!-- ================= FOOTER ================= -->
+
   <footer class="footer">
-    <a class="brand footer-brand" href="#top"><span class="brand-mark">VB</span><span>VIJU <b>BUILDERS</b><small>BUILDING WITH PURPOSE</small></span></a>
-    <p>Thoughtful construction. Strong foundations.</p>
-    <div class="footer-bottom"><span>© <span id="year"></span> Viju Builders. All rights reserved.</span><a href="#top">Back to top ↑</a></div>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <img
+            src="assets/viju-builders-logo.jpeg"
+            data-logo
+            alt="Viju Builders logo"
+            loading="lazy"
+          >
+
+          <h3>VIJU BUILDERS</h3>
+
+          <p>
+            Architects, Engineers and Builders.
+
+            Building with experience, engineering knowledge
+            and a commitment to quality since 1990.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>Explore</h4>
+
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h4>Contact Information</h4>
+
+          <div class="footer-links">
+
+            <a href="tel:+918078233805" data-phone-link>
+              8078233805
+            </a>
+
+            <a href="mailto:vijubuilders@gmail.com" data-email-link>
+              vijubuilders@gmail.com
+            </a>
+
+            <p data-address>
+              ARCADIA COMPLEX, PALAPARAMBU,
+              VADAPURAM, Kerala - 676542, India
+            </p>
+
+            <p>
+              GSTIN: <span data-gst>32CQYPV2870F1Z8</span>
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="year">2026</span> Viju Builders.
+          All Rights Reserved.
+        </p>
+
+        <p>
+          Architects · Engineers · Builders
+        </p>
+
+      </div>
+
+    </div>
+
   </footer>
-  <a class="floating-whatsapp" id="floating-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/main.js"></script>
+
+
+  <!-- ================= FLOATING WHATSAPP ================= -->
+
+  <a
+    id="floating-whatsapp"
+    class="floating-whatsapp"
+    data-whatsapp
+    href="https://wa.me/918078233805"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Viju Builders on WhatsApp"
+  >
+    <span aria-hidden="true">✆</span>
+  </a>
+
+
 </body>
 </html>
