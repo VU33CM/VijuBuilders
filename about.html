@@ -88,15 +88,19 @@
       line-height: 1.95;
     }
 
+
+    /* LARGE COMPANY LOGO PANEL */
+
     .about-logo-panel {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 370px;
-      padding: 45px;
+      min-height: 430px;
+      padding: 25px;
       background: var(--cream);
       box-shadow: 0 25px 70px rgba(0,0,0,.2);
+      transition: box-shadow .5s ease;
     }
 
     .about-logo-panel::before {
@@ -110,8 +114,9 @@
     .about-logo-panel img {
       position: relative;
       z-index: 1;
-      width: min(100%, 290px);
-      max-height: 290px;
+      display: block;
+      width: min(100%, 370px);
+      max-height: 370px;
       object-fit: contain;
       transition: transform .65s var(--ease);
     }
@@ -132,6 +137,7 @@
       text-align: center;
       text-transform: uppercase;
     }
+
 
     /* COMPANY INTRO */
 
@@ -199,6 +205,7 @@
       height: 1px;
       background: var(--gold);
     }
+
 
     /* LEADERSHIP */
 
@@ -318,6 +325,7 @@
       line-height: 1;
     }
 
+
     /* CLOSING BANNER */
 
     .about-closing {
@@ -349,18 +357,24 @@
       line-height: 1.9;
     }
 
-    /* ABOUT PAGE RESPONSIVE */
+
+    /* TABLET */
 
     @media (max-width: 900px) {
 
       .about-hero-grid {
-        grid-template-columns: 1fr  .8fr;
+        grid-template-columns: 1.1fr .9fr;
         gap: 35px;
       }
 
       .about-logo-panel {
-        min-height: 290px;
-        padding: 35px;
+        min-height: 340px;
+        padding: 22px;
+      }
+
+      .about-logo-panel img {
+        width: min(100%, 310px);
+        max-height: 310px;
       }
 
       .company-story-grid {
@@ -372,6 +386,9 @@
       }
 
     }
+
+
+    /* MOBILE */
 
     @media (max-width: 760px) {
 
@@ -390,12 +407,14 @@
 
       .about-logo-panel {
         width: min(100%, 390px);
-        min-height: 320px;
+        min-height: 350px;
         margin: 0 auto;
+        padding: 20px;
       }
 
       .about-logo-panel img {
-        max-width: 230px;
+        width: min(100%, 290px);
+        max-height: 290px;
       }
 
       .company-story-grid {
@@ -434,10 +453,18 @@
 
     }
 
+
+    /* SMALL MOBILE */
+
     @media (max-width: 420px) {
 
       .about-logo-panel {
-        min-height: 280px;
+        min-height: 310px;
+      }
+
+      .about-logo-panel img {
+        max-width: 255px;
+        max-height: 255px;
       }
 
       .leader-image {
@@ -454,7 +481,7 @@
 <body>
 
 
-  <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
 
   <header class="header">
 
@@ -506,7 +533,7 @@
   <main>
 
 
-    <!-- ================= ABOUT HERO ================= -->
+    <!-- ABOUT HERO -->
 
     <section class="about-hero">
 
@@ -536,7 +563,7 @@
         </div>
 
 
-        <!-- PROMINENT COMPANY LOGO -->
+        <!-- LARGE OFFICIAL COMPANY LOGO -->
 
         <div class="about-logo-panel reveal-right">
 
@@ -559,7 +586,7 @@
 
 
 
-    <!-- ================= COMPANY STORY ================= -->
+    <!-- COMPANY STORY -->
 
     <section class="company-story">
 
@@ -623,7 +650,7 @@
 
 
 
-    <!-- ================= LEADERSHIP ================= -->
+    <!-- LEADERSHIP -->
 
     <section class="leadership-section">
 
@@ -794,7 +821,7 @@
 
 
 
-    <!-- ================= CLOSING ================= -->
+    <!-- CLOSING -->
 
     <section class="about-closing">
 
@@ -830,7 +857,7 @@
 
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -927,7 +954,7 @@
 
 
 
-  <!-- ================= WHATSAPP ================= -->
+  <!-- WHATSAPP -->
 
   <a
     id="floating-whatsapp"
